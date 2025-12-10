@@ -1,0 +1,32 @@
+The Behavior of the VMCS-maintenance instructions i summarized: 
+
+						If you use Virtalbox From oricale than you understand
+
+VMPTRLD 		Take a single 64-bit source operand in memory. It makes the referened VMCS active and current 
+
+VMPTRST			Take a single 64-bit destination operand that is in memory. Current-VMCS pointer is stored into the destination operand 
+
+VMCLEAR			Takes a single 64-bit operand in memory. The instruction sets the launch state of the VMCS referenced by the operand to "clear", renders that VMCS inactive, and endures that data for the VMCS have been written to the VMCS-data area in the referenced VMCS region
+
+VMREAD			Reads a component from the VMCS and stores it into a destination operand 
+
+VMWRITE			Writes a component to the VMCS from a source operand 
+
+		The behavoir of the VMX managment instructions is summarized below: 
+
+VMLAUNCH		Launches a virtual machine managed by the VMCS. a VM entry occurs, transferring control to the VM
+
+VMRESUME		Resumes a virtual machine managed by the VMCS. A VM entry occurs, transferring control to the VM
+
+VMXOFF			Causes the processor to leave VMX operation
+
+VMXON			Takes a single 64-bit source operand in memory. It causes a logical processor to enter VMX root operation and to use the memory referenced by the operand to support VMX operations. 
+
+
+INVEPT			Invalidate cached Extended Page Table (EPT) mappings in the processor to synchronize address translation in virtual machines with memory-resident EPT pages 
+
+INVVPID			Invalidate cached mappings of address translation based on the Virtual processor ID (VPID)
+
+VMCALL			Allow a guest in VMX non-root operation to call the CMM for service. A VM exit occurs, transferring control to the VMM
+
+VMFUNC			Allows software in VMX non-root operation to invoke a VM function, which is processor functionality enabled and configured by software in VMX root Operation. No VM exit occurs 

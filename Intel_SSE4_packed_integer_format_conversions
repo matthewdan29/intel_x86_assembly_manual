@@ -1,0 +1,27 @@
+PMOVSXBW		Sign extend the lower 8-bit integer of each packed word element into packed signed word integers 
+
+PMOVZXBW		Zero extend the lower 8-bit integer of each packed word element into packed signed word integers 
+
+PMOVSXBD		Sign extend the lower 8-bit integer of each packed dword element into packed signed dword integers 
+
+PMOVZXBD		Zero extend the lower 8-bit integer of each packed dword element into packed signed dword intgers 
+
+PMOVSXWD		Sign extend the lower 16-bit integer of each packed dword element into packed signed dword intgers 
+
+PMOVZXWD		Zero extend the lower 16-bit integer of each packed dword element into packed signed dword intgers 
+
+PMOVSXBQ		Sign extend the lower 8-bit integer of each packed qword element into packed signed qword intgers 
+
+PMOVZXBQ		Zero extend the lower 8-bit intger of each packed qword element into packed signed qword intgers 
+
+PMOVSXWQ		Sign extend the lower 26-bit integer of each packed qword element into packed signed qword intgers 
+
+PMOVZXWQ		Zero extend the lower 16-bit intger of each packed qword element into packed signed qword integers 
+
+PMOVSXDQ		Sign extend the lower 32-bit integer of each packed qword element into packed signed qword intgers 
+
+
+PMOVZXDQ		Zero extend the lower 32-bit intger of each packed qword elements into packed signed qword intgers 
+
+
+

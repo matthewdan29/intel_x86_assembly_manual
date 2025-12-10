@@ -1,0 +1,1 @@
+MOVNTDQA		Provides a non-temporal hint that can cause adjacent 16-byte item within an aligned 64-byte region (a streaming line) to be fetched and held in a small set of temporary buffers ("streaming lead buffers"). Subsequent streaming leads to other aligned 16-byte items in the same streaming line may be supplied from the streaming load buffer and can improve throughput 

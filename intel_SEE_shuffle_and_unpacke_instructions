@@ -1,0 +1,9 @@
+Intel SSE shuffle and upacked instructions shuffle or interleave single percision floating-point values in packed single precision floating-point operands 
+
+SHUFPS		Shuffles valuesa in packed single precision floating-point operands 
+
+UNPCKHPS 	Unpacks and interleaves the two high-order values from two single precisioin floating-point operands 
+
+UNPCKLPS 	Unpacks and interleaves the two low-order values from two single precision floating-point operands 
+
+

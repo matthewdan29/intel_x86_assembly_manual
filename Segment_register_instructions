@@ -1,0 +1,13 @@
+The segment register instructions allow far pointers (segment addresses) to be loaded into the segment registers 
+
+LDS		Load far pointer using DS
+
+LES		Load far pointer using ES
+
+LFS		Load far pointer using FS 
+
+LGS		Load far pointer using GS 
+
+LSS		Load far pointer using SS
+
+

@@ -1,0 +1,3 @@
+ADDSUBPS		Performs single precision addtion on the second and fourth pairs of 32-bit data elements within the operands; single precision subtraction on the first and third pairs 
+
+ADDSUBPD		Pregorms double precision addition on the second pair of quadwords, and double precision subtraction on the first pair. 

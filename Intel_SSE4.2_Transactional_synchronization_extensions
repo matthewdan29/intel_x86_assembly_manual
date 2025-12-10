@@ -1,0 +1,15 @@
+XABORT		Abort an RTM transaction execution 
+
+XACQUIRE	Prefix hint to the beginning of an HLE transaction region. (HLE = Hardware Lock Elision) (RTM = Restricted Transactional Memory). HLE is compatiable with older Intel processors. RTM is not compatible with older processors.
+
+XRELEASE	Prefix hint to the end of an HLE transaction region
+
+XBEGIN		Transaction begin of an RTM transaction region
+
+XEND		Transaction end of an RTM transaction region 
+
+XTEST 		Test is executing in a transactional region
+
+XRESLDTRK 	Resume tracking load address. 
+
+XSUSLDTRK	Suspend tracking load addresses.  

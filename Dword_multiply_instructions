@@ -1,0 +1,3 @@
+PMULLD		Returns four lower 32-bit of the 64-bit results of signed 32-bit integer multiplies.
+
+PMULDQ		Returns two 64-bit signed result of signed 32-bit integer multiplies 

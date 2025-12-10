@@ -1,0 +1,36 @@
+The x87 FPU instructions are executed by the processor's x87 FPU. 
+These instructions operate on floating-point, integer, and binary-coded decimal (BCD) operands.
+
+FLD		Load floating-point value. 
+
+FST		Store floating-point value
+
+FSTP 		Store floating-point value and pop
+
+FILD		Load integer 
+
+FIST		Store integer
+
+FISTP^1		Store integer and pop
+
+FBLD		Load BCD
+
+FBSTP 		Store BCD and pop
+
+FXCH		Exchange registers 
+
+FCMOVE		Floating-point conditional move if equal 
+
+FCMOVNE		Floating-point conditional move if not equal 
+
+FCMOVB		Floating-point conditional move if below 
+
+FCMOVBE		Floating-point conditional move if below or equal 
+	
+FCMOVNB		Floating-point conditional move if not below 
+
+FCMOVNBE	Floating-point conditional move if not below or equal 
+
+FCMOVU		FLoating-point conditional move if unordered
+
+FCMOVNU		FLoating-point conditional move if not unordered 

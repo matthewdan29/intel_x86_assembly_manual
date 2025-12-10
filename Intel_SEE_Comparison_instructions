@@ -1,0 +1,11 @@
+Intel SSE compare instructions comapre packed and scalar single precisison floating-point operands 
+
+CMPPS 		Compare packed single precision floating-point values 
+
+CMPSS		Compare scalar single precision floating-point values 
+
+COMISS		Preform ordered comparison of scalar single precision floating-point values and set flags in EFLAGS register 
+
+UCOMISS		Perform unordered comparisioin of scalar single precision floating-point values and set flags in EFLAGS register 
+
+

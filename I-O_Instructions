@@ -1,0 +1,19 @@
+These instructions move data between the processor's I/O ports and a register or memory
+
+IN		Read from a port 
+
+OUT 		Write to a port 
+
+INS/INSB	Input string from port/Input byte string from port 
+
+INS/INSW	Input string from port/Input word string from port
+
+INS/INSD	Input string from port/Input doubleword string from port
+
+OUTS/OUTSB	Output string to prot/Output byte string to port
+
+OUTS/OUTSW 	OutPut string to port/Output word string to port 
+
+OUTS/OUTSD	Output string to port/Output doubleword string to port
+
+

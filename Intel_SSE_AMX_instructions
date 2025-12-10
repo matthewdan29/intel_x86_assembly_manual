@@ -1,0 +1,27 @@
+Intel Advanced Matrix Extensions (Intel AMX) is a built-in accelerator designed to significantly enhance AI capabilites on Intel Xeon Scalable processors. 
+Intel AMX is specifically designed to improve the performance of deep learning training and inference on the CPU. 
+It is ideal for workloads such as natural language processing (NLP), recommendation systems(check my github i have a project that will help you understand the highlevel view of this), image recognition, and other AI
+
+LDTILECFG		Load tile configuration
+
+STTILECFG		Store tile configuration 
+
+TDPBF16PS		Dot product of BF16 tiles accumulated into packed single precision tile 
+
+TDPBSSD			Dot product of signed bytes with dword accumulation 
+
+TDPBSUD			Dot product of signed/unsigned bytes with dword accumulation 
+
+TDPBUSD			Dot product of unsigned/signed bytes with dword accumulation 
+
+TDPBUUD			Dot product of unsinged bytes with dword accumulation 
+
+TILELOAD		Load data into tile 
+
+TILELOADDT1		Load data into tile with hint to optimize data caching 
+
+TILERELEASE 		Release tile 
+
+TILESTORED 		Store tile 
+
+TILEZERO 		Zero tile 

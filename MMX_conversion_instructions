@@ -1,0 +1,21 @@
+The conversion instructions pack and unpack bytes, words, and doublewords
+
+PACKSSWB		Pack words into bytes with signed saturation
+
+PACKSSDW		Pack doublewords into words with signed saturation
+
+PACKUSWB		Pack words into bytes with unsigned saturation 
+
+PUNPCKHBW		Unpack high-order bytes.
+
+PUNPCKHWD		Unpack high-order words 
+
+PUNPCKHDQ		Unpack high-order doublewords 
+
+PUNPCKLBW		Unpack low-order bytes 
+
+PUNPCKLWD		Unpack low-order words 
+
+PUNPCKLDQ		Unpack low-order doublewords 
+
+

@@ -1,0 +1,1 @@
+PSIGNB/W/D		Negates each signed integer element of the destination operand if the sign of the corresponding data element in the source operand is less than zero 

@@ -1,0 +1,15 @@
+The load constants instructions load common constants, such as pi, into the x87 floating-point registers 
+
+FLD1		Load +1.0
+
+FLDZ		Load +0.0
+
+FLDPI		Load pi 
+
+FLDL2E		Load log(sub(2)e)
+
+FLDLN2		Load log(sub(e)2)
+
+FLDL2T		Load log(sub(2)10)
+
+FLDLG2		Load log(sub(10)2)

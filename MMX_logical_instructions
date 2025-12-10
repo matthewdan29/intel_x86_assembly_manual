@@ -1,0 +1,10 @@
+The Logical instructions perform AND, AND NOT, OR, and XOR (I had a project on xor bits lol) operations on quadwords operands 
+
+PAND		Bitwise logical AND 
+
+PANDN		Bitwise logical AND NOT 
+
+POR		Bitwise logical OR
+
+PXOR		Bitwise logical exclusivbe OR
+

@@ -1,0 +1,10 @@
+Intel SSE2 packed single precision floating-point instructions perform conversion operations on single precision floating-point and integet operands. 
+These instructions represent enhancements to the Intel SSE single precision floating-point instructions. 
+
+CVTDQ2PS 		Convert packed doubleword integers to packed single precision flaoting-point values 
+
+CVTPS2DQ		Convert packed single precision flaoting-point values to packed doubleword integers 
+
+CVTTPS2DQ		Convert with truncation packed single precision floating-point values to packed doubleword integers 
+
+

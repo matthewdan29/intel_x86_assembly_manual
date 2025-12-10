@@ -1,0 +1,11 @@
+The logical instructions perform basic AND, OR, XOR, and NOT logical operations on byte, word, and doubleword values. 
+
+AND		Perfrom bitwise logical AND. 
+
+OR		Perfrom bitwise logical OR. 
+
+XOR		Perfrom bitwise logical exclusive OR
+
+NOT 		Perfrom bitwise logical NOT
+
+

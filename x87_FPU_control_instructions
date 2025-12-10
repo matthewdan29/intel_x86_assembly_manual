@@ -1,0 +1,41 @@
+The x87 FPU control instructions operate on the x87 FPU register stack and save and restore the x87 FPU state. 
+
+FINCSTP 	Increment FPU register stack pointer 
+
+FDECSTP		Decrement FPU register stack pointer 
+
+FFREE		Free floating-point register 
+
+FINIT		Initialize FPU after checking error conditions 
+
+FNINIT		Initialize FPU without checking error conditions(very few cases)
+
+FCLEX		Clear floating-point exception flags after checking for errors conditions 
+
+FNCLEX		Clearing floating-point excepting flags without checking for error conditions(very few cases)
+
+FSTCW		Store FPU control word after checking error conditions 
+
+FNSTCW		Store FPU control word without checking error conditions(very few cases)
+
+FLDCW		Load FPU control word 
+
+FSTENV		Store FPU envirornment after checking error conditions 
+
+FNSTENV		Store FPU environment without checking error conditions(IDK Linux does this lol)
+
+FLDENV		Load FPU environment 
+
+FSAVE		Save FPU state after checking error conditions 
+
+FNSAVE		Save FPU state without checking error conditions 
+
+FRSTOR		Restore FPU state 
+
+FSTSW		Store FPU status word after checking error conditions 
+
+FNSTSW		Store FPU status word without checking error conditions 
+
+WAIT/FWAIT	Wait for FPU 
+
+FNOP 		FPU no operation 

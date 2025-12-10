@@ -1,0 +1,16 @@
+The intel SSE3 extensions offers 13 instructions that accelerate performance of streaming SIMD extendions technoloy, Streaming SIMD Extensions 2 technology, and x87-FP math capabilites. 
+These instructions can be grouped into the following categories: 
+
+1) One x87 FPU instructions used in integer conversino 
+
+2) One SIMD integer instruction that addresses unaligned data loads 
+
+3) Two SIMD floating-point packed ADD/SUB instructions 
+
+4) Four SIMD floating-point horizontal ADD/SUB instructions 
+
+5) Three SIMD floating-point LOAD/MOVE/DUPLICATE instructions (The duplicate is more important to me)
+
+6) Two thread synchronization instructions 
+
+

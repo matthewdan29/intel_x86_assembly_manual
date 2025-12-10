@@ -1,0 +1,5 @@
+Five of the Intel SSE4.2 instructions operate on XMM register as a source or destination. 
+These include four text/string processing instructions and one packed quadword compare SIMD instruction. 
+Programming these five Intel SSE4.2 instructions is similar to programming 128-bit integer SIMD in intel SSE2/SSSE3.
+Intel SSE4.2 does not provide any 64-bit integer SIMD instructions 
+

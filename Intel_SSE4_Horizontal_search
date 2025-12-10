@@ -1,0 +1,1 @@
+PHMINPOSUW		Finds the value and location of the minimum unsigned word from one of 8 horizontally packed unsigned words. The resulting value and location (offset within the source) are packed into the low dword of the destination XMM register. 

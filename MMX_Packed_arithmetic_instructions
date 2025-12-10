@@ -1,0 +1,35 @@
+The packed arithmetic instructions perform packed integer arithmetic on packed byte, word, and doubleword integers. 
+
+PADDB		Add packed byte integers 
+
+PADDW		Add packed word integers.
+
+PADDD		Add packed doubleword integers 
+
+PADDSB		Add packed signed byte integerts with signed saturation
+
+PADDSW		Add packed signed word integers with signed saturation
+
+PADDUSB		Add packed unsigned byte integers with unsighned saturation 
+
+PADDUSW		Add packed unsigned word integers with unsigned saturation 
+
+PSUBB		Subtract packed byte integers 
+
+PSUBW		Subtract packed word integers 
+
+PSUBD		Subtract packed doubleword integers 
+
+PSUBSB		Subtract packed signed byte integers with signed saturation 
+
+PSUBSW		Subtract packed signed word integers with signed saturation
+
+PSUBUSB		Subtract packed unsigned byte integers with unsigned saturation 
+
+PSUBUSW		Subtract packed unsigned word integers with unsigned saturation 
+
+PMULHW		Multiply packed signed word integers and store high result 
+
+PMULLW 		Multiply packed signed word integers and store low result 
+
+PMADDWD		Multiply and add packed word integers 

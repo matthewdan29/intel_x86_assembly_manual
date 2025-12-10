@@ -1,0 +1,7 @@
+PCMPESTRI		Packed compare explicit-length strings, return index in ECX/RCX
+
+PCMPESTRM		Packed compare explicit-length strings, return mask in XMM0. 
+
+PCMPISTRI		Packed compare implicit-length strings, return index in ECX/RCX
+
+PCMPISTRM		Packed compare implicit-length strings, return mask in XMM0

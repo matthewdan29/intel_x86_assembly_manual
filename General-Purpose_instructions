@@ -1,0 +1,5 @@
+The general-purpose instructions perform basic data movement, arithmetic, logic, program flow, and string operations that programers commonly use to write application and system software to run on Intel 64 and IA-32 processors. 
+They operate on data contained in memory, in the general-purpose registers (EAX, EBX, ECX, EDX, EDI, EBP, and ESP) and in the EFLAGS register. 
+They also operate on address information contained in memory, the general-purpose registers, and the segment registers (CS, DS, SS, ES, FS, and GS). 
+
+This group of instructions includes the data transfer, binary integer arithmetic, decimal arithmetic, logic operations, shift and rotate, bit and byte operations, program control, string flag control, segment register operations, and miscellaneous subgroups. 

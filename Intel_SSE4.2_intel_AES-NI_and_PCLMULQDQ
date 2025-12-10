@@ -1,0 +1,18 @@
+Six Intel AES-NI instructions operate on XMM registers to provide accelerated primitives for block encryption/decryption using advanced encryption standard(FIPS-197). 
+The PCLMULQDQ instructions performs carry-less multiplication for two binary numbers up to 64-bit wide. 
+
+AESDEC		Perform an AES decryption round using an 128-bit state and a round key. AESDEC _m128i _mm_aesdec(m128i, _m128i); VAESDIC _m256i _mm256_aesdec_epi128(_m256i, _m256i); VAESDEC _m512i _mm_aesdec_epi128(_m512i, _m512); 
+
+
+AESDECLAST	Perform an AES decryption round using an 128-bit state and a round key. AESDECLAST _m128i _mm_aesdeclast (_m128i, _m128i); VAESDECLAST _m256 _mm256_aesdeclast_epi128(_m256i, _m256i); VAESDECLAST _m512i _mm512_aesdeclast_epi128(_m512i, _m512i);
+
+AESENC		Perform an AES encryption round using an 128-bit state and a round key. AESENC _m128i _mm_aesenc(_m128i, _m128i); VAESENC _m256i _mm_256_aesenc_epi128(_m256i, _m256i); VAESENC _m512i _mm512_aesenc_epi128(_m512i, _m512i); 
+
+AESENCLAST	Perform the last AES encryption round using an 128-bit state and a round key. AESENCLAST _m128i _mm_aesenclast(_m128i, _m128i); VAESENCLAST _m256i _mm256_aesenclast_epi128(_m256i, _m256i); VAESENCLAST _m512_aesenclast_epi128(_m512i, _m512i); 
+
+AESIMC		Perform an inverse mix column transformation primitive. AESIMC _m128i _mm_aesimc(_m128i); 
+
+AESKEYGENASSIST		Assist the creation of round keys with a key expansion schedule. AESKEYGENASSIST _m128 _mm_aeskeygenassist(_m128i, const int); 
+
+
+PCLMULQDQ	Perform carryless multiplication of two 64-bit numbers. PCLMULQDQ _m128i _mm_clmulepi64_si128(_m128i, _m128i, const int); VPCLMULQDQ _m256 _mm256_clmulepi64_epi128(_m256i, _m256i, const int); VPCLMULQDQ _m512i _mm512_clmulepi64_epi128(_m512i, _m512i, const int);  

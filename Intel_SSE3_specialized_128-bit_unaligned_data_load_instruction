@@ -1,0 +1,2 @@
+LDDQU		Special 128-bit unaligned load designed to avoid cache line splits 
+

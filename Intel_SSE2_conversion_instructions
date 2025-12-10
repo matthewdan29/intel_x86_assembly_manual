@@ -1,0 +1,28 @@
+Intel SSE2 conversion instructions convert packed and individual doubleword integers into packed and scalar double precision floating-point values and visce versa. 
+They also convert between packed and scalar single precision and double precision floating-point values. 
+
+CVTPD2PI 		Convert packed double precision floating-point values to packed doubleword integers 
+
+CVTTPD2PI		Convert with truncation packed double precision floating-point values to packed doubleword integers 
+
+CVTPI2PD		Convert packed doubleword integers to packed double precision floating-point values 
+
+CVTPD2DQ		Convert packed double precision floating-point values to packed doubleword integers 
+
+CVTTPD2DQ		Convert with truncation packed double precision floating-point values to packed doubleword integers 
+
+CVTDQ2PD		Convert packed doubleword integers to packed double precision floating-point values 
+
+CVTPS2PD		Convert packed single precision floating-point values to packed double precision floating-point values 
+
+CVTPD2PS 		Convert packed double precision floaint-point values to packed single precicison floating-point values 
+
+CVTSS2SD		Convert scalar single precision flaoting-point values to scalar double precision floating-point values 
+
+CVTSD2SS		Convert scalar double precision floating-point values to scalar single precision floating-point values 
+
+CVTSD2SI		Convert scalar double precision floating-point values to a signed integer. 
+
+CVTTSD2SI 		Convert with truncation scalar double precision floating-point values to a scalar signed integer 
+
+CVTSI2SD 		Convert signed integer to scalar double precision floating-point values. 

@@ -1,0 +1,3 @@
+DPPD		Perform double precision dot product for up to 2 elements and broadcast 
+
+DPPS		Perform dingle precision dot products for up to 4 elements and broadcast 

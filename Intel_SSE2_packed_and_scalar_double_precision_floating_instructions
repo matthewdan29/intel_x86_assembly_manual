@@ -1,0 +1,7 @@
+Intel SSE2 packed and scalar double precision floating-point instructions are divided into the following subordinate subgroups: 
+1) Data movement 
+2) arithmetic
+3) comparison
+4) conversion
+5) logical
+6) shuffle operations on double precision floating-point operands

@@ -1,0 +1,1 @@
+PALIGNR		Source operand is appended after the destination operand forming an intermediate value of twice the width of an operand. The result is extracted from the intermediate value into the destination operand by selecting the 128-bit or 64-bit value that are right-alligned to the byte offest specified by the immediate value 

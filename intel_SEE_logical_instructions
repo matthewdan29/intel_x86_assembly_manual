@@ -1,0 +1,11 @@
+Intell SEE logical instruction perform bitwise AND, AND NOT, OR, and XOR operations on packed single precision floating-point operands 
+
+ANDPS		Perform bitwise logical AND of packed single precision floating-point values 
+
+ANDNPS 		Perfrom bit wise logical AND NOT of packed single precision floating-point values 
+
+ORPS		Perfrom bitwise logical OR of packed single precision floating-point values 
+
+XORPS		Perform bitwise logical XOR of packed single precision floating-point values 
+
+

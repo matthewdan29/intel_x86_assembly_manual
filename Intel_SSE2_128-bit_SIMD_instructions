@@ -1,0 +1,30 @@
+Intel SSE2 SIMD integer instructions perform additional operations on packed words, doublewords, and quadwords contained in XMM and MMX registers 
+
+MOVDQA		Move aligned double quadword. 
+
+MOVDQU		Move unaligned double quadword 
+
+MOVQ2DQ		Move quadword integer from MMX to XMM registers 
+
+MOVDQ2Q		Move quadword integer from XMM to MMX registers 
+
+PMULUDQ		Multiply packed unsigned doubleword integers 
+
+PADDQ		Add packed quadword integers 
+
+PSUBQ		Subtract packed quadword integers 
+
+PSHUFLW		Shuffle packed low words 
+
+PSHUFHW 	Shuffle packed high words 
+
+PSHUFD 		Shuffle packed doublewords 
+
+PSLLDQ		Shift double quadword left logical 
+
+PSRLDQ		Shift double quadword right logical 
+
+PUNPCKHQDQ	Unpack high quad words 
+
+PUNPCKLQDQ	Unpacke low quadwords 
+

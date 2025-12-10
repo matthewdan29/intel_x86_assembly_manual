@@ -1,0 +1,37 @@
+Intel Streaming SIMD extensions 4 (Intel SSE4) introduces 54 new instructions. 
+Intel SSE4.1 is targeted to improve the performance of media, imaging, and 3D workloads. 
+Intel SSE4.1 adds instructions that improve compiler vectorization and significantly increase support for packed dword computation. 
+The technology also provides a hint that can improve memory throughtput when reading from uncacheable WC memory type. 
+Intel 4.1 instructions include: 
+
+1) Two instructions perform packed dword multiplies 
+
+2) two intructions perform floating-point dot products with input/output selects. 
+
+3) One instruction performs a load with a streaming hint. 
+
+4) Six instructions simplify packed blending
+
+5) Eight instructions expand support for packed integer MIN/MAX
+
+6) Four instructions support floating-point round with selectable rounding mode and precision exveption override 
+
+7) Seven instructions improve data insertion and extractions from XMM registers 
+
+8) Twelve instructions improve packed integer format conversions (sign and zero extensions)
+
+9) One instructions improves SAD (sum absolute difference) generation of small block sizes 
+
+10) One instruction aids horizontal searchgin operations 
+
+11) One instruction imporves masked comparisons. 
+
+12) One instruction adds qword packed equality comparisons 
+
+13) One instructioon adds dwords packing with unsigned saturation 
+
+The Intel SSE4.2 instructions operating on XMM register include: 
+
+1) String and text processing that can take advantage of single-instruction multiple-data programing (SIMD programing)
+
+2) A SIMD integer instruction that enhances the capability of the 128-bit integer SIMD capability of SSE4.1

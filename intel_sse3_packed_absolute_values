@@ -1,0 +1,47 @@
+PABSB		Computes the absolute value of each signed byte data element. 
+
+PABSW		Comuptes the absolute value of each signed 16-bit data element
+
+PABSD		Computes the absolute value of each signed 32-bit data element. 
+
+				Below is Intel C/C++ compiler intrinsic equivalents for each 
+
+
+VPABSB_m512i _mm512_abs_epi8(_m512i a); 
+VPABSW_m512i _mm512_abs_epi16(_m512i a); 
+VPABSB_m512i _mm512_mask_abs_epi8(_m512i s, _mm64 m, _m512i a); 
+VPABSW_m512i _mm512_mask_abs_epi16(_m512i s, _mmask32 m, _m512i a); 
+VPABSB_m512i _mm512_maskz_abs_epi8(_mmask64 m, _m512i a); 
+VPABSW_m512i _mm512_maskz_abs_epi16(_mmask32 m, _m512i a); 
+VPABSB_m256i _mm256_mask_abs_epi8(_m256i s, _mmask32 m, _m256i a); 
+VPABSW_m256i _mm256_mask_abs_epi16(_m256i s, _mmask16 m, _m256i a); 
+VPABSB_m256i _mm256_maskz_abs_epi8(_mmask32 m, _m256i a); 
+VPABSW_m256i _mm256_maskz_abs_epi16(_mmask16 m, _m256i a); 
+VPABSB_m128i _mm_mask_abs_epi8(_m128i s, _mmask16 m, _m128i a); 
+VPABSW_m128i _mm_mask_abs_epi16(_m128i s, _mmask8 m, _m128i a); 
+VPABSB_128i _mm_maskz_abs_epi8 (_mmask16 m, _m128i a); 
+VPABSW_m128i _mm_maskz_abs_epi16(_mmask8 m, _m128i a); 
+VPABSD _m256i _mm256_mask_abs_epi32(_m256i s, _mmask8 k, _m256i a); 
+VPABSD _m256i _mm256_maskz_abs_epi32(_mmask8 k, _m256i a); 
+VPABSD _m128i _mm_mask_abs_epi32(_m128i s, _mmask8 k, _m128i a); 
+VPABSD _m128i _mm_maskz_abs_epi32(_mmask8 k, _m128i a); 
+VPABSD _m512i _mm512_abs_epi32(_m512i a); 
+VPABSD _m512i _mm512_mask_abs_epi32(_m512i s, _mmask16 k, _m512i a); 
+VPABSD _m512i _mm512_maskz_abs_epi32(_mmask16 k, _m512i a); 
+VPABSQ _m512i _mm512_abs_epi64(_m512i a); 
+VPABSQ _m512i _mm512_mask_mask_abs_epi64(_m512i s, _mmask8 k, _m512i a); 
+VPABSQ _m512i _mm512_maskz_abs_epi64(_mmask8, _m512i a); 
+VPABSQ _m256i _mm256_mask_abs_epi64(_m256i s, _mmask8 k, _m256i a); 
+VPABSQ _m256i _mm256_maskz_abs_epi64(_mmask8 k, _m256i a); 
+VPABSQ _m128i _mm_mask_abs_epi64(_m128i s, _mmask8 k, _m128i a); 
+VPABSQ _m128i _mm_maskz_abs_epi64(_mmask8 k, _m128i a); 
+PABSB  _m128i _mm_abs_epi8(_m128i a); 
+VPABSB _m128i _mm_abs_epi8(_m128i a); 
+VPANSB _m256i _mm256_abs_epi8(_m256i a); 
+PABSW  _m128i _mm_abs_epi16(_m128 a); 
+VPABSW _m128i _mm_abs_epi16(_m128i a); 
+VPABSW _m256i _mm256_abs_epi16(_m256i a); 
+PANSD  _m128i _mm_abs_epi32(_m128i a); 
+VPABSD _m128i_mm_abs)epi32(_m128i a); 
+VPABSD _m128i _mm_abs_epi32(_m128i a); 
+VPABSD _m256_abs_epi32(_m256i a); 

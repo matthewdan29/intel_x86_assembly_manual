@@ -1,0 +1,38 @@
+Intel SEE packed arithmetci instructions perform packed and scalar arithmetic operations on packed and scalar single precision floating-point operands 
+
+ADDPS 		Add packed single precision floating-point values 
+
+ADDS		Add scalar single precision floating-point values 
+
+SUBPS 		Subtract packed single precision floating-point values 
+
+SUBSS		Subtract scalar single precision floating-point values 
+
+MULPS 		Multiply packed single precision floating-point values 
+
+MULSS		Multiply scalar single precision floating-point values 
+
+DIVSS		Divide packed single precision floating-point values 
+
+DIVSS		Divide scalar single precision floating-point values 
+
+RCPPS 		Compute reciprocals of packed single precision floating-point values 
+
+RCPSS		Compute reciprocal of scalar single precision floating-oint values 
+
+SQRTPS		Compute square roots of packed single precision floating-point values 
+
+SQRTSS		Compute square root of scalar single precision floating-point values 
+
+RSQRTPS		Compute reciprocals of square roots of packed single precision floating-point values 
+
+MAXPS 		Return maximum packed single precision floating-point values 
+
+MAXSS		Return maximum scalar single precision floating-point values 
+
+MINPS 		Return minimum packed single precision floating-point values 
+
+MINSS		Return minimum scalar single precisison floating-point values 
+
+
+

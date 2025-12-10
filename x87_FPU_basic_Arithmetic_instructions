@@ -1,0 +1,53 @@
+The basic arithmetic instructions perform basic arithmetic operations on floating-point and integer operands.
+
+FADD		Add floating-point.
+
+FADDP		Add Floating-point and pop
+
+FIADD		Add intefer
+
+FSUB		Subtract floating-point
+
+FSUBP		Subtract floating-point and pop
+
+FISUB		Subtract integer
+
+FSUBR		Subtract floating-point and reverse. 
+
+FSUBRP		Subtract floating-point reverse and pop
+
+FISUBR		subtract integer reverse 
+
+FMUL 		Multiply floating-point 
+
+FMULP		Multiply floating-point and pop
+
+FIMUL		Multipy integer
+
+FDIV		Divide floating-point 
+
+FDIVP		Divide floating-point and pop
+
+FIDIV		Divide integer
+
+FDIVR		Divide floating-point reverse 
+
+FDIVRP		Divide floating-point reverse 
+
+FIDIVR		Divide integer reverse
+
+FPREM		Partial remainder 
+
+FPREM1		IEEE partial remainder
+
+FABS		Absolute value 
+
+FCHS		Change sign 
+
+FRNDINT 	Round to integer 
+
+FSCALE		Scale by power of TWO 
+
+FSQRT		Square root 
+
+FXTRACT		Extract exponent and significand

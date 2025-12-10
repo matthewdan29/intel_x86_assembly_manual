@@ -1,0 +1,3 @@
+RDRAND		Retrieves a random number generated from hardware 
+
+RDSEED		Retrieves a random number generated from hardware

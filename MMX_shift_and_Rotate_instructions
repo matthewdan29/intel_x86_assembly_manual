@@ -1,0 +1,19 @@
+The shift and rotate instructions shift and rotate packed bytes, words, or doublewords, or quadwords in 64-bit operands
+
+PSLLW 		Shift packed words left logical 
+
+PSLLD		Shift packed doublewords left logical 
+
+PSLLQ		Shift packed quadword left logical 
+
+PSRLW		Shift packed words right logical 
+
+PSRLD		Shift packed doublewords right logical 
+
+PSRLQ		Shift packed quadword right logical 
+
+PSRAW		Shift packed words right arithmetic 
+
+PSRAD 		Shift packed doublewords right arithmetic 
+
+

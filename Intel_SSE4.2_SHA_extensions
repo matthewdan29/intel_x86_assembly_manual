@@ -1,0 +1,22 @@
+Intel SHA extensions provide a set of instructions that target the acceleration of the Secure Hash Algorithm (SHA), specifically the SHA-1 and SHA-256 variants. 
+
+SHA1MSG1		Perform an intermediate calculation for the next four SHA1 message dwords from the previous message dwords. SHA1MSG1 _m128i _mm_sha1msg1_epu32(_m128i, _m128i); 
+
+SHA1MSG2		Perfrom the final calculation for the next four SHA1 message dwords from the intermediate message dwords. SHA1MSG2 _m128i _mm_sha1msg2_epu32(_m128i, _m128i); 
+
+SHA1NEXTE		Calculate SHA1 state E after four rounds. SHA1NEXTE _m128i _mm_sha1nexte_epu32(_m128i, _m128i); 
+
+
+SHA1RNDS4		Perform four rounds of SHA1 operations. SHA1RNDS4 _m128i _mm_sha1rnds4_epu32(_m128i, _m128i, const int); 
+
+
+SHA256MSG1		Perform an intermediate calculation for the next four SHA256 message dwords. SHA256MSG1 _m128i _mm_sha256msg1_epu32(_m128i, _m128i); 
+
+
+SHA256MSG2		Perform the final calculation for the next four SHA256 message dwords. SHA256MSG2 _m128i _mm_sha256msg2_epu32(_m128i, _m128i); 
+
+
+SHA256RNDS2		Perform two rounds of SHA256 operations. SHA256RNDS2 _m128i _mm_sha256rnds2_epu32(_m128i, _m128, )
+
+
+

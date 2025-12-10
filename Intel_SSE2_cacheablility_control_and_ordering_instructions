@@ -1,0 +1,18 @@
+Intel SSE2 cacheability control instructions provide additional operations for caching of non-temporal data when storing data from XMM registers to memory. 
+LFENCE and MFENCE provide additional control of instruction ordering on store operations 
+
+CLFUSH		Flushes and invalidates a memory operand and its associated cache line from all levels of the processor's cache hierarchy
+
+LFENCE		Serializes load operations 
+
+MFENCE		Serializes load and store operations 
+
+PAUSE 		Improves the performance of "spin-wait loops"
+
+MASKMOVDQ	Non-temporal store of selected bytes from an XMM register into memory 
+
+MOVNTPD		Non-temporal store of two packed double precision floating-point values from and XMM register into memory 
+
+MOVNTDQ		Non-temporal store of double quadword from an XMM register into memory 
+
+MOVNTI		Non-temporal store of a doubleword from a general-purpose register into memory

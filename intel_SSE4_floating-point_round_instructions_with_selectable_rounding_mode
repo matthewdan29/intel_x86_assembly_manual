@@ -1,0 +1,7 @@
+ROUNDPS			Round packed single precision floating-point values into integer values and return rounded floating-point values 
+
+ROUNDPD 		Round packed double precision floating-point values into integer values and return rounded flaoting-point values 
+
+ROUNDSS			Round the low packed single precision floating-point value into an integer value and return a rounded floating-point value 
+
+ROUNDSD			Round the low packed double precision floating-point value into an integer value and return a rounded floating-point value 

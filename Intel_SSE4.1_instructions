@@ -1,0 +1,3 @@
+Intel SSE4.1 instructions can use an XMM register as a source or destination. 
+Programming Intel SSE4.1 is similar to programming 128-bit integer SIMD and floating-point SIMD instruction in Intel SSE/SSE2/SSE3.
+Intel SSE4.1 does not provide any 64-bit integer SIMD instructions operating on MMX registers. 

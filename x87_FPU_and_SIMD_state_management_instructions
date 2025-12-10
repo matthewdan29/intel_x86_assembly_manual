@@ -1,0 +1,10 @@
+Two state managment instructions were introduced into the IA-32 architecture with Pentium II processor family: 
+
+FXSAVE		Save x87 FPU and SIMD state 
+
+FXRSTOR 	Restore x87 FPU and SIMD state
+
+Initially, these instructions operated only on the x87 FPU (and MMX) registers to perform a fast save and restore, respectively, of the x87 FPU and MMX state. 
+With the introduction of SSE extendions in the Pentium II processor family, these instructions were expanded to also save and restore the state of the XMM and MXCSR registers. 
+Intel 64 architecture also supports these instructions 
+

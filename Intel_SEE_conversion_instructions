@@ -1,0 +1,13 @@
+Intel SEE conversion instructions convert packed and individual doubleword intergfer into packed and scalar single precision floating-point vaules and vice versa (If you read any of my repo you know I didnt say this lol its Intel)
+
+CVTPI2PS		Convert packed doubleword integerts to packed single precision flaoting-point values 
+
+CVTSI2SS		Convert signed integer to scalar single precisison flaoting-point value 
+
+CVTPS2PI		Convert packed single precision floating-point values to packed doubleword integers 
+
+CVTTPS2PI		Convert with truncation packe single precision floating-point values to packed doubleword integers 
+
+CVTSS2SI 		Convert a scalar single precision floating-point value to a signed integer 
+
+CVTTSS2SI		Convert with truncation a scalar single precision floating-point value to scalar signed integer

@@ -1,0 +1,2 @@
+FMA extendsions enhances Intel AVX with high-throughput, arithmetic capcbilities covering fused multiply-add, fused multiply-subtract, fused multiply add/subtract interleave, signed-reversed, multiply on fused multiply-add and multiply-subtract. 
+FMA extensions provide 36 256-bit floating-point instructions to perform computation on 256-bit vectors and addititonal 128-bit and scalar FMA instructions. 

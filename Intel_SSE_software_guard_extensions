@@ -1,0 +1,39 @@
+Intel Software Guard Extensions (Intel SGX) provide two sets of instruction leaf functions to enable application software to instantiate a proctected container, referred to as an enclave. 
+The enclave instructions organized as leaf functions under two instructions mnemonics: ENCLS (rings 0) and ENCLU (ring 3)
+
+
+The ENCLS instruction invokes the specified privileged Intel SGX leaf function for managing and debugging enclaves.
+Software specifies the leaf function by setting the appropriate value in the register EAX as input. 
+The registers RBX, RCX, and RDX have leaf-specific purposes, and may act as input, as output, or may be unused. 
+In 64-bit mode, the instruction ignores upper 32-bit of the RAX register 
+
+The ENCLS instruction produces an invalid-opcode exception (#UD) if CRO.PE = 0 or RFLAGS.VM = 1, or if it is executed in system-management mode (SMM). 
+Addidtionally, any attempt to execyte the instruction when CPL > 0 results in #UD. 
+The instruction produces a general-protection exception (#GP) if CRO.PG = 0 or if an attempt is made to invoke an undefined lkeaf function. 
+In VMX non-root operation, executtion of ENCLS may cause a VM exit if the "enable ENCLS exiting" VM-execution control is 1.
+In this case, execution of individual leaf functions of ENCLS is governed by the ENCLS-exiting bitmap field in the VMCS. 
+Each bit in that field corresponds to the index of an ENCLS leaf function (as provided in EAX)
+
+Software in VMX root operation can thus intercept the invocation of various ENCLS leaf functions in VMX non-root operation by setting the "enable ENCLS exiting" VM-execution control and seeting the corresponding bits in the ENCLS-exiting bitmap 
+Addresses and operands are 32 bits outside 64-bit mode (IA32_EFER.LMA = 0 || CS.L = 0) and are 64 bits in 64-bit mode (IA32_EFER.IMA = 1 || CS.L = 1) CS.D calue has no impact on address calculation. 
+The Ds segment is used to create linear addresses. 
+
+Segment override prefixes and address-size override prefixes are ignored, and is the REX prefix in 64-bit mode.
+
+
+
+The ENCLU instruction invokes the specified non-privileged Intel SGX leaf fucntions. 
+Software specifies the leaf function by setting the appropriate value in the register EAX as input. 
+The registers RBX, RCX, and RDX have leaf-specific purpose, and may act as input, as output, or may be unused. 
+In 64-bit mode, the instruction ignores upper 32 bits of the RAX register 
+
+The ENCLU instruction produces an invalid-opcode exception (#UD) if CRO.PE = 0 or RFLAGS.VM = 1, or if it is executed in system-managment mode (SMM).
+Additionally, any attempt to execute this instruction when CPL < 3 results in #UD. 
+The instruction produces a general-protection exception (#GP) if either CRO.PG or CRO.NE is 0 , or if an attempt is made to invoke an undefined leaf function. 
+The ENCLU instrution produces a device not available exception (#NM) if CRO.TS = 1.
+
+Addresses and operands are 32 bit outside 64-bit mode (IA32_EFER.LMA = 0 or CS.L = 0) and are 64 bits in 64-bit mode (IA32_EFER.LMA = 1 and CS.L = 1).
+CS.D value has no impact on address calculation. 
+The DS segment is used to create linear addresses. 
+
+Segment override prefixes and address-size override prefixes are ignored, as is the REX prefix 64-bit mode. 

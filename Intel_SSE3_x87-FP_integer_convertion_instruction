@@ -1,0 +1,1 @@
+FISTTP		Behaves like the FISTP instruction but uses truncation, irrespective of the rounding mode specified in the floating-point control word (FCW)

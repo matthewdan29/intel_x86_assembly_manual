@@ -1,0 +1,19 @@
+The shift and rotate instructions shift and rotate the bits in word and doubleword operands. 
+
+SAR		Shift arithmetic right. 
+
+SHR		Shift logical right. 
+
+SAL/SHL 	Shift arithmetic left/Shift logical left. 
+
+SHRD		Shift right double 
+
+SHLD		shift left double
+
+ROR		Rotate right 
+
+ROL		Rotate left
+
+RCR		Rotate through carry right 
+
+RCL		Rotate through carry left 

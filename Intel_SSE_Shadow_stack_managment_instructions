@@ -1,0 +1,25 @@
+Shadow stack management instructions allow the program and run-time to perform operations like recovering from control protections faults, shadow stack switching, etc. 
+
+Intel Control-flow Enforcement Technology (CET) introduces the concept of a shadow stack. 
+When configured to do so, the CPU uses shadow stacks to ensure the conrrectness of certain control-flow transfers. 
+Some control-flow transfers update a shadow stack with multiple accesses, including modification of a stack element called "supervisor shadow-stack token (henceforth token)". A shadow stack's token includes a bit that indicates wheater the shdow stack is in use or busy. 
+Such shadow-stack updates are said to be complex. 
+Typically, a complex shadow stack updates pertain only to the shadow stacks used by supervisor software (software operating when the current privilege level -- CPL -- is 0).
+Certain events encountered during the complex shadow-stack update can cause the shadow stack to become prematurely busy, meaning that the update fails to complete but has marked the shadow stack "busy". 
+Prematurely busy shadow stacks may lead to unexpected behavior. 
+
+CLRSSBSY		Clear busy bit in a supervisor shadow stack token. 
+
+INCSSP			Increment the shaow stack pointer (SSP)
+
+RDSSP			Read shaow stack point (SSP)
+
+RSTORSSP 		Restore a shadow stack pointer (SSP)
+
+SAVEPREVSSP		Save previous shadow stack pointer (SSP)
+
+SETSSBSY		Set busy bit in a supervisor shadow stack token 
+
+WRSS 			Write to a shadow stack 
+
+WRUSS			Write to a user mode shaow stack 

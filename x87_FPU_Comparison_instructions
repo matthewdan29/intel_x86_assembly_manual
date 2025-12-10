@@ -1,0 +1,31 @@
+The Compare instructions examine or compare floating-point or integer operands.
+
+FCOM		Compare floating-point 
+
+FCOMP		Compare floating-point and pop
+
+FCOMPP		Compare floating-point and pop twice 
+
+FUCOM		Unordered compare floating-point 
+
+FUCOMP		Unorderedcompare floating-point and pop
+
+FUCOMPP 	Unordered compare floating-point and pop twice 
+
+FICOM		Compare integer 
+
+FICOMP		Compare integer and pop 
+
+FCOMI		Compare floating-point and setEFLAGS
+
+FUCOMI		Unordered compare floating-point and set EFLAGS
+
+FCOMIP		Compare floating-point, set EFLAGS , and pop 
+
+FUCOMIP		Unordered compare floating-point, set EFLAGS, and pop 
+
+FTST		Test floating-point, set EFLAGS, and pop 
+
+FXAM 		Examine floating-point 
+
+ 

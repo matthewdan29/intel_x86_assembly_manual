@@ -1,0 +1,9 @@
+CLUI		Clear user interrupt flag 
+
+SENDUIPI	Send user interprocessor interrupt 
+
+STUI		Set user interrupt flag 
+
+TESTUI 		Determain user interrrupt flag (I thougt it had to do with burning pee at first lol )
+
+UIRET		User-interrupt return 

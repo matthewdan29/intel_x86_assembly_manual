@@ -1,0 +1,13 @@
+The Compare instructions compare packed bytes, words, or doublewords
+
+PCMPEQB		Compare packed bytes for equal 
+
+PCMPEQW		Compare packed words for equal 
+
+PCMPEQD		Compare packed doublewords for equal 
+
+PCMPGTB		Compare packed signed byte integets for greater than 
+
+PCMPGTW 	Compare packed signed word integers for greater than 
+
+PCMPGTD		Compare packed signed double words integer for greater than 

@@ -1,0 +1,15 @@
+MMX technology, SSE extensions, SSE2 extensions, and SSE3 extensions have been introduced into the IA-32 architecture to permit IA-32 processors to perform single instructions multiple data (SIMD) operations. 
+MMX instructions operate on packed byte, word, doubleworld, or quadword integer operands contained in memory, in MMX registers, and/or in general-purpose registers. 
+
+Support for the MMX instructions can be detected with the CPUID instructions, But its can only be executed on the INtel 64 and IA-32 processors that support the MMX technology.
+
+MMX instructions are divided into the following subgroups: 
+
+1) Data transfer, 
+2) Conversion
+3) packed arithmetic 
+4) comparison
+5) logical 
+6) shift
+7) rotate
+8) state managment instructions

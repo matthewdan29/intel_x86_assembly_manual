@@ -1,0 +1,7 @@
+Intel SSE2 shuffle and unpack instructions shuffle or interleave double precision floating-point values in packed double precision floating-point operands 
+
+SHUFPD 		Shiffles values in packed double precision floating-poin operands 
+
+UNPCKHPD 	Unpackes and interleaves the high values from two packed double precision floating-point operands 
+
+UNPCKLPD 	Unpacks and interleaves the low values from two packed double precision flaoting-points operands 

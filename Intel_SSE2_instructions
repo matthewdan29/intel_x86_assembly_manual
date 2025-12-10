@@ -1,0 +1,12 @@
+Intel SSE2 extensions represents an extension of the SIMD execution model introduced with MMX technology and the Intel SSE extensions. 
+Intel SSE2 instructions operate on packed double precision floating-point operands and on packed byte, word, doubleword, and quadword operands located in the XMM registers.
+
+These instructions are divided into four subgroups
+
+1) Packed and scalar double precision floating-point instructions 
+
+2) Packed single precision floating-point conversion instructions 
+
+3) 128-bit SIMD integer instructions 
+
+4) Cacheability-control and instruction orderin instructions  

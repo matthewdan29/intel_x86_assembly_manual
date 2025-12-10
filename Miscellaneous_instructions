@@ -1,0 +1,23 @@
+The Miscellaneous instructions provide such function as loading an effective address, executing a "no-operation," and retrieving processor identification information
+
+LEA		Load effective address
+
+NOP		No operation 
+
+UD 		Undefined instructions
+
+XLAT/XLATB	Table lookup translation
+
+CPUID 		Processor identification
+
+MOVBE		Move data after swapping data bytes 
+
+PREFETCHW	Prefetch data into chche in anticipation of write
+
+PREFETCHWT1	Prefetch hint T1 with intent to write 
+
+CLFUSH		Flushes and invalidates a memory operand and its associated cache line from all levels of the processor's cache hierarchy. 
+
+CLFLUSHOPT 	Flucshes and invalidates a memory operand and its associated cache line from all levels of the processor's cache hierarchy with optimized memory system throughput 
+
+

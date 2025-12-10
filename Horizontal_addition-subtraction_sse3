@@ -1,0 +1,13 @@
+PHADDW		Adds two adjacent, signed 16-bit integers horizontally from the source and destination operands and packs the signed 16-bit resutls to the destinations operand. PHADDW _m64 _mm_hadd_pi16(_m65 a, _m64 b); PHADDD _m64 _mm_hadd_pi32(_m64 a, _m64 b); PHADDW _m64 _mm_hadd_epi16(_m128i a, _m128i b); PHADDD _m128i _mm_hadd_epi32(_m128i a, _m128i b); VPHADDW _m256i _mm256_hadd_epi16(_m256i a, _m256i b); VPAHDDD _m256i _mm256_hadd_epi32(_m256i a, _m256i b); 
+
+PHADDSW		Adds two adjacent, signed 16-bit integers horizontally from the source and destination operands and packs the signed, saturated 16-bit results to the destination operand. PHADDSW _m64 _mm_hadds_pi16(_m65 a, _m64 b); PHADDSW _m128i _mm_hadds_epi16(_m128i a, _m128i b); VPHADDSW _m256i _mm_hadds_epi16(_m256i a, _m256i b); 
+
+PHADDD		Adds two adjacent, signed 32-bit integers horizontally from the source and destination operands and packs the signed 32-bit results to the destination operand. PHADDW _m65 _mm_hadd_pi16(_m64 a, _m64 b); PHADDD _m64 _mm_hadd_pi32(_m64 a, _m64 b); PHADDW _m64 _mm_hadd_epi16(_m128i a, _m128i b); PHADDD _m128i _mm_hadd_epi32(_m128i a, _m128i b); VPHADDD _m256i _mm256_hadd_epi16(_m256i a, _m256i b); VPHADDD _m256i _mm256_hadd_epi32(_m256i a, _m256i b);
+
+PHSUBW		Performs horizontal subtraction on each adjacent pair of 16-bit signed integers by subtracting the most significant word fromt the least signeificant word of each pair in the source and destination oprand. The signed 16-bit results are packed and written to the destination operand. PHSUBW _m64 _mm_hsub_pi16(_m64 a, _m64 b); PHSUBD _m64 _mm_hsub_pi32(_m64 a, _m64 b); PHSUBW _m128i _mm_hsub_epi16(_m128i a, _m128i b); PHSUBD _m128i _mm_hsub_epi32(_m128i a, _m128ib); VPHSUBW _m256i _mm256_hsub_epi16(_m256i a, _m256i b); VPHSUBD _m256_hsub_epi32(_m356i a, _m256ib); 
+
+
+PHSUBSW		Performs horizontal subtraction on each adjacent pair of 16-bit signed integers by subtracting the most significant word from the least significant word of each pair in the source and destination operands. The signed, saturated 16-bit results are packed and written to the destination operand. PHSUBSW _m64 _mm_hsubs_pi16(_m64 a, _m64 b); PHSUBSW _m128i _mm_hsubs_epi16(_m128i a, _m128i b); VPHSUBSW _m256i _mm256_hsubs_epi16(_m256i a, _m256i b);
+
+PHSUBD		Performs horizontal subtraction on each adjacent pair of 32-bit signed integers by subtracting the most significant doubleword from the least significant double word of each pair in the source and destination operands. The signed 32-bit results are packed and written to the destination operand. _m128i horizontal_subtract_sse3(_m128i a, _m128i b)
+

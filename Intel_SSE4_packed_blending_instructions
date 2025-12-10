@@ -1,0 +1,11 @@
+BLENDPD 		Conditionally copies specified double precision floating-point data elements in the source operand to the corresponding data elements in the destination, using an immediate byte control. 
+
+BLENDPS			Conditionally copies specified single precision floating-point data elements in the source operand to the corresponding data elements in the destination, using an immediate byte control. 
+
+BLENDVPD		Conditionally copies specified double precision floating-point data elements in the source operand to the corresponding data elements in the destination, using an implied mask. 
+
+BLENDVPS		Conditionally copies specified single precision floating-point data elements in the source operand to the corresponding data elements in the destination,  using an implied mask
+
+PBLENDVB		Conditionally copies specified byte elements in the source operand to the corresponding elements in the destination, using an implied mask
+
+PBLENDW			Conditionally copies specified word elements in the source operand to the corresponding elements in the destination, using an immediate byte control 

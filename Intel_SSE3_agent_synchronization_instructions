@@ -1,0 +1,3 @@
+MONITOR		Set up an address range used to monitor write-back stores.
+
+MWAIT		Enables a logical processor to enter into an optimized state while waiting for a write-back store to the address range set up by the monitor instruction

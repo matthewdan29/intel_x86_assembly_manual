@@ -1,0 +1,9 @@
+Intel SSE2 logical instructions perform AND, AND NOT, OR, and XOR operations on packed double precision floating-point values 
+
+ANDPD		Perform bitwise logical AND of packed double precision floating-point values 
+
+ANDNPD 		Perfrom bitwise logical AND NOT of packed double precision floating-point values 
+
+ORPD		Perform bitwise logical OR of packed double precision floating-point values 
+
+XORPD 		Perform bitwise logical XOR of packed double precision floating-point values 

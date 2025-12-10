@@ -1,0 +1,17 @@
+The transcendental instructions perform basic trigonometric and logarithmic operations on floating-point operands 
+
+FSIN		SINE. 
+
+FCOS		Cosine. 
+
+FSINCOS		Sine and cosine
+
+FPTAN		Partial tangent
+
+FPATAN		Partial arctangent 
+
+F2XM1		2^x - 1
+
+FYL2X		y*log(sub(2)x)
+
+FYL2XP1		y*log(sub(2)x+1)

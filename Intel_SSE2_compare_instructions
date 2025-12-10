@@ -1,0 +1,9 @@
+Intel SSE2 compare instructions compare packed and scalar double precision floating-point values and return the results of the comparison either to the destination operand or to the EFLAGS register 
+
+CMPPD		Compare packed double precision floating-point values 
+
+CMPSD		Compare scalar double precision floating-point values 
+
+COMISD		Perform ordered comparison of scalar double precision floating-point values and set flags in EFLAGS register 
+
+UCOMISD		Perform unordered comparision of scalar double precision floating-point values and set flags in EFLAGS register

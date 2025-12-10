@@ -1,0 +1,16 @@
+SSE3 provde 32 instructions to accelerate computations on packed integers. 
+These include: 
+
+1) Tweleve instructions that perform horizontal addition or subtraction operations. 
+
+2) Six instructions that evaluate absolute values 
+
+3) two instructions that perform multiply and add operations and speed up the evaluation of dot products 
+
+4) Two instructions that accelerate packed-integer multiply operations and produce integer values with scaling 
+
+5) two instructions that perform a byte-wise, in-place shuffle according to the second shuffle control operand 
+
+6) siz instructions that negate packed integers in the destinations operand if the signs of the corresponding elelment in the source operand is less than zero. 
+
+7) Two instructions that align data from the composite of two operands 

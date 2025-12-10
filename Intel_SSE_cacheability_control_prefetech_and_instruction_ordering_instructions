@@ -1,0 +1,15 @@
+The Cacheability control instruction provide control over the caching of non-temporal data when storing data from the MMX and XMM registers to memory. 
+The PREFETCHh allow data to be prefeteched to a selected cache level.
+The SFENCE instruction controls instruction ordering on store operations 
+
+MASKMOVQ		Non-temporal store of selected bytes from an MMX register into memory
+
+MOVNTQ			Non-temporal store of quadword from an MMX register into memory
+
+MOVNTPS			Non-temporal store of four packed single precision floating-point values from an XMM register into memory 
+
+PREFETCHh		Load 32 or more bytes from memory to a selected level of the processor's cache hierarchy
+
+SFENCE			Serializes store operations 
+
+

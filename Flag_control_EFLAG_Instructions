@@ -1,0 +1,23 @@
+The flag control instructions operate on the flags in the EFLAGS register
+
+STC		Set carry flag
+
+CLC		Clear the carry flag
+
+CMC		Complement the carry flag 
+
+CLD 		Clear the direction flag 
+
+STD		Set direction flag 
+
+LAHF		Load flags into AH register 
+
+SAHF		Store AH register into flags 
+
+PUSHF/PUSHFD	Push EFLAGS onto stack
+
+POPF/POPFD	Pop EFLAGS from stack 
+
+STI		Set interrupt flag 
+
+CLI		Clear the interrupt flag 

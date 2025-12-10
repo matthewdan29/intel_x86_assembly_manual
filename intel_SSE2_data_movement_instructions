@@ -1,0 +1,13 @@
+Intel SSE2 data movement instructions move double precision floating-point data between XMM registers and between XMM regsiters and memory. (this stuff should start looking like english to everyone on the detail of the "functions")
+
+MOVAPD		Move two aligned packed double precision floating-point values between XMM registers or between an XMM register and memory 
+
+MOVUPD		Move two unaligned packed double precision floating-point values between XMM registers or between an XMM register and memory 
+
+MOVHPD		Move high packed double precision floating-point value to and from the high quadword of an XMM register and memory 
+
+MOVLPD		Move low packed single precision floating-point value to and from the low quadword of an XMM register and memory
+
+MOVMSKPD	Extract sign mask from two packed double precision floating-point values 
+
+MOVSD		Move scalar double precision floating-point value between XMM registers and between an XMM register and memory. 

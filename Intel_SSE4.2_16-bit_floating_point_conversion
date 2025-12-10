@@ -1,0 +1,7 @@
+Converstion between single precision floating-point (32-bit) and half precision floating-point (16-bit) data are provided by the VCVTPS2PH and VCVTPH2PS instructions, introduced beginning with the third generation of Intel Core processors based on Ivy Bridge microsacrchitecture: 
+
+VCVTPH2PS		Convert eight/four data elements containing 16-bit floating-point data into eight/four single precision floating-point data. 
+
+VCVTPS2PH		Convert eight/four data elements conataining single precision floating-point data into eight/four 16-bit flaoting-point data 
+
+

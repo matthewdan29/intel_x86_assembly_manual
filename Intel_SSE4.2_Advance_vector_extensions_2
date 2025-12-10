@@ -1,0 +1,4 @@
+Intel AVX2 extends Intel by promoting the most of the 128-bit SIMD integer instructions with 256-bit numeric provecessing capabilites. 
+Intel AVX2 instructions follow the same programing model as AVX instructions. 
+
+AVX2 provide enchanced functionsalities for broadcast/permute operations on data elements, vector shift instructions with variable-shift count per data element, and instructions to fetch non-contiguous data elements from memory. 

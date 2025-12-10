@@ -1,0 +1,25 @@
+THese Inte SSE 64-bit SIMD integer instructions perform additional operations on packed bytes, words, or doubleworrds contained in MMX registers. 
+
+PAVGB		Compute average of packed unsigned byte integers
+
+PAVGW		Compute average of packed unsigned word integers 
+
+PEXTRW		Extract word 
+
+PINSRW		Insert word 
+
+PMAXUB		Maximum of packed unsigned byte integers
+
+PMAXSW		Maximum of packed signed word integers 
+
+PMINUB		Minimum of packed unsigned byte integers 
+
+PMINSW		Minimum of packed signed word integers 
+
+PMOVMSKB	Move byte mask 
+
+PMULHUW		Multiply packed unsigned integers and store high result 
+
+PSADBW		Compute sum of absolute differences
+
+PSHUFW		Shuffle packed integer word in MMX register

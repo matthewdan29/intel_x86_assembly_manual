@@ -1,0 +1,17 @@
+Intel Memory Protection Extensions (Intel MPX) provides a set of instructions to enable softerware to add robust bounds checking capability to memory refereneces. 
+
+BNDMK		Create a LowerBound and an UpperBound in a register. 
+
+BNDCL		Check the address of a memory reference against a LowerBound 
+
+BNDCU		Chcek the address of a memory reference against an UpperBound in 1's complement form
+
+BNDCN		Check the address of a memery reference against an UpperBound not in 1's complement form 
+
+BNDMOV		Copy or load from memory of the LowerBound and UpperBound to a register 
+
+BNDMOV		Store to memory of the LowerBound and UpperBound from a register 
+
+BNDLDX		Load bounds using address translation
+
+BNDSTX		Store bounds using address translation

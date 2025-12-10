@@ -1,0 +1,5 @@
+These instructions provide machiine-language support for procedure calls in block-structred languages
+
+ENTER		High-level procedure entry
+
+LEAVE		High-level procedure exit

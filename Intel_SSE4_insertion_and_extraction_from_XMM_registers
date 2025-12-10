@@ -1,0 +1,20 @@
+EXTRACTPS		Extracts a single precision floating-point value from a specified offset in an XMM register and strores the result to memory or a general-purpose register 
+
+
+INSERTPS		Inserts a single precision floating-point value from either a 32-bit memory location or selected from a specified offset in an XMM register to a specified offset in the destination XMM register. In Addition, INSERTPS  allows zeroing out selected data elements in the destination, using mask 
+
+PINSRB			Insert a byte value from a register or memory into an XMM register
+
+PINSRD			Insert a dword value from 32-bit register or memory into an XMM register 
+
+PINSRQ			Insert a qword value from 64-bit register or memory into an XMM register 
+
+PEXTRB			Extract a byte from an XMM regster and insert the value into a general-purpose register or memory. 
+
+PEXTRW			Extract a word from an XMM register and insert the value into a general-purpose register or mmemory 
+
+
+PEXTRD 			Extract a dword from an XMM register and insert the value into a general-purpose register or memeory 
+
+
+PEXTRQ			Extract a qword from an XMM register and insert the value into a general-purpose regster or memeory 

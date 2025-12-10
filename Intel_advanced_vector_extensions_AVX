@@ -1,0 +1,7 @@
+Intel Advanced vector extensions (AVX) promote legacy 128-bit SIMD instructions sets that operate on the XMM register set to use a "vector extension" (VEX) prefix and operates on 256-bit vector registers (YMM). 
+Almost all prior generations of 128-bit SIMD instructions that operate on XMM (but not on MMX registers) are promoted to support three-operand syntax with VEX-128 endcoding. 
+
+VEX-prefix encoded intel AVX instructions support 256-bit and 128-bit floating-point operations by extending the legacy 128-bit SIMD floating-point instructions to support the three-operand Syntax. 
+
+Addtional functions enhancements are also provided with VEX-encoded intel AVX instruions. 
+

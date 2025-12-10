@@ -1,0 +1,197 @@
+Intel AVX-512 instructions provide a wide range of functionality that support programming in 512-bit, 256 and 128-bit vector register, plus support for opmask registers and instructions operating on opmask registers. 
+The collecetion of 512-bit SIMD instruction sets in Intel AVX-512 include new functionality not available in Intel AVX and Intel AVX2, and promoted instructions similar to equivalent ones in Intel AVX/intel AXX2 but with enhancedment provided by opmask registers not available to VEX-encoded intel AVX/Intel AVX2. 
+Some Instruction mnemoics that are available only with EVEX encoding, VBRODCASTF128 into VBROADCASTF32X4
+An Intel AVX-512 instruction set architecture for FP16 was added, supporteing a wide range of general-purpose numeric operations for 16-bit half precision floating-point values, which complements the existing 32-bit and 64-bit floating-point instructions already available in the Intel Xeon processor-based products. 
+
+512-bit instruction mnemonics in AVX-512F instructions that are not Intel AVX or AVX2 promotions include: 
+
+VALIGND/Q		Perform dword/qword alignment of two concatenated source vectors. 
+
+VBLENDMPD/PS		Replace the VBLENDVPD/PS instructions (using opmask as select control)
+
+VCOMPRESSPD/PS		Compress packed DP or SP elements of vector. 
+
+VCVT(T)PD2UDQ		Convert packed DP FP elements of a vector to packed unsigned 32-bit integers 
+
+VCVT(T)PS2UDQ		Convert packed SP FP elements of a vector to packed unsigned 32-bit integers 
+
+VCVTQQ2PD/PS		Convert packed signed 64-bit integers to packed DP/SP FP elements
+
+VCVT(T)SD2USI		Convert the low DP FP element of a vector to an unsigned integer. 
+
+VCVT(T)SS2USI		Convert the low SP FP element of a vector to an unsigned integer. 
+
+VCVTUDQ2PD/PS 		Convert packed unsigned 32-bit integers to packed DP/SP FP elements 
+
+VCVTUSI2USD/S 		Convert an unsigned integer to the low DP/SP FP element and merge to a vector 
+
+VEXPANDDP/PS		Expand packed DP or SP elements of a vector 
+
+VEXTRACTF32X4/64X4	Extract a vector from a full-length vector with 32/64-b-t granular update. 
+
+VEXTRACTI32X4/64X4	Extract a vector from a full-length vector with 32/64-bit grandular update 
+
+VFIXUPIMMPD/PS		Perform fix-up to special values in DP/SP FP vectors. 
+
+VFIXUPIMMSD/SS		Perform fix-up to special values of the low DP/SP FP element
+
+VGETEXPPD/PS		Convert the exponent of DP/SP FP elements of a vector into FP values 
+
+VGETEXPSD/SS		Convert the exponent of the low DP/SP FP element in a vector into FP value 
+
+VGETMANTPD/PS		Convert the mantissa of DP/SP FP element of a vector into FP values 
+
+VGETMANSD/SS		Convert the mantissa of the low DP/SP FP element of a vector into FP values 
+
+VINSERTF32X4/64X4	Insert a 128/256-bit vector into a full-length vector with 32/64-bit granular update 
+
+VMOVDQA32/64		VMOVDQA with 32/64-bit granular conditional update. 
+
+VMOVDQU32/64		VMOVDQU with 32/64-bit granular conditional update. 
+
+VPBLENDMD/Q		Blend dword/qword elements using opmask as select control 
+
+VPBROADCASTD/Q		Broadcast from general-purpose register to vector register. 
+
+VPCMPD/UD		Compare packed signed/unsigned dwords using specified pprimitive
+
+VPCMPQ/UQ		Compare packed signed/unsigned quadwords using specified primitive 
+
+VPCOMPRESSQ/D		Compress packed 64/32-bit elements of a vector 
+
+VPERMI2D/Q		Full permute of two tables of dword/qword elements overwriting the index vector
+
+VPERMI2PD/PS		Full permute of two tables of DP/SP elements overwriting the index vector. 
+
+VPERMT2D/Q		Full permute of two tables of dword/qword elements overwriting one source table 
+
+VPERMT2PD/PS		Full permute of two tables of DP/SP elements overwriting one source table 
+
+VPEXPANDD/Q		Expand packed dword/qword elements of a vector 
+
+VPMAXSQ			Compute maximum packed signed 64-bit integer elements 
+
+VPMAXUD/UQ		Compute maximum of packed unsigned 32/64-bit integer elements 
+
+VPMINSQ			Compute minimum of packed signed 64-bit integer elements 
+
+VPMINUD/UQ		Compute minium of packed unsigned 32/64-bit integer elements 
+
+VPMOV(S|US)QB		Down convert qword elements in a vector to byte elements using truncation (saturation | unsigned saturation)
+
+VPMOV(S|US)QW		Down convert qword elements in a vector to word elements using truncation (saturation | unsigned saturation)
+
+VPMOV(S|US)QD		Down convert qword elements in a vector to dword elements using truncation (saturation | unsigned saturation)
+
+VPMOV(S|US)DB		Down convert dword elements in a vector to byte elements using truncations (saturation | unsigned saturation)
+
+VPMOV(S|US)DW		Down convert dword elements in a vector to word elelments using truncation (saturation | unsigned saturation)
+
+VPROLD/Q		Rotate dword/qword element left by a constant shift count with conditional update 
+
+VPROLDVD/Q		Rotate dword/qword element left by shift counts specified in a vector with conditional update 
+
+VPRORD/Q		Rotate dword/qword element right by a constant shift count with conditional update 
+
+VPRORRD/Q		Rotate dword/qword element right by shift counts specified in a vector with conditional update 
+
+VPSCATTERDD/DQ 		Scatter dword/qword elements in a vector to memeory using dword indices 
+
+VPSCATTERQD/QQ		Scatter dword/qword elements in a vector to memory using qword indices 
+
+VPSRAQ			Shift qwords right by a constant shift count and shifting in sign bits 
+
+VPSRAVQ			Shift qwords right by shifts counts in a vector and shiftting in sign bits 
+
+VPTESTNMD/Q		Perform bitwise NAND of dword/qword elements of two vectors and write results to opmask 
+
+VPTERLOGD/Q		Perform bitwise ternary logic operation of three vectors with 32/64 bit granular conditional update 
+
+VPTESTMD/Q		Perform bitwise AND of dword/qword elements of two vectors and write results to opmask 
+
+VRCP14PD/PS		Compute approximate reciprocals of packed DP/SP FP elements of a vector 
+
+VRCP14SD/SS		Compute the approximate reciprocal of the low DP/SP FP element of a vector
+
+VRNDSCALEPD/PS		Round packed DP/SP FP elements of a vector to specified number of fraction bits 
+
+VRNDSCALESD/SS		Round the low DP/SP FP element of a vector to specified number of fraction bits 
+
+VRSQRT14PD/PS 		Compute approximate reciprocals of square roots of packed DP/SP FP elements of a vector 
+
+VRSQRT14SD/SS		Compute the approximate reciprocal of square root of the low DP/SP FP element of a vector 
+
+VSCALEPD/PS 		Multiply packed DP/SP FP elements of a vector by powers of two with exponents specified in a second vector 
+
+VSCALESD/SS		Multiply the low DP/SP FP element of a vector by powers of two with exponent specified in the corresponding element of a second vector 
+
+VSCATTERDD/DQ		Scatter SP/DP FP elements in a vector to memory using dword indices 
+
+VSCATTERQD/QQ		Scatter SP/DP FP elements in a vector to memory using qword indices 
+
+VSHUFF32X4/64X2		Shuffle 128-bit lanes of a vector with 32/64 bit grandular conditional update
+
+VSHUFI32X4/64X2		Shuffle 128-bit lanes of vector with 32/64 bit granular condtional update 
+
+		Opmask instructions include : 
+
+KADDB/W/D/Q		Add two 8/16/32/64-bit opmasks. 
+
+KANDB/W/D/Q		Logical AND two 8/16/32/64-bit opmasks 
+
+KANDNB/W/D/Q		Logical AND NOT two 8/16/32/64-bit opmask 
+
+MOVB/W/D/Q		Move from or move to opmask register of 8/16/32/64-bit data
+
+KNOTB/W/D/Q		Bitwise NOT of two 8/16/32/64-bit opmasks 
+
+KORB/W/D/Q		Logical OR two 8/16/32/64-bit opmasks 
+
+KORTESTB/W/D/Q		Updaate EFLAGS according to the result of bitwise OR of two 8/16/32/64-bit opmasks
+
+KSHIFTLB/W/D/Q		Shift left 8/16/32/64-bit mask by specified count 
+
+KSHIFTRB/W/D/Q		Shift right 8/16/32/64-bit opmask by specified count 
+
+KTESTB/W/D/Q		Shift right 8/16/32/64-bit opmask by specified count 
+
+KTESTB/W/D/Q		Shift right 8/16/32/64-bit opmask by specified count 
+
+KTESTB/W/D/Q		Update EFLAGS according to the result of bitwise TEST of two 8/16/32/64-bit opmasks
+
+KUNPCKBW/WD/DQ		Unpack and interleave two 8/16/32/64-bit opmasks into 16/32/64-bit mask
+
+KXNORB/W/D/Q		Bitwise logical XNOR of two 8/16/32/64-bit opmasks
+
+KXORB/W/D/Q 		Logical XOR of two 8/16/32/64-bit opmasks 
+
+		512-bit instructions mnemonics in AVX-512ER include: 
+
+VEXP2PD/PS 		Compute approximate base-2 exponential of packed DP/SP FP elements of a vector 
+
+VEXP2SD/SS		Compute approximate base-2 exponential of the low DP/SP FP element of a vector 
+
+VRCP28PD/PS		Compute approximate reciprocals to 28 bit of packed DP/SP FP elements of a vector 
+
+VRCP28SD/SS 		Compute the approximate reciprocal to 28 bits of the low DP/SP FP element of a vector 
+
+VRSQRT28PD/PS		Compute approximate reciprocals of square roots to 28 bits of packed DP/SP FP elements of a vector
+
+VRSQRT28SD/SS		Compute the approximate reciprocal of squar root to 28 bits of the low DP/SP FP element of a vector 
+
+		512-bit instruction mnemonics in AVX-512PF include: 
+VGATHERPRODPD/PS	Sparse prefetch of packed DP/SP FP vector with T0 hint using dword indices 
+
+VGATHERPFOQPD/PS 	Sparse prefetch of packed DP/SP FP vector with T0 hint using qword indices 
+
+VGATHERPFQDPD/PS	Sparse prefetch of packed DP/SP FP vector with T1 hint using dword indices 
+
+VGATHERPF1QPD/PS	Sparse prefetch of packed DP/SP FP vector with T1 hint using qword indices 
+
+VSCATTERPFODPD/PS 	Sparse prefetech packed DP/SP FP vector with T0 hiont to write using dword indices 
+
+VSCATTERPFOQPD/PS 	Sparse prefetch of packed DP/SP FP vector with T0 hint to write using qword indices 
+
+VSCATTERPF1DPD/PS	Sparse prefetch of packed DP/SP FP vector with T1 hint to write using dword indices 
+
+VSCATTERPF1QPD/PS	Sparse prefetech of packed DP/SP FP vector with T1 hint to write using qword indices

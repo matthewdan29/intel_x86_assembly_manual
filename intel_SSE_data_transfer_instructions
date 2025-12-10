@@ -1,0 +1,17 @@
+Intel SSE data transfer instructions move packed and scalar single precision floating-poijnt operands between XMM registers and between XMM registers and memory
+
+MOVAPS		Move four aligned packed single precision floating-point values between XMM registers or between an XMM register and memory
+
+MOVUPS		Move four unaligned packed single precision floating-point values between XMM registers or between an XMM register and memory 
+
+MOVHPS		Move two packed single precision floating-point values to and from the high quadword of an XMM register and memory 
+
+MOVHPLS		Move two packed single precision floating-point values from the high quadword of an XMM register to the low quadword of another XMM register 
+
+MOVLPS		Move two packed single precision floating-point values to and from the low quadword of an XMM register and memory 
+
+MOVLHPS		Move two packed single precision flaoting-point values from the low quadword of an XMM register to the high quadword of another XMM register
+
+MOVMSKPS	Extract sign mask from four packed single precision floating-point values 
+
+MOVSS		Move scalar single precision floating-point value between XMM registers or between an XMM register and memory 

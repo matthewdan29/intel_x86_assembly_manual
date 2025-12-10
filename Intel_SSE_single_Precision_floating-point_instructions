@@ -1,0 +1,9 @@
+These instructions operate on packed and scalar single precisiion floating-point values located in XMM registers and/or memory. 
+This subgroup is further divided into the following subordinate subgroups: 
+1) data transfer
+2) packed arithmetic
+3) comparison
+4) logical 
+5) shuffle
+6) unpacked 
+7) conversion instructions

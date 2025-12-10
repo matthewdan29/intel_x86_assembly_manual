@@ -1,0 +1,91 @@
+The following system instructions are used to control those functions of the processor that are provided to support for operating systems and executives
+
+CLAC		Clear AC Flag in EFLAGS register 
+
+STAC		Set AC Flag in EFLAGS register 
+
+LGDT		Load global descriptor table (GDT) register 
+
+SGDT		Store global descriptor table (GDT) register 
+
+LLDT 		Load local descriptor table (LDT) register 
+
+SLDT 		Store local descriptor table (LDT) register 
+
+LTR		Load task register 
+
+STR		Store task register 
+
+LIDT		Load interrupt descriptor table (IDT) register 
+
+SIDT		Store interrupt descriptor table (IDT) register 
+
+MOV		Load and store control registers 
+
+LMSW		Load machine status word 
+
+SMSW		Store machine status word 
+
+CLTS 		Clear the task-switch flag 
+
+ARPL		Adjust requested privilege level 
+
+LAR		Load access rights 
+
+LSL 		Load segment limit
+
+VERR 		Very segment for reading 
+
+VERW		Verfy segment for writing 
+
+MOV		Load and store debug registers 
+
+INVD 		Invalidate cache, no writeback
+
+WBINVD		Invalidate cache, with writeback 
+
+INVLPG		Invalidate TLB Entry
+
+INVPCID		Invalidate Process-context identifier 
+
+LOCK (prefix)	Perform atomic access to memory (can be applied to a number of general purpose instructions that provide memory source/destination acess)
+
+HLT		Halt processor 
+
+RSM 		Return from system management mode (SMM)
+
+RDMSR		Read model-specific register 
+
+WRMSR		Write model-specific register
+
+RDPMC		Read performance monitoring counters 
+
+RDTSC		Read time stamp counter 
+
+RDTSCP 		Read time stamp counter and processor ID
+
+SYSENTER	Fast System Call, transfer to a flat protected mode kernel at CPL = 0
+
+SYSEXIT 	Fast system call, transfer to a flat protected mode kernel at CPL = 3
+
+XSAVE		Save processor extended states to memory 
+
+XSAVEC		Save processor extended states with compaction to memory 
+
+XSAVES		Save processor supervisor-mode extended states to memory 
+
+XRSTOR		Restore processor extended states from memory 
+
+XRSTORS 	Restore processor supervisor-mode extended states from memory 
+
+XGETBV		Reads the state of an extended control register 
+
+XSETBV		Writes the state of an extended control regidter
+
+RDFSBASE 	Reads from FS base address at any privilege level 
+
+RDGSBASE 	Reads from GS base address at any privilege level 
+
+WRFSBASE 	Writes to FS base address at any privillege level 
+
+WRGSBASE	Writes to GS base address at any privilege level 

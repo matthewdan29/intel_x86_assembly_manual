@@ -1,0 +1,15 @@
+Intel SSE instruction represent and extension of the SIMD execution model introfuced with the MMX technology. 
+Intell SSE instructions can only be executed on Intel 64 and IA-32 processors that support Intel SSE extensions.
+Intel SSE instruction can only be executed on Intel 64 and IA-32 processors that support Intel SSE extensions. 
+Support for these instructions can be detected with the CPUID instruction. 
+
+Intel SSE instructions are divided into for subgroups 
+
+1) SIMD single precision floating-point instructions that operate on the XMM registers 
+
+2) MXCSR state managment instructions 
+
+3) 64-bit SIMD integer instructions that operate on the MMX registers 
+
+4) Cacheability control, prefetch, and instruction ordering instructions
+

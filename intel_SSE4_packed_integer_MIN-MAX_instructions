@@ -1,0 +1,15 @@
+PMINUW		Compare packed unsigned word integers 
+
+PMINUD		Compare packed unsigned dword integers 
+
+PMINSB		Compare packed siged byte integers 
+
+PMINSD		Comare packed signed dword integers 
+
+PMAXUW		Compare packed unsigned word integers 
+
+PMAXUD 		Compare packed unsigned dword integers 
+
+PMAXSB		Compare packed signed byte integers 
+
+PMAXSD		Compare packed signed dword integers 

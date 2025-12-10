@@ -1,0 +1,7 @@
+The data transfer instructions move doubleword and quadword operands between MMX registers and between MMX registers and memory 
+
+MOVD 		Move doubleword 
+
+MOVQ		Move quadword 
+
+

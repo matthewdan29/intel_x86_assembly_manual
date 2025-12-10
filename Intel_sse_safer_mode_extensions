@@ -1,0 +1,15 @@
+The behavior fo the GETSEC instruction leaves of the Safer Mode Extension (SMX). 
+GETSEC[CAPABILITIES] returns the available leaf function of the GETSEC instruction
+
+GETSEC[ENTERACCS]		Loads an authenticated code chipset module and enters authenticated code execution mode. 
+GETSEC[EXITAC]			Exits authenticated code execution mode.
+
+GETSEC[SENTER]			Establishes a measured launched environment(MLE) which has its dynamic root of trust anchored to a chipset supporting intel trusted execution technology 
+
+GETSEC[SEXIT]			Exits the MLE 
+
+GETSEC[PARAMETERS]		Returns SMX related parameter infomation
+
+GETSEC[SMCRTL]			SMX mode control 
+
+GETSEC[WAKEUP]			Wakes up sleeping logical processors inside an MLE 

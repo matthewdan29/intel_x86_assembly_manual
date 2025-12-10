@@ -1,0 +1,13 @@
+XSAVE		Save processor extended states to memory
+
+XSAVEC		Save processor extended states with compaction to memory 
+
+XSAVEOPT	Save processor extended states to memory, optimized
+
+XRSTOR		Restore processor extended states from memory
+
+XRSTOR		Restore processor extended states from memory
+
+XGETBV		Reads the state of an extended control register 
+
+
