@@ -1,0 +1,16 @@
+Move instructions -- The MOV (move) and CMOVcc (conditional move) instructions transfer data between memory and registers or between registers. 
+
+
+The MOV instruction performs basic load data and store data operations between memory and the processor's registers and data movement operations between registers. 
+
+The MOV instructions cannot move data from one memory location to another or from one segment register to another segment register. 
+Memory-to-memory moves are performed with the MOVS (string move) instruction. 
+
+
+Conditional move instructions -- The CMOVcc instructions are a group of instructions that check the state of the status flags in the EFLAGS register and perform a move operation if the flags are in a specified state. 
+THese instrcutions can be used to move a 16-bit or 32-bit value from memory to a general-purpose register or from one general-purpose register to another. 
+The flage state, being tested is specified with a condition code (cc) associated with the instruction. 
+If the condition is not satisfied, a move is not performed and execution continues with the instruction following the CMOVcc instruction. 
+
+CMOVcc instructions are useful for optimizing small IF constructions. 
+They also help eliminate branching overhead for IF statement and the possiblilty of branch mispredictions by the processor. 

@@ -1,0 +1,15 @@
+The stack containded in a segment and identified by the segment selector in the SS register. 
+When using flat memory model, The stack can be loacted anywhere in the linear address space for the program. 
+Iteams are placed on the stack using the PUSH instrction and removed from the stack using the POP instruction. 
+When an item is pushed onto the stack, the processor decrements the ESP register, then writes the item at the new top of stack. 
+WHen an item is popped off the stack, the processor reads the item from the top of stack, then increments the ESP register. 
+In this manner, the stack grows down in memory (towards lesser addresses ) when items are pushed on the stack and shrink up (towards greater addresses) when the items are popped from the stack. (Think of when you at a buffet and you take a plate from the plate rack and when the waiter reloads the plates thats the best way to think of it )
+
+A program or operating system/executive can set up many stacks. 
+
+When a system set up many stacks, only one stack -- the current stack is available at a time. 
+The current stack is the one contained in the segment referenced by the SS register.
+
+The processor references the SS register automatically for all stack operations. 
+When the ESP register is used as a memory address, it automatically points to an ddress on the current stack. 
+Also, the CALL, RET, PUSH, POP, ENTER, and LEAVE instructions all perform operations on the current stack  

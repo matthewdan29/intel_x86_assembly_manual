@@ -1,0 +1,18 @@
+The RDSEED instruction returns a random number. 
+All Intel processorss that support the RDSEED instruction indicate the availability of the RDSEED instruction via reporting CPUID.(ECX=07H, ECX=0H):EBX.RDSEED[bit 18] = 1.
+RDSEED returns random numbers that are supplied by a cryptographically secure, enhanced non-deterministic random bit generator (Enhanced NRBG). 
+The NRBG is desgned to meet the NIST SP 800-90B and NIST SP800-90C
+
+Under heavy load, with multiple cores executing RDSEED in parallel, it is possible for the demand of random numbers by software processes/threads to exceed the rate at which the random number generator hardware can supply them. 
+This will lead to the RDSEED instruction returning no data transitorily. 
+The RDSEED instruction indicates the occurrence of this situation by clearing the CF flag. 
+
+The RDSEED instrcution returns with the carry flag set (CF = 1) to indicate valid data is returned. 
+It is recommended that software using the RDSEED instruction to get random number retry foor a limited number of iterations while RDSEED returns CF=0 and complete when valid data is returned, indicated with CF=1. 
+This will deal with transitory underflows. 
+A retyr limit should be employed to prevent a hard failure in the NRBG (expected to be extremely rare) leading to a busy loop in software. 
+
+The intrinsic primitive for RDSEED is defined to address software's need for the common cases (CF =1) and the rare situations (CF = 0). 
+The intrinsic primitive returns a value that reflects the value of the carry flag returned by the underlying RDEED instruction. 
+
+

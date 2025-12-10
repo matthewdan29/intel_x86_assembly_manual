@@ -1,0 +1,8 @@
+Binary arithmetic instructions operate on 8-bit, 16-bit, and 32-bit numeric data encoded as signed or unsigned binary integers. 
+The binary arithmetic instructions may also be used in algorithms that operate on decimal (BCD) values. 
+
+The sub groups are: 
+1) Add and subtract 
+2) increment and decrement 
+3) compare and change signs
+4) multiply and divide

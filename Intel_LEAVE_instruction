@@ -1,0 +1,5 @@
+The LEAVE instruction, which does not have any operands, reverses the action of the previous ENTER instruction. 
+The LEAVE instruction copies the contents of the EBP register into the ESP register to release all stack space allocated to the procedure. 
+THen it restores the old value of the EBP register from the stack. 
+This simultabeously restores the ESP register to its orginal value. 
+A subsequent RET instruction then can remove any arguments and the return address pushed on the stack by the calling program for use by the procedure. 

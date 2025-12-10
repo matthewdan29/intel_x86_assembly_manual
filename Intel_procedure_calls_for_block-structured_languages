@@ -1,0 +1,9 @@
+The ENTER (enter procedure) and LEAVE (leave procedure) instructions automatically create and release, respectiviely, stack frames for called procedures. 
+The stack frames have predefined spcaes for local variables and the necessary pointers to allow coherent returns from called procedures. 
+They also allow scope rules to be implemented so that procedures can access their own local variables and some number of other variables located in other stack frames. 
+
+ENTER and LEAVE offer two benefits: 
+
+1) They provide machine-language support for implementing block-structured languages, such as C and Pascal. 
+
+2) They simplify procedure enter and exit in compiler-generated code. 

@@ -1,0 +1,24 @@
+To improve performance, more recent processors support modifications to the processor's operation during the string stor operation initiated with the MOVS, MOVSB, STOS, and STOSB instructions. 
+This optimized operation, called "Fast-string operation" is used when the execution of one of those instructions meets certain initial conditions. 
+Instructions using fast-string operation effectively operate on the string in groups that may include multiple elements of the native data size (byte, word, doubleword, or quadword). 
+With fast-string operation, the processor recognizes interrupts and data breakpoints only on boundaries between these groups. 
+Fast-string operation is used only if the source and destination addresses both use either the WB or WC memory types. 
+
+The initial conditions for fast-string operation are implementation-specific and may vary with the native string size. 
+Examples of  parameters that may impact the use of fast-string opertion include the following: 
+1) The alignment indicatd in the EDI and ESI alignment register. 
+2) The address order of the string operation 
+3) The value of the initial operation counter (ECX)
+4) The difference between the source and destination addresses. 
+
+Software can disable fast-string operation by clearing the fast-string-enable biit (bit 0) of IA32_MISC_ENABLE MSR. 
+However, Intel recommends that system software always enable fast-string operation. 
+
+When fast-string opertaion is enabled (because IA32_MISC_ENABLE[0] = 1), some processors may futher enhance the operation of the REP MOVSB and REP STOSB instructions. 
+A processor supports these enchancements if CPUID.(EAX=07H, ECX=0H):EBX[bit 9] is 1.
+
+The stores produced by fast-string operation may appear to execute out of order. 
+Software dependent upon sequential store ordering should not use string operations for the entire data structure to be stored. 
+Data and semaphores should be sparated. 
+Order-dependent code should write to a discrete semaphore variable after any string operations to allow correctly ordered data to be seen by all processors. 
+Atomicity of load and stro operatiojns is guaranteed only for native data elements of the string with native data size, and only if they are included in a single cache line. 

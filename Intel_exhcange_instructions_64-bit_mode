@@ -1,0 +1,2 @@
+The CMPXCHG16B instruction is available in 64-bit mode only. 
+It is an extension of the functionality provided by CMPXG8B that operates on 128-bits of data

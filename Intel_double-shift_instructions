@@ -1,0 +1,11 @@
+The SHLD (shift left double) and SHRD (shift right double) instructions shift a specified number of bits from one operand to another. 
+They are provided to facilitate operations on unaligned bit strings. 
+They can also be used to implement a variety of bit string move operations. 
+
+The SHLD instruction shifts the bits in the destination operand to the left and fills the empty bit positions (in the destination operand) with bits shifted out of the source operand. 
+The destination and source operands must be the same length (either words or doublewords). 
+The shift count can range from 0 to 31 bits. 
+The result of this shift operation is stored in the destination operand, and the source operand is not modified. 
+The CF flag is loaded with the last bit shifted out of the destination operand. 
+
+The SHRD instruction operates the same as the SHLD instruction except bits are shifted to the right in the destination operand, with the empty bit positions filled with bits shifted out of the source operand. 

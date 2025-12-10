@@ -1,0 +1,7 @@
+For I/O instructions to and from memory, the differences in 64-bit mode are: 
+
+1) The source operand is specified by RSI or DS:ESI, depending on the address size attribute of the operation. 
+
+2) The destination operand is specified by RDI or DS:EDI, depending on the address size attribute of the operation 
+
+3) Operation on 64-bit data is not encodable and REX prefixes are silently ignored. 

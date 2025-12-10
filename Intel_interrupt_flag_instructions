@@ -1,0 +1,5 @@
+The STI (set interrupt flag) and CLI (clear interrupt flag) instrucions allow the interrupt IF flag in the EFLAGS register to be modified directly. 
+The IF flag controls the servicing of hardware-generated interrupts (those received at the processor's INTR pin). 
+If the IF flag is set, the processor services hardware interrupts; it the IF flag is clear, hardware interrupts are masked. 
+
+The ability to execute these instructions depends on the operating mode of the processor and the current priviliege level (CPL) of the program or task attempting to execute these instrutions.

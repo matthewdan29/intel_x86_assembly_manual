@@ -1,0 +1,37 @@
+The MOVS (Move String), CMPS (Compare string), SCAS (Scan string), LODS (Load string), and STOS (Store string) instructions permit large data structures, such as alphanumeric character strings, to be moved and examined in memory. 
+These instructions operate on individual elements in a string, which can be a byte, word, or doubleword. 
+The string elements to be operated on are identified with the ESI (source string element) and EDI (destination string element) registers. 
+Both of these registers contain absolute addresses (offsets into a segment) that point to a string elementl. 
+
+By default, the ESI register addresses the segment identified with the DS segment register. 
+A segment-override prefix allows the ESI register to be associated with the CS, SS, ES, FS, or GS segment register. 
+The EDI register addresses the segment identified with the ES segment register; no segment override is allowed for the EDI register. 
+The use of two different segment registers in the string instructions permits operations to be performed on strings located in different segments. 
+Or by associating the ESI register with th3e ES segment register, both the source and destination strings can be located in the same segment. 
+(This latter condition can also be achieved by loading the DS and ES segment registers with the same segment selector and allowing the ESI register to default to the DS register. )
+
+The MOVS instruction moves the string element addressed by the ESI register to the location addressed by the EDI register. 
+The assembler recognizes three "short forms" of this instruction, which specify the size of the string to be moved: MOVSB (move byte string), MOVSW (move word string), and MOVSD(move doubleword string). 
+
+The CMPS instruction subtracts the destination string element from the source string element and updates the status flags (CF, ZF, OF, SF, PF, and AF) in the EFLAGS register according to the results. 
+Neither string element is written back to memory. 
+THe assembler recognizes three "short forms" of the CMPS instruction: 
+1) CMPSB (compare byte strings)
+2) CMPSW (compare word strings)
+3) CMPSD (compare doubleword strings)
+
+The SCAS instruction subtracts the destination string element from the contents of the EAX, AX, or AL register (depending on operand length) and updates the status flags according to the results. 
+The string element and register contents are not modified. 
+The following "short form" of the SCAS instruction specify the operand lenght: 
+1) SCABS (scan byte string)
+2) SCASW (scan word string)
+3) SCASDD (scan doubleword string)
+
+The LODS instruction loads the source string element identified by the ESI register into the EAX register (for a doubleword string), the AX register (for a word string), or the AL register (for a byte string). 
+The "short forms" for this instruction are LODSB (load byte string), LODSW (load word string), and LODSD (load doubleword sting). 
+This intruction is usually used in a loop, where other instructions process each element of the string after they are loaded into the target register. 
+
+The STOS instrcution stores the source string element from the EAX (doubleword string), AX (word string), or AL (byte string) register into memory location identified with the EDI register. 
+The "short form" for this instruction are STOBS (store byte string), STOSW (store word string), and STOSD (store doubleword string). 
+This instruction is also normally used in a loop. 
+Here a string is commonly loaded into the register with a LODS instruction, operated on by other instructions, and then stored again in memory with a STOS instruction. 

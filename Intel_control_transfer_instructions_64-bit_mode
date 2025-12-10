@@ -1,0 +1,18 @@
+In 64-bit mode, the operand size for all near branches (CALL, RET, JCC, JCXZ, JMP, and LOOP) is forced to 64-bits. 
+The listed instructions update the 64-bit RIP without need for a REX operand-size prefix. 
+
+Near branches in the following operations are forced to 64-bits (regardless of operand size prefixes): 
+
+1) Truncation of the size of the instruction pointer
+
+2) Size of a stack pop or push, due to CALL or RET
+
+3) Size of a stack-pointer increment or decrement, due to CALL or RET
+
+4) Indirect-branch operand size
+
+Note that the displacement field for relative branches is still limited to 32 bits and the address size for near branches is not forced. 
+
+Address size determines the register size (CCX/ECX/RCX) used for JCXZ and LOOP. t
+It also impacts the address calculation for memory indirect branches. 
+Addresses size is 64 bit by default, although it can be over-ridden to 32 bits (using a prefix). 

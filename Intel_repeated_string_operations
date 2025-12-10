@@ -1,0 +1,18 @@
+To operate on strings longer than a doubleword, the string instructions can be combined with a repeat prefix (REP) to create a repeating instruction or be placed in a loop. 
+
+When used in string insstructions, the ESI and EDI registers are automatically incremented or decremented after each iteration of an insttruction to point to the next element (byte, word, or doubleword) in the string. 
+String operations can thus begin at higher addresses and work toward lower ones, or they can begin at lower addresses and work toward higher ones. 
+The DF flag in the EFLAGS register controls whether the registers are incremented (DF = 0) or decrmented (DF = 1). 
+The STD and CLD instructions set and clear this flag, respectively. 
+
+The following repeat prefixes can be used in conjunction with a count in the ECX register to cause a string instruction to repeat: 
+
+1) REP - Repeat while the ECX register not zero 
+
+2) REPE/REPZ - Repeat while the ECX register not zero and the ZF flag is set 
+
+3) REPNE/REPNZ - Repeat while the ECX register not zero and the ZF flag is clear 
+
+When a string instruction has a repeat prefix, the opertaion executes until one of the termination condition specified by the prefix is satisfied. 
+The REPE/REPZ and REPNE/REPNZ prefixes are used only with the CMPS and SCAS instructions. 
+Also, note that a REP STOS instruction is the fastes way to initialize a large block of memory. 

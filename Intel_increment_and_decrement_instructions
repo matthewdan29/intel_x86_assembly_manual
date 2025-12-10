@@ -1,0 +1,3 @@
+The INC (increment) and DEC (decrement) instructions add 1 or subtract 1 from an unsigned integer operand, respectively. 
+A primary use of these instructions is for implementing counters. 
+

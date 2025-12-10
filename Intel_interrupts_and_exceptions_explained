@@ -1,0 +1,22 @@
+The processor provides two mechanisms for interrupting program execution, interrupts, and excepetions: 
+
+1) An interrupt is an asynchronous event that is typically triggered by an I/O device. 
+
+2) An exception is a synchronous event that is generated when the processor detects one or more predefined conditions while executing an instrution. There are 3 class of exceptions 
+	1) faults
+	2) traps 
+	3) aborts
+
+The processor responds to interrupts and exceptions in essentially the same way. 
+When an interrupt or exception is signaled, the processor halts execution of the current program or task and switches to a handler procedure that has been written specifically to handle the interrupt or exception condition. 
+The processor accesses the handler procedure through an entry in the interrupt descriptor table (IDT). 
+When the handler has completed handling the interrupt or exception, program control is returned to the interrupted program or task. 
+The operating system, executive, and/or device drivers normally handle interrupts and exceptions independently from application programs or tasks. 
+Application programs can, however, access the interrupt and exception handelers incorporated in an operating system or executive through assembly-language calls. 
+
+
+When the processor detects an interrupt or exception, it does one of the following things: 
+
+1) Executes an implicit call to a handler procedure. 
+
+2) executes an implicit call to a handler task 

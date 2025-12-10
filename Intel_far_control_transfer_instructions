@@ -1,0 +1,5 @@
+The JMP and CALL instructions both accept a far pointer as a destination to transfer program contrl to a segment other than the segment currently being pointed to by the CS register. 
+When a far call is made with the CALL instruction, the current values of the EIP and CS registers are both pushed on the stack. 
+The RET instrucion can be used to execute a far return. 
+Here, program control is transferred from a code segment that contains a called procedure back to the code segment that contrained the calling procedure. 
+The RET instruction restores the value of the CS and EIP registers for the calling procedure from the stack. 

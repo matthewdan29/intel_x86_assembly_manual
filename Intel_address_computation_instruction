@@ -1,0 +1,3 @@
+The LEA (load effective address) instruction computes the effective address in memory (offset within a segment) of a source operand and places it in a general-purpose register. 
+This instruction can interpret any of the processor's addressing modes and can perform any indexing or scaling that may be needed. 
+It is especially useful for initializing the ESI or EDI registers before the execution of string instructions or for initializing the EBX register befor an XLAT instruction

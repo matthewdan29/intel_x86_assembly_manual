@@ -1,0 +1,35 @@
+The 64-bit extensions expand branching mechanisms to accommodate branches in 64-bit linear-address space. 
+These are: 
+	1) Near-branch semantics are redefined in 64-bit mode. 
+
+	2) in 64-bit mode and compatibility mode, 64-bit call-gate descriptors for far calls are avaliable. 
+
+In 64-bit mode, the operand size for all near braches (CALL, RET, JCC, JCXZ, JMP, and LOOP) is forced to 64 bits. 
+Thes instrcutions update the 64-bit RIP without the need for the REX operand-size prefix. 
+
+The following aspects of near braches are controlled by the effective operand size: 
+
+	1) Truncation of the size of the instruction pointer. 
+
+	2) size of a stack pop or push, due to a CALL or RET 
+
+	3) Indirect-branch operand size. 
+
+Om 64-bit mode, all of the above actions are forced to 64 bits regardless of operand size prefixes (operand size prefixes are silently ignored). 
+However, the displacment field for relative branches is still limited to 32-bits by an address size prefix. 
+
+Software typically uses far branches to change privilege levels. 
+The lagacy IA-32 architecture proves the call-gate mechanism to allow software to branch from one privielge level to another, although call gates can also be used for branches that do not change privilege levels. 
+WHen call gates are used, the selector portion of the direct or indirect pointer references a gate descriptor (the offset in the instruction is ignored). 
+The offset to the destination's coade segment is taken from the call-gate descriptor. 
+
+64-bit mode redefines the type value of a 32-bit call-gate descriptor type to a 64-bit call gate descriptor and expands the size of the 64-bit descriptor to hold a 64-bit offset. 
+The 64-bit mode call-gate descriptor allows far branches that reference any location in the supported linear-address space. 
+These call gates also hold the target code selector (CS), allowing changes to privilege level and default size as a result of the gat transition. 
+
+Because immediates are generally specified up to 32 bits, the only way to specify a full 64-bit absolute RIP in 64-bit mode is with an indirect branch. 
+For this reason, direct branches are liminated from the instruction set in 64-bit mode. 
+
+64-bit mode also expands the semantics of the SYSENTER and SYSEXIT  instructions so that the instructions operate within 64-bit memory space. 
+The mode also introduces two new instructions: SYSCALL and SYSRET (which are valid only in 64-bit mode). 
+

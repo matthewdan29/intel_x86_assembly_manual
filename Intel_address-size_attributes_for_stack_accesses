@@ -1,0 +1,8 @@
+Instructions that use the stack impliicitly (PUSH and POP instrctions) have two address-size attributes each of either 216 or 32 bits. 
+This is because they always have the implicit address of the top of the stack, and they may also have an explicit memory address (PUSH Array[EBX]). 
+The attribute of the explicit address is determined by the D flag of the current code segment and the presence or absence of the 67H address-size prefix. 
+
+The address-size attribute of the top of the stack determines whether SP or ESP is used for the stack access. 
+Stack operations with an address-size attribute of 16 use the 16-bit SP stack pointer register and can use a maximum stack address of FFFFH; stack operations with an address-size attribute of 32 bits use the 32-bit ESP register and can use a maximum address of FFFFFFFH. 
+The default address-size attribute for data segments used as stacks is controlled by the B flag of the segment's descriptor. 
+When this flag is clear, the default address-size attribute is 16 bit; when the flag is set, the address-size attribute is 32. 

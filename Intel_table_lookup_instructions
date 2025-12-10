@@ -1,0 +1,4 @@
+The XLAT and XLATB (table lookup) instructions replace the contents of the AL register with a byte read from a translation table in memory. 
+The initial value in the AL register is interpreted as an unsigned index into the translation table. 
+This index is added to the contents of the EBX register (which contains the base address of the tablle) to calculate the addres of the table entry. 
+These instrcutions are used for applications such as converting character codes from one alphabet into another

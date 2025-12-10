@@ -1,0 +1,4 @@
+To pass a large number of parameters to the called procedure, the parameters can be placed on the stack, in the stack frame for the calling procedure. 
+Here, it is usedful to use the stack-frame base pointer (in the EBP register) to make a frame boundary for easy access to parameters 
+
+The stack can also be used to pass parameters back from the called procedure to the calling procedure 

@@ -1,0 +1,12 @@
+The processor provides a variety of instructions that address the segment registers of the processor directly. 
+These instructions are only used when an operating system executive is using the segmented or the real-address mode memory momory mode. 
+
+These instructions are divided into subordiate subgroups of instructions that allow: 
+
+1) Segment-register load and store. 
+
+2) Far control transfers 
+
+3) software interrupts calls
+
+4)handling of far pointers 

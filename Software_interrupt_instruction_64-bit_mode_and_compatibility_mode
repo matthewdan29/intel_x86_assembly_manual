@@ -1,0 +1,6 @@
+In 64-bit mode, the stack size is 8 bytes wide. 
+IRET must pop 8-byte items off the stack. 
+SS:RSP pops unconditionally. 
+BOUND is not supported. 
+
+In compatibility mode, SS:RSP is popped only if the CPL changes. 

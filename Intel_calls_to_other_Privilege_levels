@@ -1,0 +1,24 @@
+Privilege levels are 0-3 the lower you go the more access you have. 
+The reason to use privilege levels is to improve the reliability of the operating system. 
+The highest privilege level 0 is used for segments that contain the moost critical code modules in the system, usually the kernel of an operating system. 
+The outer rings are used for segments that contain code modules for less critical software. 
+
+Code modules in lower provilege segments can only access modules operating at higher privilege segments by means of a tightly controlled and protected interface called a gate. 
+Attempts to access higher privilege segments without going through a protection gate and without having sufficient access rights causes a general-protection exception (#GP) to be generated.
+
+If an operating system or executive uses this mutilevel protection mechanism, a call to a procedure that is in a mor provilieged protection level than the calling procedure is handeled in a similar manner as a far call
+The differences are as follows: 
+
+1) The segment selector provided in the CALL instruction references a special data structure called a "call gete descriptor". 
+Among other things, the call gate descriptor provides the following: 
+		A) Access rights information 
+
+		B) THe segment selector for the code segment of the called procedure 
+
+		C) an offset into the code segement (That is, the instruction pointer for the called procedure)
+
+2) The processor switches to a new stack to execute the called procedure. Each privilege level has its own stack. The segment selector and stack pointer for the privilege level 3 stack are stored in the SS and ESP registers, respectiviely, and are automatically saved when a call to a move privileged level occurs. The segment selectors and stack pointers for the privilege level 2, 1, and 0 stacks are stored in a system segment called the task state segment (TSS).
+
+		A) An intel Task State Segment (TSS) is a data structure that stores the execution state of a task, including register values, stack pointers, and control information. It is primarily used by the operating system to manage multitasking and handle hardware-based task switching, and it provides the CPU with the necessary infomation to switch between different tasks or to change privilege levels, particularly for handling interrups 
+
+The use of all call gate and the TSS during a stack switch are transparent to the calling procedure, except when a general-protection exception is raised. 

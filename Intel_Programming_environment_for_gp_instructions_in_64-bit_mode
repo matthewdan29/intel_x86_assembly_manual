@@ -1,0 +1,18 @@
+1) General-purpose registers - In 64-bit mode, sixteen general-purpose registers available. R8D-R15D are available by using REX prefix. All sixteen GPRs can be promoted to 64 bits. The 64-bit registers are referenced as RAX, RBX, RCX, RDX, RBP, RSI, RDI, RSP, and R8-R15. Promotion to 64-bit operand requires REX prefix encodings. 
+
+2) Segment registers - In 64-bit mode, segmentation is available but it si set up uniquely 
+
+3) Flags and Status register - WHen the processor is running in 64-bit mode, EFLAGS becomes the 64-bit RFLAGS register 
+
+4) Instruction Pointer register - in 64-bit mode, the EIP register becomes the 64-bit RIP register 
+
+General-purpose instructions operate on the following data types in 64-bit mode. 
+The width of valid data types is dependent on default operand size, address size, or a prefix that overrides the default size: 
+
+A) Bytes, words, doublewords, quadwords
+
+B) Signed and unsigned byte, word doubleword, quadword integers 
+
+C) Near and Far pointers 
+
+D) Bit fields

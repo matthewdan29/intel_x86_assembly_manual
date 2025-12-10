@@ -1,0 +1,4 @@
+The processor does not save the state of the general-purpose registers on procedure calls. 
+A calling procedure can thus pass up six parameters to the called proceure by copying the parameters into any of these registers (except the ESP and EBP registers) prior to executing the CALL instruction. 
+The call procedure can likewise pass parameters back to the calling procedure through general-purpose registers. 
+

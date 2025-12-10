@@ -1,0 +1,17 @@
+The INT n (software interrupt), INTO (interrupt on overflow), and BOUND (detect value out of range) instructions allow a program to explicity raise a specified interrupt or exception, which in turn causes the handler routine for the interrupt or exception to be called. 
+
+The INT n instruction can raise any of the processor's interrupts or exceptions by encoding the vector of the interrupt or exception in the instruction. 
+This instruction can be used to support software generated interrupts or to test the operation of interrupt and exception handlers. 
+
+The IRET (return from interrupt) instrucion returns program control from an interrupt handler to the interrupted procedure. 
+The IRET instruction performs a simialr operation to the RET instruction. 
+
+The CALL (call procedure) and RET (return from procedure) instructions allow a jump from one procedure to another and a subsequent return to the calling procedure. 
+EFLAGS register contents are automatically stored on the stack along with the return instruction pointer when the processor services an interrupt. 
+
+The INTO instruction raises the overflow exception if the OF flag is set. 
+If the flag is clear, execution continues without raising the exception. 
+This instruction allow software to access the overflow exception handler explicitly to check for overflow conditions. 
+
+The BOUND instruction compares a signed value against upper and lower bounds, and raises the "BOUND rage exceeded" exception if the value is less than the lower bound or greater than the upper bound. 
+This instruction is useful for operation such as checking an array index to make sure it falls within the range defined for the array. 

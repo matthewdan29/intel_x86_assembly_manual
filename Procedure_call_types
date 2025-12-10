@@ -1,0 +1,8 @@
+The processor supports procedure calls in the following two different ways: 
+
+1) CALL and RET intructions 
+
+2) ENTER and LEAVE instructions, in conjunction with the CALL and RET instructions 
+
+Both of these procedure call manchanisms use the procedure stack, commonly referred to as "the stack", to save the state of the calling procedure, pass parameters to the called procedure, and store local variables for the currently executing procedure.
+The Processor's facilites for handling interrupts and exceptions are similar to those used by the CALL and RET instructions 

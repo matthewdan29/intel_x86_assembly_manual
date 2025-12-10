@@ -1,0 +1,9 @@
+These instructions operate on bit or byte strings. These are the subgroups: 
+
+1) Test and modify a single bit. 
+
+2) scan a bit string. 
+
+3) set a byte given conditions 
+
+4) test operands and report results 

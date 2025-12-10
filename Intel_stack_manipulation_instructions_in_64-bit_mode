@@ -1,0 +1,5 @@
+In 64-bit mode, the stack pointer size is 64 bits and cannot be overriden by an instruction prefix 
+In implicit stack refferences, address-size overrides and ignored. 
+Pushes and pops of 32-bit values on the stack are not possible in 64-bit mode. 
+16-bit pushes and pops are supported by using the 66H operand-size prefix. 
+PUSHA, PUSHAD, POPA, and POPAD are not supported 

@@ -1,0 +1,42 @@
+The PUSH, POP, PUSHA (push all register), and POPA (Pop all registers) instructions move data to and from the stack. 
+The PUSH instruction decrements the stack pointer (contained in the ESP register), then copies the source operand to the top of stack. 
+It operates on memory operands, immediate operands, and register operands (including segment registers). 
+The PUSH instruction is commonly used to place parameters on the stack before calling a procedure. 
+It can also be used to reserve space on the stack for temporary variables. 
+
+The PUSHA instruction saves the contents of the eight general-purpose registers on the stack. 
+This instruction simplifies procedure calls by reducing the number of instructions requiired to save the contents of the general-purpose registers. 
+The registers are pushed on the stack in the following order: 
+1) EAX
+2) ECX
+3) EDX
+4) EBX
+
+the initial value of ESP before EAX was pushed, EBP, ESI, and EDI
+
+The POP instruction copies the word or doubleword at the current top of stack (indicated by the ESP register) to the location specified with the destination operand. 
+It then increments the ESP register to point to the new top of stack. 
+The destination operand may specify a general-purpose register, a segment register, or a memory location. 
+
+The POPA instruction reverses the effect of the PUSHA instruction. 
+It pops the top eight words or doublewords from the top of the stack into the general-purpose registers, except for the ESP register. 
+If the operandsize attribute is 32, the doublewords on the stack are transferred to the registers in the following order: 
+1) EDI
+2) ESI
+3) EBP
+4) ignore doubleword, 
+5) EBX
+6) EDX
+7) ECX
+8) EAX
+
+The ESP register is retored by the action of popping the stack. 
+If the operand-size attribute is 16, the words on the stack are transferred to the registers in the following order: 
+1) DI
+2) SI
+3) BP
+4) ignore word
+5) BX
+6) DX
+7) CX
+8) AX

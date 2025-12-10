@@ -1,0 +1,3 @@
+The BSF (bit scan forward) and BSR (bit scan reverse) instructions scan a bit string in a source operand for a set bit and store the bit index of the first set bit found in a destination register. 
+The bit index is the offset from the least significant bit (bit 0) in the bit string to the first set bit. 
+The BSF instruction scans the source operand low-to-high (from bit 0 of the source operand toward the most significant bit); the BSR instruction scans high-to-low (from the most significant bit toward the least significant bit). 

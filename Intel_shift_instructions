@@ -1,0 +1,17 @@
+the SAL (shift arithmetic left), SHL (shift logical left), SAR (shift arithmetic right), SHR (shift logical right) instructions perform an arithmetic or logical shift of the bits in a byte, word, or doubleword. 
+
+The SAL and SHL instructions perform the same operation. 
+They shift the source operand left by from 1 to 31 bit postions. 
+Empty bit positions are cleared. 
+The CF flag is loaded with the least bit shifted out of the operand.
+
+The SHR instruction shifts the source operand right by from 1 to 31 bits postions. 
+As with the SHL/SAL instruction, the empty bit positions are cleared and the CF flag is loaded with the least bit shifted out of the operand. 
+
+The SAR instruction shifts the source operand right by from 1 to 31 bit postions. 
+The instruction differs from the SHR instruction in that it preserves the sign of the source operand by clearing empty bit postions if the operand is positive or setting the empty bits if the operand is negative. 
+Again, the CF flag is loaded with the last bit shifted out of the operand. 
+
+The SAR and SHR instructions can also be used to perform division by powers of 2 
+
+PERSONAL: think of it as adding in a 0 to the left most bit or right most bit  

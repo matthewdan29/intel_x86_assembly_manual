@@ -1,0 +1,10 @@
+In 64-bit mode, address calculations that reference SS segments are treated as if the segment base is zero. 
+Fields (base, limit, and attribute) in segment descriptor registers are ignored. 
+SS DPL (Stack segment Descriptor Privilege Level) is modified such that it is alwasys equal to CPL (Current privilege level). 
+This will be true even if it is the onlhy field in the SS descriptor that is modified. 
+
+Register E(SP), E(IP) and E(BP) are promoted to 64-bits and are remaned RSP, RIP, and RBP respectively. 
+Some forms of segment load instructions are invalid (LDS, POP ES, are some to talk about)
+
+PUSH/POP instructions increment/decrement the stack using a 64-bit width. 
+When the contents of a segment register is pushed onto 64-bit stack, the pointer is automatically aligned to 64 buits (as with a stack that has a 32 bit width).

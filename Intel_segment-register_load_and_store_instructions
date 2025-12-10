@@ -1,0 +1,6 @@
+The MOV instruction and the PUSH and POP instructions can transfer 16-bit segment selectors to and from segment registers (DS, ES, FS, GS, and SS). 
+The transfers are always made to or from a segment register and a general-purpose register or memory. 
+Transfers between segment registers are not supported. 
+
+The POP and MOV instructions cannot place a value in the CS register. 
+Only the far control-transfer versions of the JMP, CALL, and RET instrutions affect the CS register directly

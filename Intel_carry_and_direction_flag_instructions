@@ -1,0 +1,7 @@
+The STC (set carry flag), CLC (clear carry flag), and CMC (complement carry flag) instructions allow the CF flag in the EFLAGS register to be modified directly. 
+They are typically used to initialize the CF flag to a known state before an instruction that uses the flag in an operation is executed. 
+They are also used in conjunction with the rotate-with-carry instructions (RCL and RCR). 
+
+The STD (set direction flag) and CLD (clear direction flag) instructions allow the DF flag in the EFLAGS register to be modified directly. 
+The DF flag determines the direction in whic index registers ESI and EDI are stepped when executing string processing instructions. 
+If the DF flag is clear, the index registers are incremented after each iteration of a string instruction; if the DF flag is set, the registers are decremented. 

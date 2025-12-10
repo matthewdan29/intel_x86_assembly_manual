@@ -1,0 +1,31 @@
+The Processor does not save the contents of the general-purpose registers, segment registers, or the EFLAGS register on a procedure call. 
+A calling procedure should explicitly save the values in any of the general-purpose registers that it will need when it resumes execution after a return. 
+These values can be saved on the stack or in memory in one of the data segments. 
+
+The PUSHA and POPA instructions facilitate saving and restoring the contents of the general-purpose registers. 
+PUSHA pushes the values in all the general-purpose registers on the stack in the following order: 
+1) EAX
+
+2) ECX
+
+3) EDX
+
+4) EBX
+
+5) ESP (the value proir to executing the PUSHA instruction)
+
+6) EBP
+
+7) ESI
+
+8) EDI
+
+The POPA instruction pops all the register values saved with a PUSHA instruction (except the ESP value) from the stack to their respective registers. 
+
+If a called procedure changes the state of any of the segment registers explicitly, it should restore them to their former values before executing a return to the calling procedure. 
+
+If a calling procedure needs to maintain the state of the EFLAGS register, it can save and restore all or part of the register using the PUSHF/PUSHFD and POPF/POPFD instructions. 
+The PUSHF instruction pushes the lower word of the EFLAGS register on the stack, while the PUSHFD instruction pushes the entire regiseter. 
+The POPF instruction pops a word from the stack into the lower word of the EFLAGS register, while the POPFD instrucion pops a double word from the stack into the register. 
+
+

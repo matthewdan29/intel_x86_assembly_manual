@@ -1,0 +1,21 @@
+The EFLAGS transfer instructions allow groups of flags in the EFLAGS register to be copied to a register or memory or be loaded from a register or memory. 
+
+The LAHF (load AH from flags) and SAHF (store AH into flags) instructions operate on five of the EFLAGS status flags (SF, ZF, AF, PF, and CF). 
+The LAHF instruction copies the status flags to bits 7, 6, 4, 2, and 0 of the AH register, respectively. 
+The contents of the remaining bits in the register (bits 5, 3, and 1) are unaffected, and the contens of the EFLAGS register remain unchanged. 
+The SAHF instrucions copies bits 7, 6, 4, 2, and 0 from the AH register into the SF, ZF, AF, PF, and CF flags, repectively in the EFLAGS register. 
+
+The PUSHF (push flags), PUSHFD (push flags double), POPF (pop flags), and POPFD (pop flags double) instructions copy the flags in the EFLAGS register to and from the stack. 
+The PUSHF instrucion pushes the lower word of the EFLAGS register onto the stack. 
+The PUSHFD instruction pushes the entire EFLAGS register onto the stack (with the RF and VM flags read as clear). 
+
+The POPF instruction pops a word from the stack into the EFLAGS register. 
+Only nits 11, 10, 8, 7, 6, 4, 2, and 0 of the EFLAGS register are affected with all uses of this instruction. 
+If the current privilege level (CPL) of the current code segment is 0 (most privilege ), the IOPL bits (bits 13 and 12) also are affected. 
+If the I/O privilege level (IOPL) is greater than or equal to the CPL , numerically, the IF flag (bit 9) also is affected. 
+
+The POPFD instrucion pops a double word into the EFLAGS register. 
+THis instruction can change the state of the AC bit (bit 18) and the ID bit (bit 21), as well as the bits affected by a POPF instrucion. 
+The restrictions for changing the IOPL bits and the IF flag that were given for the POPF instruction also apply to the POPFD instruction. 
+
+

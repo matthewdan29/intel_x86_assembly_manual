@@ -1,0 +1,38 @@
+The RDRAND instruction returns a random number. 
+RDRAND instruction indicate the availability of the RDRAND instruction via reporting CPUID.01H:ECX.RDRAND[bit 30] = 1. 
+
+RDRAND returns random numbers that are supplied by a cryptographically secure, deterministic random bit generator DRBG. 
+The DRBG is designed to meet the NISTSP800-90A standard. 
+The DRBG is re-seeded frequently from a on-chip non-deterministic entropy source to guarantee data returned by RDRAND is statistically uniform, non-periodic and non-deterministic. 
+
+In order for the hardware design to meet its security goals, the random number generator contiuously test itself and the random data it is generating. 
+Runtime failures in the random number generator circuitry or statistically anomalous data occurring bu chance will be detected by the self test hardware and flag the resulting data as being bad. 
+In such extremely rare cases, the RDRAND instruction will return no data instead of bad data. 
+
+Under heavy load, with multiple cores executing RDRAND in parallel, it is possible, though unlikely, for the demand of random numbers by software processes/threads to exceed the rate at which the random number generator hardware can supply them. 
+This will lead to the RDRND instruction returning no data transitorily. 
+The RDRAND instruction indicates the occurrence of this rar situation by clearing the CF flag. 
+The RDRAND instruction returns with the carry flag set (CF = 1) to indicate valid data is returned. 
+It is recommended that souftware is using RDRAND instruction to get random numbers retry for a limited number of iterations while RDRAND returns CF=0 and complete when valid data is returned, indicated with CF=1. 
+This will deal with transitory underflows. 
+A retyr limit should be employed to prevent a hard failure in the RNG(expected to be extrmely rare) leading to a busy loop in software. 
+
+The Intrinsic primitive for RDRAND is defined to address software's need for the common casses (CF = 1) and the rare situations (CF = 0). 
+The intrisic primitve returns a value that reflects the value of the carry flag returned by the underlying RDRAND instruction. 
+The example below illustrates the recommended usage of an RDRAND intrinsic in a utility function, loop to fetch a 64 bit random value with a retry count limit of 10. 
+A C implementation might be written as follows: 
+
+
+#define SUCCESS 1
+#define RETRY_LIMIT_EXCEEDED 0
+#define RETRY_LIMIT 10
+
+int get_random_64(unsigned_int 64 * arand)
+{
+	int i; 
+	for (i = 0; i < RETRY_LIMIT; i ++)
+	{
+		if (_rdand64_step(arand)) return SUCCESS; 
+	}
+	return RETRY_LIMIT_EXCEEDED; 
+}

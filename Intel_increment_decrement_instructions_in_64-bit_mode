@@ -1,0 +1,2 @@
+The INC and DEC instructions are supported in 64-buit mode. 
+However, some forms of INC and DEC (the register operand being encoded using register extension field in the MOD R/m byte) are not encodeable in 64-bit mode becuase the opcodes are treated as REX prefixes 

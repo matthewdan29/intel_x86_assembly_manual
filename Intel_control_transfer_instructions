@@ -1,0 +1,8 @@
+The processor provides both conditional and unconditional control transfer instructions to direct the flow of program execution. 
+Conditional transfers are taken only for specified states of the status flags in the EFLAGs register. 
+Unconditional control transfers are always executed. 
+
+The subgroups are: 
+1) Unconditional transfers 
+2) Conditional transfers 
+3) Software interrups

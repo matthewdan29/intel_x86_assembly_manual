@@ -1,0 +1,21 @@
+ASCII (American Standard Code for Information Interchange, Is a character encoding standard that assigns unique numerical values to letter, numbers, punctuation, and control characters.)
+
+Unpacked BCD (Binary Coded Decimal is a format that stores each decimal digit in its own byte (8 bits), with the lower 4 bits holding the binary value of the digit and the upper 4 bits often unused or zero)
+
+The AAA (ASCII adjust after addition), AAS (ASCII adjust after subtraction), AAM (ASCII adjust after multiplication), and AAD (ASCII adjust before division) instructions adjust the results of arithmetic operations performed on unpacked BCD values. 
+All these instructions assume that the value to be adjusted is stored in the AL register or, in one instance, the AL and AH register. 
+
+The AAA instruction adjusts the contents of the AL register following the addition of two unpacked BCD values. 
+It converts the binary value in the AL regster into a decimal value and stores the results in the AL regster in unpacked BCD format (the decimal number is stored in the lower 4 bits of the register and the upper 4 bits are cleared).
+If a decimal carry occurred as a result of the addition, the CF flag is set and the contents of the AH register are incremented by 1.
+
+The AAS instruction adjusts the contents of the AL register following the subtraction of two unpacked BCD values. 
+Here again, a binary value is converted into an unpacked BCD value. 
+If a borrow was required to complete the decimal subtract, the CF flag is set and the contents of the AH register are decremented by 1. 
+
+The AAM instruction adjusts the contents of the AL register following a multiplication of two unpacked BCD values. 
+It converts the binary value in the AL register into a decimal value and stores the least significant digit of the result in the AL register (in unpacked BCD format) and the most significant digit, if there is one, in the AH register (also  in unpacked BCD format). 
+
+The AAD instruction adjusts a two-digit BCD value so that when the value is divided with the DIV instruction, a valid unpacked BCD result is obtained. 
+The instruction converts the BCD value in registers AH (most significant digit) and AL (least significant digit) into a binary value and stores the result in register AL. 
+When the value in AL is divided by an unpacked BCD value, the quotient and remainder will be automatically encoded in unpacked BCD format. 

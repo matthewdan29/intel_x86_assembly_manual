@@ -1,0 +1,8 @@
+The Flag Control (EFLAG) instructions allow the state of selected flags in the EFLAGS register to be read or modified. 
+For the purpose of this discussion, these instructions are further divided into subordiante subgroups of instructions that manipulate: 
+
+1) Carry and direction flags 
+
+2) The EFLAGS register. 
+
+3) Interrupt flags 

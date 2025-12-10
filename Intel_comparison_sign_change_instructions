@@ -1,0 +1,6 @@
+The CMP (compare) instructions computes the difference between two integer operands and updates the OF, SF, ZF, AF, PF, and CF fllags according to the result. 
+The source operands are not modified, nor is the result saved. 
+The CMP instruction is commonly used in conjuction with the Jcc (jump) or SETcc (byte set on condition) instruction, with the latter instructions performing an action based on the result of a CMP instruction. 
+
+The NEG (negate) instruction subtracts a sign integetr iperand from zero. 
+The effect of the NEG instruction is to change the sign of a two's complenment operand while keeping its magnitude. 

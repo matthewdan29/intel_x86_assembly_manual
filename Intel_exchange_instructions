@@ -1,0 +1,45 @@
+The exchange instructions swap the contents of one or more operands and, in some cases, perform additional operations such as asserting the LOCK signal or modifiying flags in the EFLAGS register. 
+
+The XCHG (exchange) instruction swaps the contents of two operands. 
+THis instruction takes the place of three MOV instructions and does not require a temprary location to save the constents of one operand location while the other is being loaded. 
+When a memory operand is used with the XCHG instruction, the processor's LOCK signal is automatically asserted. 
+This instruction is thus useful for implementing semaphores or similar data structures of process synchronization. 
+
+The BSWAP (byte swap) instruction reverses the byte order in a 32-bit register operand. 
+Bit positions 0 through 7 are exchanged with 24 through 31, and bit positions 8 through 15 are exchanged with 16 through 23. 
+Executing this instruction twice in a row leaves the register with the same value as before. 
+The BSWAP instruction is useful for converting between "big-endian" and "litte-endian" data formats. 
+This instruction also speeds execution of decimal arthmetic. (THe XCHG instruction can be used to swap the bytes in wofd)
+
+The XADD (exchange and add) instruction swaps two operands and then stores the sum of the two operands in the destination operand. 
+This status flags in the EFLAGS register indicate the result of the addition. 
+This instruction can be combined with LOCK prefix in multiprocessing system to allow multiple prcess to execute one DO loop. 
+
+The CMPXCHG (compare and exchange) and CMPXCHG8B (compare and exchange 8 bytes) instructions are used to synchronize operations in systems that used multiple processors. 
+The CMPXCHG instruction require three operands: 
+1) a source operand in a register
+2) another source operand in the EAX register
+3) a destination operand. 
+
+If the values contained in the destination operand and the EAX register are equal, the destination operand is replaced with the value of the other source (the value not in the EAX register).
+Otherwise, the original value of the destination operand is loaded in the EAX register. 
+The status flags in the EFLAGS register reflect the result that would have been obtained by subtracting the destination operand from the value in the EAX register. 
+
+The CMPXCHG instruction is commonly used for testing and modifyinf semaphores (A semaphore is a mechanism for controlling access to shared resources in concurrent systems, either in computer programming or visual signaling. In computing, it is a variable that manages access for multiple processes or threads, ensuring they don't interfere with each other when using a common resource. ).
+It checks to see if a semaphore is free.
+If the semaphore is free, it is marked allocated; ortherwise it gets the ID of the current owner. 
+This is all done in one uninterruptible operation. 
+In a single-procssor system, the CMPXCHG instruction eliminates the need to switch to protection 0 (to disable interrupts ) before executing multiple instructions to test and modify a semaphore. 
+
+For multiple processor systems, CMPXCHG can be comnined with the LOCK prefix to perform the compare and exchange operation atomically. 
+
+The CMPXCHG8B instruction also requires three operands: 
+
+1) a 64-bit value in EDX:EAX, 
+2) a 64-bit value in ECX:EBX, 
+3) a destination operand in memory
+
+The instruction compares the 64-bit value in the EDX:EAX registers with the destination operand. 
+If they are equal, the 64-bit value in the ECX:ENX registers is stored in the destination operand. 
+If the EDX:EAX registers and the destination are not equal, the destination is loaded in the EDX:EAX registers. 
+The CMPXCHG8B instruction can be combined with the LOCK prefix to perform the operation atomaically

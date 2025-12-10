@@ -1,0 +1,7 @@
+The CALL instruction allows control transfers to procedures within the current code segment (near call) and in a different code segment (far call). 
+Near calls usually provide access to local procedures within the currently running program or task. 
+Far calls are usually used to access operating systems procedures or procedures in a different task. 
+
+The RET instruction also allows near and far returns to match the near and far versions of the CALL instructions. 
+Also, the RET instrcution allows a program to increment the stack pointer on a return to release parameters from the stack. 
+The number of bytes released from the stack is determined by an optional argument (n) to the RET instruciton. 

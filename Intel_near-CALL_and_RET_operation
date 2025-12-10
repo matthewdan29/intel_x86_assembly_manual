@@ -1,0 +1,17 @@
+When executing the near call, the processor does: 
+
+1) Pushes the current value of the EIP register on the stack 
+
+	If the shado stack is enabled and the displacment value is not 0, pushes the current value of the EIP register on the shadow stack. 
+
+2) Loads the offset of the called procedure in the EIP register. 
+
+3) Begings execution of the called procedure. 
+
+When the executing a near return, the processor perfroms these actions: 
+
+1) Pops the top-of-stack value (return instruction pointer) into the EIP register. 
+
+2) if the RET instruction has an optional n argument, increments the stack pointer by the number of bytes specified with the n operand to release parameters from the stack. 
+
+3) Resumes executionof the calling procedure

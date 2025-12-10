@@ -1,0 +1,7 @@
+To set a stack and establish it as the current stack, the program or operating system/executive must do the following 
+
+1) Establish a stack segment 
+
+2) Load the segment selector for the stack segment into the SS register using MOV, POP, or LSS instruction 
+
+3) Load the stack pointer for the stack into the ESP register using a MOV, POP, or LSS instructions. The LSS instructing can be used to load the SS and ESP registers in one operation 

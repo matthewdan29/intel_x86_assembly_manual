@@ -1,0 +1,74 @@
+The ENTER instruction creates a stack frame compatible with the scope rules typically used in block-structured languages. 
+In block-structured languages, the scope of a procedure is the set of variables to which it has access. 
+The rules for scope vary (Just Use C/C++) among languages. 
+They may be based on the nesting of procedures, the division of the program into separately compiled files, or some other modularization scheme. 
+
+ENTER has two operands. 
+The first specifies the number of bytes to be reserved on the stack for dynamic storage for the procedure being called. 
+Dynamic storage is the memory allocated for variables created when the procedure is called, also known as automatic variables. 
+The second parameter is the lexical nesting level (from 0 - 31) of the procedure. 
+The nesting level is the depth of a procedure in a hierarchy of procedure calls. 
+The lexical level is unrelated to either the protection privilege level or to the I/O privilege level of the currently running program or task. 
+
+ENTER, in the following example, allocates 2 kbytes dynamic storage on the stack and sets up pointers to two previous stack frames in the stack frame for this procedure: 
+
+ENTER 2048,3
+
+The lexical nesting level determines the number of stack frame pointers to copy into the new stack frame from the preceding frame. 
+A stack frame pointer is a doubleword used to access the variables of a procedure. 
+The set of doubleword in the display is a pointer to the previous stack frame. 
+This pointer is used by a LEAVE instruction to undo the effect of an ENGER instruction by discarding the current stack frame. 
+
+After the ENTER instruction creates the display for a procedure, it allocates the dynamic local variables for the procedure by decrementing the contents of the ESP register by the number of bytes specified in the first parameter. 
+This new value is the ESP register serves as the initial top-of-stack for all PUSH and POP operations within the procedure. 
+
+To allow a procedure to address its display, the ENTER instruction leaves the EBP register pointing to the first doubleword in the display. 
+Because stacks grow down, this is actually the doubleword with the highest address in the display. 
+Data manipulation instructions that specify the EBP register as a base register automatically address locations within the stakc segment instead of the data segment. 
+
+The ENTER instruction can be used in two ways: 
+1) nested 
+2) non-nested. 
+If the lexical level is 0, the non-nested form is used. 
+The non-nested form pushes the contents of the EBP register on the stack, copies the contents of the ESP register into the EBP register, and subtracts the first operand from the contents of the ESP register to allocate dynamic storage. 
+The non-nested form differs from the nested form in the no stack frame pointers are copied. 
+The nested form of the ENTER instruction occurs when the second parameters (lexical level) is non zero. 
+
+The following pseudo code shows the formal definition of the ENTER instruction. 
+STORAGE is the number of bytes of dynamic storage to allocate for local variables, and LEVEL is the lexical nesting level. 
+
+
+PUSH EBP; 
+FRAME_PTR := ESP; 
+IF LEVEL > 0
+	THEN 
+		DO (LEVEL -2) times 
+			EBP := EBP -4; 
+			PUSH Pointer(EBP); (* doubleword pointed to by EBP *)
+		OD; 
+	PUSH FRAME_PTR; 
+F1; 
+EBP := FRAME_PTR; 
+ESP := ESP - STORAGE; 
+
+The main procedure (in which all other procedures are nested) operates at the highest lexical level, level 1. 
+The first procedure it calls operates at the next deeper lexical level, level 2. 
+A level 2 procedure can access the variables of the main program, which are at fixed locations specified by the compiler. 
+In the case of level 1, the ENTER instruction allocates only the requested dynamic storage on the stack because there is no previous display to copy. 
+
+A procedure that calls another procedure at a lower lexical level gives the called procedure access to the variables of the caller. 
+The ENTER instruction provides this access by placing a pointer to the calling procedure's stack frame in the display. 
+
+A procedure that calls another procedure at the same lexical level should not give access to its variables. 
+In this case, the ENTER instructions copies only that part of the display from the calling procedure which refers to previously nested procedures operating at higher lexical levels. 
+The new stack frame does not include the pointer for addressing the calling procedure's stack frame. 
+
+The ENTER instruction treats a re-entrant procedure as a call to a procedure at the same lexial level. 
+In this case, each succeeding iteration of the re-entrant procedure can address only its own varables and the variables of the procedures within which it is nested. 
+A re-entrant procedure always can address its own variables; it does not require pointers to the stack frames of previous iterations. 
+
+By copying only the stack frame pointer of procedures at higher lexical levels, the ENTER intruction makes certain that proceures access only those variables of higher lexical levels, not those at parallel lexical levels. 
+
+Block-structured languages can use the lexical levels defined by ENTER to control access to the variables of nested procedures.
+
+This where i say read this section its a great example of incapsolation with var's page 176  

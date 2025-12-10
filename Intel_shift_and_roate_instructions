@@ -1,0 +1,5 @@
+The shift and rotate instructions rearrange the bits within an operand. 
+These instructions are further divided into subordinate subgroups of instructions that: 
+1) Shift bits 
+2) double-shift bits (move them between operands)
+3) rotate bits 

@@ -1,0 +1,11 @@
+The ADD (add integers), ADC (add integers with carry), SUB (subtract integers), and SBB (subtract integers with borrow) instructions perfrom addtion and subtraction operations on signed or unsigned integers operands. 
+
+The ADD instruction computes the sum of two integer operands. 
+
+The ADC instruction computes the sum of two integer operands, plus 1 if the CF flag is set. 
+This instruction is used to propagte a carry when adding numbers in stages. 
+
+The SUB instruction computes the difference of two integetr operands 
+
+THe SBB instructioin computes the deffernece of two integer operands, minus 1 if the CF flag is set. 
+This instruction is used to propagate the borrow when subtracting numbers in stages 

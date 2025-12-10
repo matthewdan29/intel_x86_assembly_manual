@@ -1,0 +1,6 @@
+In 64-bit mode, the LAHF and SAFH instructions are supported if CPUID.80000001H:ECX.LAHF-SAHF[bit 0] = 1. 
+
+PUSHF and POPF behave the same in 64-bit mode as in non-64-bit mode. 
+PUSHFD always pushes 64-bit RFLAGS onto the stack (with the RF and VM flags read as clear). 
+POPFD always pops a 64-bit value from the top of the stack and loads the lower 32 bits into RFLAGS. 
+It then zero extends the upper bits of RFLAGS. 

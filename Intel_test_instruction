@@ -1,0 +1,2 @@
+The TEST instruction performs a logical AND of two operands and sets the SF, ZF, and PF flags according to the results. 
+The flags can then be tested by the conditional jump or loop instructions or the SETcc instructions. 

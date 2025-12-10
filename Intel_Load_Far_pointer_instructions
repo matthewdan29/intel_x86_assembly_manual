@@ -1,0 +1,2 @@
+The load far pointer instructions LDS (load far pointer using DS), LES (load far ointer using ES), LFS (load far pointer using FS), LGS (load far pointer using GS), and LSS (load far pointer using SS) load a far pointer from memory into a segment register and a general-purpose register. 
+The segment selector part of the far pointer is loaded into the selected segment register and the offset is loaded into the selected general-purpose register. 

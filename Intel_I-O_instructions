@@ -1,0 +1,12 @@
+The IN (input from port to register), INS (input from port to string), OUT (output from register to port), and OUTS (output string to port) instructions move data between the processor's I/O ports and either a register or memory. 
+
+The register I/O instructions (IN and OUT) move data between an I/O port and the EAX register (32-bit I/O), the AX register (16-bit I/O), or the AL (8-bit I/O) register. 
+The I/O port being read or written to is specified with an immediate operand or an address in the DX register. 
+
+The block I/O instructions (INS and OUTS) instructions move blocks of data (strings) between an I/O port and memory. 
+These instructions operate similar to the string instructions. 
+THe ESI and EDI registers are used to specify string elements in memory and the repeat prefix (REP) is used to repeat the instructions to implement block moves. 
+The assemnbler recognizes the following alternate nmemonics for these instructions:  INSB (input byte), INSW (input word), and INSD (input doubleword), and OUTSB (output byte), OUTSW(output word), and OUTSD (output doubleword). 
+
+The INS and OUTS instructions use an address in the DX register to specify the I/O port to be read or written to. 
+

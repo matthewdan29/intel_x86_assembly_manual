@@ -1,0 +1,9 @@
+String Instructions - that perform operations on blocks of contiguous memory (strings). These instrcutions use implicit operands, primarily the RSI (source index) and RDI (destination index) register, and can be combined with repetition prefixes like REP for efficient, high-speed memory manipulation.
+
+Repeating string operations - Repeats a string instruction the number of times specified in the count register or until the indicated condition of the ZF flag is no longer met. The REP (repeat), REPE (Repeat while equal), REPNE(repeate while not equal), REPZ(repeat while zero), and REPNZ(repeat while not zero) mnemonics are prefixes that can be added to one of the string instructions. The REP prefix can be added to the INS, OUTS, MOVS, LODS, and STOS instructions, and the REPE, REPNE, REPZ, and REPNZ prefixes can be added to the CMPS and SCAS instructions. 
+
+Fast-string operation - refers to the optimized microcode execution of x86 string instructions (such as REP MOVSB, and REP STOBS) that allows modern processors to perform memory operations, like block copies and intializations, with high efficiency.
+
+The GP instructions includes a set of "string instructions" that are designed to access large data structures. 
+REP prefixes can be used with these instructions to perfrom more complex "repeated string operations". 
+Certain processors optimize repeated string operations with "fast-string operation". 

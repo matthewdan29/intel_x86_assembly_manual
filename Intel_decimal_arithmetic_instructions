@@ -1,0 +1,12 @@
+Decimal arithmetic can be performed by combining the binary arithmetic instructions ADD, SUN, MUL, and DIV with the decimal arithmetic instructions. 
+The decimal arithmetic instructions are provided to carry out the following operations: 
+
+1) To adjust the results of a previous binary arithmetic operation to produce a valid BCD result. 
+
+2) To adjust the operands of a subsequent binary arithmetic operation so that the operation will produce a valid BCD result 
+
+These instructions operate on both packed and unpacked BCD values. 
+THe decimal arithmetic instructions are divided into subordinate subgroups of instructions that provide: 
+1) packed BCX adjustments 
+
+2) unpacked BCD adjustments

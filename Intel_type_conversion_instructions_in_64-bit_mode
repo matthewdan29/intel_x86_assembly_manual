@@ -1,0 +1,3 @@
+The MOVSXD instruction operates on 64-bit data. 
+It sign-extends a 32-bit value to 64 bits. 
+THis intruction is not encodable in non-64-bit modes. 

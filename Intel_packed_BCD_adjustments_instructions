@@ -1,0 +1,11 @@
+The DAA (decimal adjust after addition) and DAS (decimal adjust after subtraction) instructions adjust the results of operations performed on packed BCD integer. 
+Adding two packed BCD values requires two instructions: 
+1) An ADD instructions 
+2) followed by a DDA instructions
+
+The ADD  instructions add (binary addtion) the two values and stores the result in the AL register. 
+The DAA instruction then adjusts the value in the AL register to obtain a valid, 2-digit, packed BCD value and sets the CF flag if a decimal carry occurred as the result of the addition. 
+
+Likewise, subtracting one packed BCD value from another requires a  SUB instrctuion followed by a DAS instruction. 
+The SUB instruction subtracts (binary subtraction) one BCD value from another and stores the result in the AL register. 
+THe DAS instrcution then adjusts the value in the AL register to obtain a valid, 2-digit, packed BCD value and sets the CF flag if a decimal borrow occurred as the reslt of the subtraction.  

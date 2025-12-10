@@ -1,0 +1,11 @@
+The processor provides two multiply intructions, MUL (unsinged multiply) and IMUL (singed multiply), and two divide instructions, DIV (unsigned divide (this is taxing on cpu)) and IDIV (sign divide).
+
+The MUL instruction multiplies two unsigned integer operands. 
+The result is computed to twice the size of the source operands 
+
+The IMUL instruction multiplies two signed integer operands. 
+The result is computed to twice the size of the source operands; however, in some cases the result is truncated to the size of the source operands.
+
+The DIV instruction divides one unsigned operand by another unsigned operand and returns a quotient and a remainder
+
+The IDIV instruction is identical to the DIV instruction, except that IDIV performs a signed divison. 

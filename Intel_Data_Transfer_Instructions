@@ -1,0 +1,12 @@
+The data transfer instructions move bytes, words, doublewords, or quadwords both between memory and the processor's registers and between registers. 
+For the purpose of this discussion, these instructions are divided into subordinate subgroup that provide for: 
+
+A) General data movement 
+
+B) Exchange 
+
+C) Stack 
+
+D) Stack manipulation 
+
+E)_ type conversion

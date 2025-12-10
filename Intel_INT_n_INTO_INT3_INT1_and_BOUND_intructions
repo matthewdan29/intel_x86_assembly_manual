@@ -1,0 +1,15 @@
+The INT n, INTO, INT3, and BOUND instructions allow a program ro task to explicity call an interrupt or exception handler. 
+The INT n instruction (opcode CD) uses a vector as an argument, which allows a program to call any interrupt handler. 
+
+The INTO instruction (opcode CE) explicity calls the overflow exception (#OF) hander if the overflow flag (OF) in the EFLAGS register is set. 
+The OF flag indicates overflow on arithmetic instructions, but it does not automatically raise an overflow exception. 
+AN overflow exception can only be raised explicitly in either of the following ways: 
+
+1) Execute the INTO instruction
+
+2) Test the OF flag and execute the INT n instruction with an argument of 4 (the vector of the overflow exception) if the flag is set. 
+
+The INT3 instruction (opcode CC) explicitly calls the breakpoint exception (#BP) handler. 
+Simillarly, the INT1 instrution (opcode F1) explicitly calls the debug exception (#DB) handler. 
+
+The BOUND instruction explicitly calls the BOUND-range exceeded exception (#BR) handeler if an operand is found to be not within predefined boundaries in memoory. 

@@ -1,0 +1,10 @@
+The pointer for a stack segment should be aligned on 16-bit (word) or 32-bit (double-word) boundaries, depending on the width of the stack segment. 
+The D flag in the segment descriptor for the current code segment sets the stack-segment width.
+THe PUSH and POP instrcutions use the D flag to determine how much to decrement or increment the stack pointer on a push or pop operation, respectively. 
+When the stack width is 16-bits, the stack pointer is incremented or decremenented in 16-bit increamnts; when the width is 32 bits, the stack pointer is incremented or decremented in 32-bit increments. 
+Pushing a 16-bit value onto a 32-bit wide stack can result in stack misaligned. 
+One exception to this rule is when the contents of segment register are pushed onto a 32-bit wide stack. 
+Here the processor automatically aligns the stack pointer to the next 32-bit boundary.
+The processsor does not check stack pointer alignment. 
+It is the responsibilty of the programs, tasks, and system procedures running on the processor to maintain proper alighment of stack pointers. 
+Misaligning a stack pointer can cause serious performance degradation and in some instances program failures 

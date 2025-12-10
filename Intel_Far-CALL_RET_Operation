@@ -1,0 +1,38 @@
+When executing a far call, the processor performs these actions: 
+
+1) Pushes the current values of the CS register on the stack. 
+	For shadow stack 
+
+		A. Temporarily saves the current value of the SSP register internally and aligns the SSP to the next 8 byte boundary
+		B. Pushes the current value of the CS register on the shadow stack 
+
+		C. Pushes the current value of the CS register on the shaow stack 
+
+		D. Pushes the internally saved value of the SSP register on the shadow stack. 
+
+2) Pushes the current value of the EIP register on the stack. 
+
+3) Loads the segment selector of the segment that contains the called procedure in the CS register 
+
+4) Loads the offset of the called procedure in the EIP register, 
+
+5) Begins execution of the called procedure 
+
+When executing a far return, the processor does the following: 
+
+1) Pops the top-of-stack value (the return instruction pointer) into the EIP register
+
+2) Pops the top-of-stack value (The segment selector for the code segment being returned to) into the CS register
+
+	For shadow stack
+	
+	A. Causes a control protection exception (#CP(FAR-RET/IRET)) if the SPP is not aligned to 8 bytes, 
+
+	B. Compares the values on the shadow stack at address SSP+8 (the LIP) and SSP+16 (the CS) to the CS and (CS.base + EIP) popped from the stack, and causes a control protection exception (#CP(FAR-RET/IRET)) if they do not match 
+
+	C. Pops the top-of-stack value (the SSP of the procedure being returned to) from shadow stack into the SSP register. 
+
+3) If the RET instruction has an optional n argument, increments the stack pointer by the number of bytes specified with the n operand to release parameters from the stack. 
+
+4) Resumes execution of the calliong procedure. 
+		

@@ -1,0 +1,31 @@
+The JMP, CALL, RET, INT, and IRET instructions transfer program control to another location (destination address) in the instruction stream. 
+The destination can be within the same code segment (near transfer) or in a different code segment (far transfer). 
+
+Jump instruction -- The JMP (jump) instruction unconditionally transfers program control to a destination instruction. The transfer is one-way; that is, a return address is not saved. A destination operation specifies the address (the instruction pointer) of the destination instruction. The address can be a "relative address" or and "absolute address". A "relative address" is a displacement (offset) with respect to the address in the EIP register. The destination address (a near pointer) is formed by adding the displacement to the address in the EIP register. The displacement is specified with a signed integer, allowing jumps either forward or backward in the instruction stream. An "absolute address" is a offset from address 0 of segment. It can be specified in eigher the following ways: 
+	
+	1) "An address in a general-purpose register" -- This address is treated as a near pointer, which is copied into the EIP register. Program execution then continues at the new address within the current code segment. 
+
+	2) "An address specified using the standard addressing modes of the processor" -- Here, the address can be a near pointer or a far pointer. If the address is for a near pointer, the addres is translated into an offset and copied into the EIP register. If the address is for a far pointer, the address is translated into a segment selector (which is copied into the CS register) and an offset (which is copied into the EIP register). 
+
+
+In protected mode, the JMP instruction also allows jumps to a call gate, a task gate, and a task-state segment. 
+
+"Call and return instructions" -- The CALL (call procedure) and RET (return from procedure) instructions allow a jump from one procedure (or subroutine) to another and a subsequent jump back (return) to the calling procedure. 
+
+The CALL instruction transfers program control from the current (or calling) procedure to another procedure. 
+To allow a subsequent return to the calling procedure, the CALL instruction saves the current contents of the EIP register on the stack before jumping to the called procedure. 
+The EIP register (prior to transferring program control) contains the address of the instruction following the CALL instruction. 
+When this address is pushed on the stack, it is referred to as the "return instruction pointer" or "return address". 
+
+The address of the called procedure (the address of the first instruction in the procedure being jumped to) is specified in a CALL instruction the same way as it is in a JMP instruction. 
+The address can be specified as a relative address or an absolute address. 
+If an absolute address is specified, it can be either near or a far pointer. 
+
+The RET instruction transfers program control from the procedure currently being executed back to the procedure that called it. 
+Transfer of control is accomplished by copying the return instruction pointer from the stack into the EIP register. 
+Progam execution then continues with the instruction pointer to be the EIP register. 
+
+The RET instruction has an optional operand, the calue of which is added to the contents of the ESP register as part of the return operation. 
+This operand allows the stack pointer to be incremented to remove parameters from the stack that were pushed on the stack by the calling procedure. 
+
+"Return from interrupt instruction" -- When the processor services an interrupt, it performs an implicit call to an interrupt-handling procedure. The IRET (return from interrupt) instruction returns program control from an interrupt handler to the interrupted procedure (that is, the procedure that was executing when the interrupt occured). The IRET instruction performs a similar operation to the RET instruction except that it also retores the EFLAGS register from the stack. The contents of the EFLAGS register are automatically stored on the stack along with the return instruction pointer when the processor services an interrupt. 

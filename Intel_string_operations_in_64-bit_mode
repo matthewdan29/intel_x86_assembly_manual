@@ -1,0 +1,9 @@
+The behavior of MOVS (Move String), CMPS (compare string), SCAS (scan string), LODS (Load string), and STOS (store string) instructions in 64-bit mode is similar to their behavor in non-64-bit modes, with the following differences: 
+
+1) The source operand is specified by RSI or DS:ESI, depending on the address size attribute of the operation 
+
+2) The destination operand is specified by RDI or DS:EDI, depending on the address size attribute of the operation 
+
+3) Operation on 64-bit data is supported by using the REX.W prefix
+
+When using REP prefixes for string operations in 64-nit mode, the reapet count is specified by RCX or ECX 

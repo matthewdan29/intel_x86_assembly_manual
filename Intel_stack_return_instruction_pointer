@@ -1,0 +1,10 @@
+Prior to branching to the first instruction of the called procedure, the CALL instruction pushes the address in the EIP register onto the current stack. 
+THis address is then called the return-instruction pointer and it points to the instruction where execution of the calling provedure should resume following a return fromthe called procedure. 
+Upon returning from a caleed procedure, the RET instruction pops the return-instruction pointer from the stack back into the EIP register. 
+Execution of the calling procedure then resumes. 
+
+The processor does not keep track of the location of the return-instyruction pointer. 
+A common way to reset the stack pointer to the point to the return-instruction pointer is to move the contents of the EBP register onto the ESP register. 
+If the EBP register is loaded with the stack pointer immediately following a procedure call, it should point to the return instruction pointer on the stack.
+
+The processor does not require that the return instruction pointer point back to the calling procedure. 

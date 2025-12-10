@@ -1,0 +1,6 @@
+The bit test and modify instructions operate on a single bit, which can be in an operand. 
+The location of the bit is specified as an offset from the least significant bit of the operand. 
+When the processor identifies the bit to be tested and modified, it first loads the CF flag with the current value of the bit. 
+Then it assigns a new value to the selected bit, as determined by the modify operation of the instruction. 
+
+Personally I use the selected bit shift a lot becuase I use C++ for as my main lang. albit, I'm going to use double shifts a lot more because I dont like typing out 30 to 50 bit shifts in a matrix calculation. 

@@ -1,0 +1,18 @@
+When the processor starts booting the computer, it stats in real mode and operates like a 8086 processor. 
+The processor can see up to 1MB of RAM (Random access memory).
+
+The native mode for the processor is the Protected mode. 
+The processor switches into Protected mode while it loads Windos or other advanced operating system. 
+In protected mode, the processor uses segmented (Non-linear) addressing, as opposed to linear addressing. 
+Segmented addressing means that memory (physical and virtual memory) is divided into 64k blocks. 
+THis is the max value for the Instruction Pointer (IP) register. 
+The IP register works with the Code Segment (CS) register to point to the memory location from where the microprocessor should fetch its next instruction. 
+The IP uses 4 bytes for memory addressing, making 0FFFFH  the max memory location (0FFFFH = 64k). 
+
+When Operating in real-address mode, the processor responds to an interrupt or exception with an implicit far call to an interrupt or exception handler. 
+The processor uses the interrupt or exception vector as an index into an interrupt table. 
+The interrupt table contains instruction pointers to the interrupt and exception handler proceures. 
+
+The processor saves the stat of the EFLAGS register, the EIP register, the CS register, and an optional error code on the stack before switching to the handler procedure.
+
+A return from the interrupt or exception handler is carried out with the IRET instruction. 

@@ -1,0 +1,16 @@
+The ROL (rotate left), ROR (rotate right), RCL (rotate throught carry left) and RCR (rotate through carry right) instruction rotate the bits in the destination operand out of one end and back through the other end. 
+Unlike a shift, no bits are lost during a rotaion. 
+THe rotate count can range from 0 to 31. 
+
+The ROL instruction rotates the bits in the operand to the left (toward more significant bit locations). 
+The ROR instruction rotates the operand right (toward less significant bit locations).
+
+The RCL instruction rotates the bits in the operand to the left, through the CF flag. 
+This instruction treats the CF flag as a one-bit extension on the upper end of the operand. 
+Each bit that exits from the most significant bit location of the operand moves into the CF flag. 
+At the same time, the bit in the CF flag enters the least significant bit loaction of the oprand. 
+
+The RCR instruction rotates the bits in the operand to the right through the CF flag. 
+
+For all the rotate instructions, the CF flag always contains the value of the last bit roted out of the operand, even if the instruction does not use the CF flag as an extension of the operand. 
+The value of this flag can then be tested by a conditional jump instruction (JC or JNC). 

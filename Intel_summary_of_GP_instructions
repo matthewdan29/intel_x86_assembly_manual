@@ -1,0 +1,30 @@
+General purpose instructions are divided into the following subgroups: 
+
+A) Data transfer
+
+B) Binary arithmetic
+
+C) Decimal arithmetic
+
+D) Logical 
+
+E) Shift and rotate 
+
+F) Bit and byte 
+
+G) Control transfer 
+
+H) string 
+
+I) I/O
+
+J) Enter and Leave
+
+K) Flag control 
+
+L) Segment register 
+
+M) Miscellaneous 
+
+Each sub-group of general-purpose instructions is discussed in the context of non-64-bit mode operation first. 
+Changes in 64-bit moode beyond those affected by the use of the REX prefixes are discussed in separate sub-sections within each subgroup. 

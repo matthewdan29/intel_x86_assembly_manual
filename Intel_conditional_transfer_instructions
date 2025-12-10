@@ -1,0 +1,32 @@
+The conditional transfer instructions execute jumps or loops that transfer program control to another intruction in the instruction stram if specified conditions are met. 
+The conditions for control transfer are specified with a set of conditions codes that define various states of the status flags (CF, ZF, OF, PF, and SF) in the EFLAGS register. 
+
+"Conditional jump instructions" -- The JCC (conditional) jump instructions transfer program control to a destinaltion instruction if the conditions specified with the condition code (cc) associated with the instruction are satisfied. 
+If the condition is not staisfied, execution continues with the instruction following the Jcc instruction. 
+As with the JMP instruction, the transfer is one-way; that is, a return address is not saved. 
+
+The destination operand specifies a relative address that points to an instruction in the current code segment. 
+The JCC instructions do not support far transfers; however, far transfers can be accomplished with a combination of a Jcc and a JMP instruction.
+
+The JCXZ and JECXZ instructions test the CX and ECX registers, repsectively, instead of or more status flags. 
+
+
+"Loop instructions" -- The LOOP, LOOPE (loop while equal), LOOPZ (loop while zero), LOOPNE (loop while not equal), and LOOPNZ (loop while not zero) instructions are conditional jump instructions that use the value of the ECX register as a count for the number of times to execute a loop. All the loop instructions decrement the count in the ECX register each time they are executed and terminate a loop when zero is reached. The LOOPE, LOOPX, LOOPN, and LOOPNZ instructions also accept the ZF flag as a condition for terminating the loop before the count reaches zero. 
+
+The LOOP instruction decrements the contents of the ECX register (or the CX register, if the address-size attribute is 16), then tests the register for the loop-termination condition. If the count in the ECX register is non-zero, program control is transferred to the instruction address specified by the destination operand. The destination operand is a relative address (that is, and offset relative to the contents of the EIP register), and it generally points to the first instruction in the block of code that is to be executed in the loop. 
+When the count in the ECX register reaches zero, program control is transferred to the instruction immediatly following the LOOP instruction, which terminates the loop. 
+If the count in the ECX register is zero when the LOOP instruction is first executed, the register is pre-decremented to FFFFFFFH, ausing a loop to be executed 2^32 times. 
+
+The LOOPE and LOOPZ instructions perform the same operation.
+These instructions operate the same as the LOOP instruction, except that they also test the ZF flag. 
+
+If the count in the ECX register is not zero and the ZF flag is set, program control is transferred to the destination operand. 
+When the count reahces zero or the ZF flag is clear, the loop is terminated by transferring program control to the instrution immediately following the LOOPE/LOOPZ instruction. 
+
+The LOOPNE and LOOPNZ instrcutions operate the same as the LOOPE/LOOPZ instrcutions, except that they terminate the loop if the ZF flag is set. 
+
+"Jump if zero instructions" -- The JECXZ (jump if ECX zero) instruction jumps to the location specified in the destination operand if the ECX register contains the value zero. This instruction can be used in combination with a loop instruction (LOOP, LOOPE,LOOPZ) to test the ECX register prior to beginning a loop. If the value in the ECX register is zero initially, it will be decremented to FFFFFFFH on the first loop instruction, causing the loop to be executed 2^32 times. Toprevent this problem, a JECXZ instruction can be inserted at the beginging of the code block for the loop, causing a jump out of the loop if the ECX register count is initilay zero. WHen used with repeated string scan and compare instructions, the JECXZ intruction can betermine wheter the loop terminated because the count reached zero or because the scan or compare condition were satisfied
+
+
+The JCXZ (jump if CX is zero) instruction operates the same as JECXZ instruction when the 16-bit address-size attribute is used. 
+Here, the CX register is tested for zero  

@@ -1,0 +1,6 @@
+The SETcc (set byte on condition) instructions set a destination-operand byte to 0 or 1, depending on the state of selected status flags (CF, OF, SF, ZF, and PF) in the EFLAGS register. 
+The suffix (cc) added to the SET mnemonic determines the condition being tested for. 
+
+For example, the SETO instruction tests for overflow. 
+If the OF flag is set, the destination byte is set to 1; if OF is clear, the destination byte is cleared to 0. 
+
