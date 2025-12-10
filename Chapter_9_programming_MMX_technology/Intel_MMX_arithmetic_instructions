@@ -1,0 +1,15 @@
+The arithmetic instructions perform addition, subtraction, multiplication, and multiply/add operations on packed data types. 
+
+The PADDB/PADDW/PADDD (add packed integers) instructions and the PSUBB/PSUBW/PSUBD (subtract packed integers) instruction add or subtract the corresponding signed or unsigned data elements of the source and destination operands in wraparound mode. 
+These operate on packed byte, word, and doubleword data types. 
+
+THe PADDSB/PADDSW (add packed signed integers with signed saturation) instructions on the PSUBSB/PSUBSW (subtract packed signed integers with signed saturation) instructions add or subtract the corresponding signed data elements of the source and destination operands and saturate the result to the limits of the signed data-type range. 
+These instructions operate on packed byte and word data types. 
+
+The PADDUSB/PADDUSW (add packed unsigned integers with unsigned saturation) instruction and the PSUBUSB/PSUBUSW (subtract packed unsigned integers with unsigned saturation) instructions add or subtract the corresponding unsigned data elements of the source and destination operands and saturate the result to the limits of the unsigned data-type range. 
+These instructions operate on packed byte and word data types. 
+
+The PMULHW (multiply packed signed integers and store high result) and PULLW (multiply packed signed integers and store low result) instructions perform a signed multiply of the corresponding words of the source and destination operands and write the high-order or low-order 16 bits of each of the results, repectively, to the destination operand. 
+
+The PMADDWD (multiply and add packed integers) instruction computes the products of the corresponding signed words of the source and destination operands. 
+The four intermediate 32-bit doubleword products ar summed in pairs (high-order pair and low-order pair) to produce two 32-bit doubleword results. 

@@ -1,0 +1,15 @@
+There are no conditions codes in SSE or SSE2 states. 
+A packed-data comparison instruction generates a mask which can then be transferred to an integer register. 
+The following code sequence provides an example of how to perform a conditional branch, based on the result of an Intel SSE2 arithmetic operation. 
+
+		cmppd		XMM0, XMM1		;generates a mask in XMM0
+		
+		movmskpd	EAX, XMM0		;moves a 2 bit mask to eax
+
+		test 		EAX, 	0		;compare with desired result
+
+		jnw 		BRANCH TARGET
+
+
+The COMISD and UCOMISD instructions update the EFLAGS as the result of a scalar comparison. 
+A conditional branch can then be scheduled immediately following COMISD/UCOMISD. 

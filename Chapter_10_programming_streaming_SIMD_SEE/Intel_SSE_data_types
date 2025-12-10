@@ -1,0 +1,13 @@
+Intel SSE introduced one data type, the 128-bit paacked single precision floating-point data type, to the IA-32 architecture. 
+This data type consists of four IEEE 32-bit single precision floating-point values packed into a double quadword. 
+
+This 128-bit packed single precision floaint-point data type is operated on in the XMM registers or in memory. 
+Conversion instructions are provided to convert two packed single precision floating-point values into two packed double word integers or a scalar single precision floating-point value into a doubleword integer. 
+
+Intel SSE provides converion instruction betweem XMM registers and MMX registers, and between XMM registers and general-purpose bit registers. 
+
+The addrerss of a 128-bit packed memory operand must be aligned on a 16-byte boundary, except in the following cases: 
+
+	a) The MOVUPS instruction supports unaligned accesses. 
+
+	b) scalar instructions that use a 4-byte memory operand that is not subject to alignment requirements. 

@@ -1,0 +1,13 @@
+When an MMX instruction executes, the x87 FPU tag word is marked valid (00B). 
+In this state, the execution of subsequent x87 FPU instructions may produce unexpected x87 FPU floating-point exceptions and/or incorrect results because the x87 FPU register stack appears to contain valid data. 
+The EMMS instruction is provided to prevent this problem by marking the x87 FPU tag word as empty. 
+
+The EMMS instruction should be used in each of the following cases: 
+
+	A) When an application using the x87 FPU instructions calls an MMX technology library/DLL (use the EMMS instruction at the end of the MMX code).
+
+	B) When an application using MMX instructions calls a x87 FPU floating-point library/DLL (use the EMMS instruction before calling the x87 FPU code). 
+
+	C) When a switch is made between MMX code in a task or thread and other tasks or threads in cooperative operating systems, unless it is certain that more MMX instructions will be executed before any x87 FPU code. 
+
+EMMS is not required when mixing MMX technology instructions with Intel SSE/SSE2/SSE3 instructions

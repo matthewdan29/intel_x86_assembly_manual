@@ -1,0 +1,10 @@
+Eight 128-bit XMM data registers were introduced into the IA-32 architecture with Intel SSE. 
+These registers can be accessed directly using the names XMM0 to XMM7; and they can be accessed independently from the x87 FPU and MMX registers and the general-purpose registers (that is, they are not aliased to any other of the processor's registers).
+Intel SSE instructions use the XMM registers only to operate on packed single precision floating-point operands. 
+SSE3 extensions expand the functions of the XMM registers to operand on packed or scalar double precision floating-point operands and packed integer operands.
+
+XMM registers can only be used to perform calculations on data; they cannot be used to address memory. 
+Addressing memory is accomplished by using the general-purpose registers. 
+
+Data can be loaded into XMM registers or written from the registers to memory in 32-bit, 64-bit, and 128-bit increments. 
+When storing the entire contents of an XMM register in memory (128-bit store), the data is stored in 16 consecutive bytes, with the low-order byte of the register being stored in the first byte in memory.  

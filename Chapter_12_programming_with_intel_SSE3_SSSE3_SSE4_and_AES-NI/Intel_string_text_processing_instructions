@@ -1,0 +1,3 @@
+String and text processing instructions in Intel SSE4.2 allocates four opcodes to provide a rich set of string and text processing capablities that traditionally required many more opcodes. 
+
+Depending on the output format associated with the instruction, the text/string processing instructions implicitly uses either a general-purpose register (ECX/RCX) or an XMM register (XMM0) to return the final result. 

@@ -1,0 +1,5 @@
+The MMX state is aliased to the x87 FPU state. 
+No new states or modes have been added to IA-32 architecture to support the MMX technology. 
+The same floating-point instructions that save and restore the x87 FPU state also handle the MMX state (for example, during context switching).
+
+MMX technology uses the same interface techniques between the x87 FPU and the operating system (primarily for task switching purposes). 

@@ -1,0 +1,23 @@
+The MMX register set consists of eight 64-bit registers, that are used to perform calculations on the MMX packed integer data types. 
+Values in MMX registers have the same format as a 64-bit quantity in memory. 
+
+The MMX registers have two data access modes: 64-bit access mode and 32-bit access mode. 
+The 64-bit access mode is used for: 
+
+	A) 64-bit memory accesses
+
+	B) 64-bit transfers between MMX registers 
+
+	C) All pack, logical, and arithmetic instructions
+
+	D) Some unpack instructions
+
+The 32-bit access mode is used for: 
+	
+	A) 32-bit memory accesses
+
+	B) 32-bit transfer between general-purpose registers and MMX registers
+
+	C) Some unpack instructions
+
+Although MMX registers are defined in the IA-32 architecture as separate registers, they are aliased to the registers in the FPU data register stack (R0 through R7)

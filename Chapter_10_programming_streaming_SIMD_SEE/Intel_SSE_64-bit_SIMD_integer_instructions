@@ -1,0 +1,30 @@
+Intel SSE adds the following 64-bit packed integer instructions to the IA-32 architecture. 
+These instructions operate on data in MMX registers and 64-bit memory locations. 
+
+					NOTE
+	When Intel SSE2 is present in an IA-32 processor, these instructions are extended to operate on 128-bit operands in XMM registers and 128-bit memory locations 
+
+The PAVGB (compute average of packed unsigned byte integers) and PAVGW (compute average of packed unsigned word integers) instructions compute the SIMD average of two packed unsigned byte or word integer operands, respectively. 
+For each corresponding pair of data elements in the packed source operands, the elements are added together, a 1 is added to the temporary sum, and the result is shifted right one bit position. 
+
+The PEXTRW (extract word) instruction copies a selected word from an MMX register into general-purpose register. 
+
+The PINSRW (inster word) instruction copies a word from a general-purpose register or from memory into a selected word location in an MMX register. 
+
+The PMAXUB (maximum of packed unsigned byte integers) instrucion compares the corresponding unsigned byte integers in two packed operands and returns the greater of each comparison to the destination operand. 
+
+The PMINUB (minimum of packed unsigned byte integers) instruction compares the corresponding unsigned byte integers in two packed operands and returns the lesser of each comparison to the destination operands. 
+
+The PMAXSW (maximum of packed signed word integers ) instruction compares the corresponding signed word integers intwo packed operands and returns the greater of each comparison to the destination operand. 
+
+The PMINSW (minimum of packed signed word integers) instruction compares the corresponding signed word integers in two packed operands and returns the lesser of each comparison to the destination operand. 
+
+The PMOVMSKB (move byte mask) instruction creates an 8-bit mask from the packed byte integers in an MMX register and stores the result in the low byte of a general-purpose register. The mask contains the most significant bit of each byte in the MMX register. (When operating on 128-bit operands, a 16-bit mask is created. )
+
+The PMULHUW (multiply packed unsigned word integers and store high result) instruction performs a SIMD unsigned multiply of the words in the two source operands and returns the high word of each result to an MMX register. 
+
+The PSADBW (compute sum of absolute differences) instruction computes the SIMD absolute differences of the corresponding unsigned byte integers in two source operands, sums the differences, and stores the sum in the low word of the destination operand. 
+
+The PSHUFW (shuffle packked word integers) instruction shuffles the words in the source operand according to the order specified by an 8-bit immediate operand and returns the result to the destination operand. 
+
+

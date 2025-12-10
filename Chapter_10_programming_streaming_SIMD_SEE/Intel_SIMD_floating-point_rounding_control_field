@@ -1,0 +1,1 @@
+Bits 13 and 14 of the MXCSR register (the rounding cocntrol [RC] field) control how the results of SIMD floating-point instructions are rounded. 

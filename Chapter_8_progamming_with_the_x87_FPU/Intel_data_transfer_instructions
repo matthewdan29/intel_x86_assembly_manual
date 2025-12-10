@@ -1,0 +1,32 @@
+The data transfer instructions perform the following operations: 
+
+1) Load a floating-point, integer, or packed BCD operand from memory into the ST(0) register
+
+2) Store the value in an ST(0) register to memory in floating-point, integer, or packed NCD format
+
+3) Move values between registers in the x87 FPU register stack. 
+
+The FLD (load floating-point) instruction pushes a floating-point operand from memory onto the top of the x87 FPU data-register stack. 
+If the operand is in single precision or double precision floating-point format, it is automatically converted to double extended precision floating-point format. 
+The instruction can also be used to push the value in a selected x87 FPU data register onto the top of the register stack.
+
+The FILD (load integer) instruction converts an integer operand in memory into double extended precision floating-point format and pushes the value onto the top of the register stack. 
+The FBLD (load packed decimal) instruction performs the same load operation for a packed BCD operand in memory. 
+
+The FST (store floating-point) and FIST (store integer) instructions store the value in register ST(0) in memory in the destination format (floating-point or integer, respectively). 
+Again, the format conversion is carried out automaticlly. 
+
+The FSTP (store floating-point and pop), FISTP (store integer and poip), and FBSTP (store packed decimal and pop) instructions stroe the value in the ST(0) registers into memory in the destination format (floating-point, integer, or packed BCD), then performs a "pop" operation on the register stack. 
+A pop operation causes the ST(0) register to be marked empty and the stack pointer (TOP) in the x87 FPU control work to be incremented by 1. 
+The FSTP instruction can also be used to copy the value in the ST(0) register to another x87 FPU register [ST(i)] with the value in ST(0)
+
+The FXCH (exchange register contents) instruction exchanges the value in a selected register in the stack [ST(i)] with the value in ST(0). 
+
+The FCMOVcc (condtional move) instructions move the value in a selected register in the stack [ST(i)] to register ST(0) if a condition specified with a condition code (cc) is satified. 
+The condition being tested for is represented by the status flags in the EFLAGS register. 
+The condition cod mnemonics are appended to the letters "FCMOV" to form the mnemonic for a FCMOVcc intruction
+
+Like the CMOVcc instructions, the FCMOVcc instructions are useful for optimizing small IF constructions. 
+They help eliminate branching overhead for IF operations and the psiibility of branch mispreditions by the processor. 
+
+Software can check if the FCMcc instructions are supported by checking the processor's feature information with the CPUID instruction

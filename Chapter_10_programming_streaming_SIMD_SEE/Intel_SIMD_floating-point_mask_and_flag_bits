@@ -1,0 +1,12 @@
+Bits 0 through 5 of the MXCSR register indicate whether a SIMD floating-point exception has been detected. 
+They are "sticky" flags. 
+This is, after a flag is set, it remains set until explicitly cleared. 
+To clear these flags, use the LDMXCSR or the FXRSTOR instructions to write zeroes to them. 
+
+Bit 7 through 12 provide individual mask bits for the SIMD floating-point exceptions. 
+An exception type is masked if the corresponding mask bit is set, and it is unmased if the bit is clear. 
+These mask bits are set upon a power-up or reset. 
+This causes all SIMD floating-point exceptions to be initially masked. 
+
+If LDMXCSR or FXRSTOR clears a mask bit and sets the corresponding dexcption flag bit, a SIMD floating-point exception will not be generated as a result of this change. 
+The unmasked exception will be generated only upon the execution of the next SSE/SSE2/SSE3 instruction that detects the unmasked exception condition. 

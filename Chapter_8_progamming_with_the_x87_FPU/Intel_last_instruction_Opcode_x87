@@ -1,0 +1,3 @@
+The x87 FPU stores in the 11-bit x87 FPU opcode register (FOP) the opcode of the last x87 non-control instruction executed that incurred an unmasked x87 exception. (This infromation provides state infromation for exeception handlers.)
+Only the first and second opcode bytes (after all prefixes) are stored in the x87 FPU opcode register. 
+Since the upper 5 bits of the first opcode byte are the same for all floating-point opcodes (11011B), only the lower 3 bits of this byte are tored in the opcode register. 

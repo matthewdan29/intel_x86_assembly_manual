@@ -1,0 +1,3 @@
+MMX register and their tags are mapped to physical locations of the floating-point registers and their tags. 
+
+Register aliasing and mapping will be talk about more in chapter 14

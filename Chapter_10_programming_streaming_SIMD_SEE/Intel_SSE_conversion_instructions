@@ -1,0 +1,16 @@
+Intel SSE conversion instructions support packed and scalar conversions between single precision floating-point and doubleword integer formats. 
+
+The CVTPI2PS (convert packed doubleword integers to packed single precision floating-point values) instruction converts two packed signed doubleword integers into two packed single precision floating-point values. 
+When the conversion is inexact, the result is rounded according to the rounding mode selected in the MXCSR register. 
+
+The CVTSI2SS (convert signed integer to scalar single precision floating-point value) instruction converts a signed doubleword or quadword integer into a single precision floating-point value. 
+When the conversion is inexact, the result is rounded according to the rounding mode selected in the MXCSR register. 
+
+The CVTPS2PI (convert packed single precision floating-point values to packed doubleword integers) instruction converts two packed single precision floating-point values into two packed signed doubleword integers. 
+When the conversion is inexact, the resutl is rounded accroding to the rounding mode selected in the MXCSR register. 
+The CVTTPS2PI (convert with truncation packed single precision floating-point values to packed doubleword integers) instruction is similar to the CVTPS2PI instruction, except that truncation is used to round a source value to an integer value. 
+
+The CVTSS2SI (convert scalar single precision floating-point value to signed integer) instruction converts a single precision floating-point value into a signed integer. 
+When the conversion is inexact, the result is rounded according to the rounding mode selected in the MXCSR register. 
+The CVTTSS2SI (convert with truncation scalar single precision floating-point value to signed integer) instruction is simialr to the CVTSS2SI instruction, except the trumcation is used to round the source value to an integer value. 
+

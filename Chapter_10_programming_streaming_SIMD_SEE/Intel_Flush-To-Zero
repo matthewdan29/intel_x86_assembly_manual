@@ -1,0 +1,15 @@
+Bit 15 (FTZ) of the MXCSR register enables the flush-to-zero mode, which controls the masked response to a SIMD floating-point underflow condition. 
+When the underflow exception is masked and the flush-to-zero mode is enabled, the processor performs the following operations when it detects a floating-point underflow condition. 
+
+	1) Returns a zero result with the sign of the true result
+
+	2) Sets the precision and underflow exception flags
+
+If the underflow exception is not masked, the flush-to-zero bit is ignored. 
+
+The flush-to-zero mode is not compatible with IEEE Standard 754. 
+
+The flush-to-zero mode is provided primarily for performance reasons. 
+At the cost of a slight precision loss, faster execution can be achieved for applications where underflows are common and rounding the underflow result to zero can be tolerated. 
+
+The flush-to-zero bit is cleared upon a power-up or reset of the processor, disabling the flush-to-zero mode. 

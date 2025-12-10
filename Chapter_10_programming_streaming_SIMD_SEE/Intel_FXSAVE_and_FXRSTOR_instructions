@@ -1,0 +1,15 @@
+The FXSAVE and FXRSTOR instruction were introduced into the IA-32 architecture in the Pentium 2 processor family (prior to the introduction of the SSE extensions). 
+The original versions of these instructions performed a fast save and restore, respectively, of the x87 execution environment (x87 state). (by saving the state of the x87 FPU data registers, the FXSAVE and FXRSTOR instructions implicitly save and restore the state of the MMX registers. )
+
+The SSE extensions expaneded the scope of these instructions to save and restore the states of the XMM registers and the MXCSR register (SSE state), along with x87 state. 
+
+The FXSAVE and FXRSTOR instructions can be used in place of the FSAVE/FNSAVE and FRSTOR instructions; however, the operation of the FXSAVE and FXRSTOR instructions are not identical to the operation of FSAVE/FNSAVE and FRSTOR. 	
+
+						NOTE
+		The FXSAVE and FXRSTOR instructions are not considered part of the SSE instruction group. 
+		They have a separate CPUID feature bit to indicate whether they are present (if CPUID.01H:EDX.FXSR[bit 24] = 1). 
+
+		The CPUID feature bit for SSE extensions does not indicate the resence of FXSAVE and FXRSTOR. 
+
+The FXSAVE and FXRSTOR instructions organize x87 state and SSE state in a region of memory called the "FXAVE area". 
+

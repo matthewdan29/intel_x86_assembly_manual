@@ -1,0 +1,20 @@
+The packed and scalar single precision floating-point instructions are divided into the following subgroups: 
+
+	1) Data movement instructions
+
+	2) arithmetic instructions 
+
+	3) Logical instructions
+
+	4) Comparison instructions
+
+	5) Shuffle instructions 
+
+	6) Conversion instructions
+
+The packed single precision floating-point instructions perform SIMD operations on packed single precision floating-point operands. 
+Each source operand contains four single precision floating-point values, and the destination operand contains the results of the operation (OP) performed in parallel on the corresponding values (X0 and Y0, X1, X2 and Y2, and X3 and Y3) in each operand. 
+
+The scalar single precision floating-point instruction operate on the low (least significant) doublewords of the two source operands (X0 and Y-). 
+The three most significant doublewords (X1 , X2, and X3) of the first source operand are passed through to the destination. 
+The scalar operations are similar to the floating-point operations performed in the x87 FPU data registers with the precision control field in the x87 FPU control word set for single precision (24-bit significand), except that x87 stack operations use a 15-bit exponent range for the result, while SSE operations use an 8-bit exponent range. 

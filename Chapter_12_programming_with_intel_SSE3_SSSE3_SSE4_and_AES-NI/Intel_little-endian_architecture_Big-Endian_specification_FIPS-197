@@ -1,0 +1,6 @@
+FIPS 197 text convention is to write hex strings with the low-memory byte on the left and the high-memoory byte on the right. 
+Intel's converstion is the reverse. 
+It is similar to the difference between Big Endian and Little Endian notaions. 
+A 128 bits vector in the FIPS document, when read from left to right. 
+To translate the FIPS 197 notation to an Intel 64 architecture compatible ("Little Endian") format, each test vector needs to be byte-reflected. 
+Programs do not need to perform byte-reversal in their code. 

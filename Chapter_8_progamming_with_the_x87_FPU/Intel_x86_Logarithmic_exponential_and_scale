@@ -1,0 +1,24 @@
+The following instructions provide two different logarithmic functions, and exponential function and a scale function: 
+
+FYL2X		Logarithm 
+
+FYL2XP1		Logarithm epsilon
+
+F2XM1		Exponential
+
+FSCALE		Scale
+
+The FYL2X and FYL2XP1 instructions perform two different base 2 logarithmic operations. 
+The FYL2X instruction computes (y * log₂x). 
+This operation permits the calculation of the log of any base using the following equation: 
+
+	log(subscript b)x = (1/log₂x) 
+
+The FYL2XP1 instruction compputes (y * log₂(x + 1)). 
+This opertaion provides optimum accuracy for values of x that are close to 0. 
+
+The F2XM1 instruction computes (2(superscritp)2 - 1). 
+This instruction only operates on source values in the range -1.0 to +1.0.
+
+The FSCALE instructioon multiplies the source operand by a power of 2 
+

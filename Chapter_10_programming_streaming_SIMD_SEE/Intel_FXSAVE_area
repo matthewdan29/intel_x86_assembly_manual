@@ -1,0 +1,8 @@
+The FXSAVE and FXRSTOR instructions organize x87 state and SSE state in a region on memory called the "FXSAVE area". 
+Each of the instructions takes a memory operand that specifies the 16-byte aligned based addres of the FXSAVE area on which it operates. 
+
+Every FXSAVE area comprises the 512 bytes staring at the area's base address. 
+
+The x87 state component compreses bytes 23:0 and bytes 159:32.
+The SSE state component comprises bytes 31:24 and bytes 415:160. 
+FXSAVE and FXRSTOR do not use bytes 511:416; bytes 463:416 are reserved. 

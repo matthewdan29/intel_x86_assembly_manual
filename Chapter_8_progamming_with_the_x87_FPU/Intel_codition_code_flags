@@ -1,0 +1,14 @@
+The four condition code flags (C0 through c3) indicate the results of floating-point comparison and arithmetic operations. 
+These condition code bits are used principally for conditional branching and for storage of information used in excepting handleing. 
+
+The C1 condition code flag is used for a cariety of functions. When both the IE and SF flags in the x87 FPU status word are set, indicating a stack overflow or underflow excepting (#Is), the C1 flag distinguihes between overflow (C1 = 1) and underflow (C1 = 0). 
+When the PE flag in the status word is set, indicating an inexact (rounded) result, the C1 flag is set to 1 if the last founding by the instruction was upward. 
+The FXAM instruction sets C1 to the sign of the value being examined. 
+
+The C2 condtion code flag is used by the FPREM and FPREM1 instructions to indicate an incomplete reduction (op partial remainde).
+When a successful reduction has been completed, the C0, C3 and C1 condition code flags are set to the three least-significant bits of the quotient (Q2, Q1, and Q0, respectively)
+
+The FPTAN, FSIN, FCOS, and FSINCOS instructions set the C2 flag to 1 to indicate that the source operand is beyond the allowable range of +- 2^63 and clear the C2 flag if the source operand is within the allowable range. 
+Where the state of the condition code flags are listed as undefined do not rely on any specific value in these flags. 
+
+

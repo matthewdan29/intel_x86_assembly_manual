@@ -1,0 +1,33 @@
+Data referenced by a program can be temporal (data will be used again) or non-temporal (data will be referenced once and not reused in the immediated future). 
+For example, program code is generally temporal, whereas, multimedia data, such as the display list in a 3-D graphics application, is often non-temporal. 
+To make efficient use of the processor's cacahes, it is generally desriable to cache temporal data and not cache non-temporal data. 
+Overloading the processor's caches with non-temporal data is sometimes referred to as "polluting the caches."
+The Intel SSE and SSE2 cacheability control instructions enable a program to write non-temporal data to memory in a manner that minimizes pollution of caches. 
+
+These Intel SSE and SSE2 non-temporal store instructions minimize cache pollutions by treating the memory being accessed as the write combining (WC) type. 
+If a program specifies a non-temporal store with one of these instructions and the memory type of the destination region is write back (WB), write through (WT), or write combining (WC), the processor will do the following: 
+
+	A) If the memory location being written to is present in the cache hierarchy, the data in the caches is evicted. 
+
+	B) The non-temporal data is written to memory with WC semantics
+
+Using the WC (write combining) semantics, the store transaction will be weakly ordered, meaning that the data may not be written to memory in program order, and the store will not write allocate (that is, the processor will not fetch the corresponding cache line into the cache hierarchy, prior to performing the store.)
+Also, differnt processor implementations may choose to collapse and combine these stores. 
+
+The memory type of the region being written to can override the non-temporal hint, if the memory address specified for the non-temporal store is in uncacheable memory. 
+Uncachable as referred to here means that the region being written to has been mapped with either an uncacheable (UC) or write protected (WP) memory type. 
+
+In general, WC (write combining) semantics require software to ensure coherence, with respect to other processors and other system agents (such as graphics cards). 
+Appropriate use of synchronization and fencing must be performed for producerconsumer usage models. 
+Frencing ensures that all system agents have global visibility of the stored data; for instance, failure to fence may result in a written cache line staying within a processor and not being visible to other agents. 
+
+The memory type visible on the bus in the presence of memory type aliasing is implementation specific. 
+As one possible example, the memory type written to the bus may reflect the memory type for the first store to this line, as seen in program order; other alternatives are possible. 
+This behavior should be considered reserved, and dependence on the behavior of any particular implementation risks future incompatibility. 
+
+						NOTE 
+		Some older CPU implementations may implement non-temporal stores by updating in place data that already reside in the cache hierarchy. 
+		For such processors, the destination region should also be mapped as WC (write combining).
+		If mapped as WB (write back) or WT (write through), there is the potential for speculative processor reads to bring the data into the caches; in this case, non-temporal stores would then update in place, and data would not be flushed fromt the processor by a subsequent fencing operation. 
+
+

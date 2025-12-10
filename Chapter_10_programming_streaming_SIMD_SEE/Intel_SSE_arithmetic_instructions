@@ -1,0 +1,35 @@
+Intel SEE arithmetic instructions perform addition, subtraction, multiply, divied, reciprocal, square root, reciprocal of square root, and maximum/minimum operations on packed and scalar single precision floating-point values. 
+
+The ADDPS (add packed single precision floating-point values) and SUBPS (subtract packed single precision floating-point values) instructions add and substract, respectively, two packed single precision floating-point operands. 
+
+The ADDSS (add scalar single precision floating-point values) and SUBSS (subtract scalar single precision floating-point values) instructions add and subtrac, respectively, the low single precision floating-point values of two operands and store the result in the low doubleword of the destination operand. 
+
+The MULPS (multiply packed single precision floating-point values) instructions multiplies two packed single precision floating-point operands. 
+
+The MULSS (multiply scalar single precsion floating-point values) instructions multiplies the low singer precision floating-point values of two operands and stores the result in the low doubleword of the distination operand. 
+
+The DIVPS (divide packed, single precision floating-point values) instructions divides two packed single precision floating-point operands. 
+
+The DIVSS (divide scalar single precision floating-point values) instructions divides the low single precision floating-point values of two operands and stores the result in the low doubleword of the destination operand. 
+
+The RCPPS (compute reciprocals of packed single precision floating-point values) instructions computes the approximate reciprocals of values in a packed single precision floating-point operand. 
+
+The RCPSS (compute reciprocal of scalar single precision floating-point values) instructions computes the approximate reprocal of the low single precision floating-point value in the source operand and stores the result in the low doubleword of the destination operand. 
+
+The SQRTPS (compute square roots of packed single precision floating-point values) instructions computes the square roots of the values in a packed single precision floating-point operand. 
+
+The SQRTSS (compute square root of scalar single precision floating-point values) instructions computes the square root of the low single precision floating-point value in the source operand and stores the result in the low doubleword of the destination operand. 
+
+The RSQRTPS (compute reciprocals of square roots of packed single precision floating-point values) instruction computes the approximate reciprocals of the square rootss of the values in a packed single precision floating-point operand. 
+
+The RSQRTSS (reciprocal of square root of scalar single precision floating-point value) instruction computes the approximate reciprocal of the square root of the low single precision floating-point value in the source operand and stores the result in the low doubleword of the destination operand. 
+
+The MAXPS (return maximum of packed single precision floating-point values) instruction compares the corresponding values from two packed single precision floating-point operands and returns the numerically greater value form each comparison to the destination operand. 
+
+The MAXSS (return maximum of scalar single precision floating-point values) instructions compares the low values from two packed single precision floating-point operands and returns the numerically greater value from the comparison to the low doubleword of the destination operand. 
+
+The MINPS (return minimum of packed single precision floating-point values) instruction compares the corresponding values from two packed single precision floating-point operands and returns the numerically lesser value from each comparson to the destination operand. 
+
+The MINSS (return minimum of scalar single precision floating-point values) instruction compares the low values from two packed single precision floating-point operands and returns the numerically lesser value from the comparison to the low doubleword of the destination operand. 
+
+

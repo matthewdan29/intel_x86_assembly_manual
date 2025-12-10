@@ -1,0 +1,12 @@
+Bit 6 (DAZ) of the MXCSR register enables the denormals-are-zeros mode, which controls the processor's response to a SIMD floating-point denormal operand condition. 
+When the denormals-are-zeros flag is set, the processor converts all denormal source operands to a zero with the sign of the original operand before performing any computations on them. 
+The processor does not set the denormal-operand exception flag (DE), regardless of the setting of the denormal-operand exception mask bit (DM); and it does not generate a denormal-operand exception if the exception is unmasked. 
+
+The denormals-are-zeros mode is provided to improve processor performance for applications such as streaming media processing, where rounding a denormal operand to zero does not appreciably affect the quality of the processed data. 
+
+The denormals-are-zeros flag is cleared upon a power-up or reset of the processor, disabling the denormals-are-zero mode. 
+
+THe denormal-are-zero mode is fully compatiblle with the SSE SIMD floating-point instructions (that is, the denormals-are-zeros flag affects the operation of the SSE SIMD floating-point instructions). 
+In earllier IA-32 processors and in some models of the Pentium 4 processor this flag (bit 6) is reserved. 
+
+Attempting to set bit 6 of the MXCSR register on processors that do not support the DAZ flag will cause a general-protection exception (#GP). 

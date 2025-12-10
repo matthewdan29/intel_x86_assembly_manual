@@ -1,0 +1,10 @@
+The precision-control (PC) field (bits 8 and 9 of the x87 FPU control word) determines the precision (64, 53, or 24 bits) of floating-point calculations made by the x87 FPU. 
+The default precision is double extended precision, which uses the full 64-bit significand available with the double extended precision floating-point format of the x87 FPU data registers. 
+This setting is best suited for most applications, becuase it allows applications to take full advantage of the maximum precision available with the x87 FPU data registers. 
+
+The double precision and single precision settings reduce the size of the significand to 53 bits and 24 bits, respectively. 
+These settings are provided to support IEEE standard 754 and to provide compatibility with the specificantions of certain existing programming languages. 
+Using these settings nullifies the advatages of the double extended precision floating-point format's 64-bit significant length. 
+When reduced precision is specified, the rounding of the significand value clears the unused bits on the right to zeros. 
+
+The precision-control bits only affect the results of the following floating-point instructions: FADD, FADDP, FIADD, FSUB, FSUBP, FISUB, FSUBR, FSUBRP, FISUBR, FMUL, FMULP, FIMIL, FDIV, FDIVP, FIDIV, FDIVR, FDIVRP, FIDIVR, and FSQRT

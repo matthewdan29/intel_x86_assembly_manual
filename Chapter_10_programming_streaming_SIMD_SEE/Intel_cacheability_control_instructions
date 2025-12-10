@@ -1,0 +1,7 @@
+The non-temporal hit directs the processor to store the data to memory without writing the data into the cache hierarchy. 
+
+The MOVNTQ (store quadword using non-temporal hint) instruction stores packed integer data from an MMX register to memory, using a non-temporal hint. 
+
+The MOVNTIPS (store packed single precision floating-point values using non-temporal hint) instruction stores packed floating-point data from an XMM register to memeory, using a non-temporal hint. 
+
+The MASKMOVQ (store selected bytes of quadword) instrction stores selected byte integers from an MMX register to memory, using a byte mask to selectively write the individual bytes. This instruction also uses a non-temporal hint. 

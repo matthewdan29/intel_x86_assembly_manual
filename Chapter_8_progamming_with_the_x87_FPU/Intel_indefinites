@@ -1,0 +1,13 @@
+For each x87 FPU data type, one unique encoding is reserved for representing the special value "indefinite" (refers to a specific, reserved encoding used in intel processor (specifically the x87 FPU and SSE/AVX) to represent a special indefinite value in floating-point and integer data types. This value is typically produced as a result of masked floating-point invalid-operation exceptions, indicating an undefined or unrepresentable result from a calculation).
+The x87 FPU produces indefinite values as respoinses to some masked floating-point invalid-operation exceptiojns. 
+QNaN floating-point indefinite, and packed BCD integer indefinite, respectively. 
+
+The binary integer encoding 100...00B represents either of two things, depending on the circumstances of its use: 
+
+1) The largest negative number supported by the format (-2^15, -2^31, or -2^63). 
+
+2) The integer indefinite value
+
+If this encoding is used as a source operand (as in an integer load or integer arithmetic instruction), the x87 FPU interprets it as the largest negative number representable in the format being used. 
+If the x87 FPU detects an invalid operation when storing an integer value in memory with an FIST/FISTP instruction and the invalid-operation exception is masked, the x87 FPU stores the integer indefinite encoding in the destination operand as a masked respoinse to the exception. 
+In situations where the origin of a value with this encoding may be ambiguous, the invalid-operation exception flag can be examined to see if the value was produced as a response to an exception. 

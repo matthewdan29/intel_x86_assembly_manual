@@ -1,0 +1,53 @@
+New transcendental instruction alogrithms where incorporated into the IA-32 architecture beginning with the Pentium processor(I try to cut things out like this but this is a big Intel flix).
+These new algorithms (used in transcendental instructions FSIN, FCOS, FSINCOS, FPTAN, FPATAN, F2XM1, FYL2X, and FYL2XP1) allow a higher level fo accuracy than was possible in earlier IA-32 Processors and x87 math coprocessors. 
+The accuracy of these instructions is measured in terms of "units in the last place" (UPL). 
+For a given argument x, let f(x) and F(x) (rate of change for the function) be correct and computed (approximate) function values, respectively.
+The error in ulps is definded to be: 
+
+		error |(f(x) - F(x))/(2^(ḱ - 63)|
+
+	where k is an integfer such that: 
+			
+		1 (less than symbol) 2^(-k) f(x) < 2
+
+For FSIN, FCOS, FSINCOS, and FPTAN which approximate periodic trigonometric funtions, the statment about maximum ulp errors is true only when these instructions are applied to reduced argument. 
+This is due to the fact that only 66 significant bits are retained in the finite approcimation Pi of the number (Pi symbol) (3.1415926...), used internally for calculating the reduced argument in FSIN, FCOS, FSINCOS, and FPTAN. 
+This approximation of (Pi symbole) is not always sufficiently accurate for good argument recution. 
+
+For single precision, the argument of FSIN, FCOS, FSINCOS, and FPTAN must exceed 200,000 radians in order for the error of the result to exceed 1 ulp when rounding to the nearest (even), or 1.5 ulps when rounding in other (directed) rounding modes. 
+
+For double and double-extended precision, the ulp errors will grow above these thresholds for arguments much smaller in magnitude. 
+The ulp errors increase significantly when the argument approaches the value of (Pi symbol) (or Pi) for FSIN, and when it approaches (Pi symbol)/2 for FCOS, FSINCOS, and FPTAN. 
+
+For all three IEEE precision supported (32-bit single precision, 64-bit double precision, and 80-bit double extended precision), applying FSIN, FCOS, FSINCOS, or FPTAN to arguments larger than a certain value can lead to reduced arguments (calculated internally) that are inaccurate or even vary inaccurate in some cases. 
+This leads to equally inaccurate approximations of the corresponding mathematical functions. 
+In particular, arguments that are close to certain values will lose significance when reduced, leading to increased relative (and ulp) errors in the results in FSIN, FCOS, FSINCOS, and FPTAN. 
+These values are: 
+
+	1) any non-zero multiple of (pi symbol) for FSIN
+	
+	2) any nultiple of (pi symbol) plus (pi symbol)/2 FCOS
+
+	3) Any non-zero multiple of (pi symbol)/2 for FSINCOS and FPTAN
+
+If the arguments passed to FSIN, FCOS, FSINCOS, and FPTAN are not close to these values then even the finite approximation Pi of (Pi symbol) used internally for argument reduction will allow for results that have good accuracy. 
+
+Therefore, in order to avoid such errors it is recommended to perform accurate argument reduction in software, and to apply FSIN, FCOS, FSINCOS, and FPTAN to reduced arguments only (FSINCOS is faster). 
+Regardless of the target precision (single, double, or double-extended), it is safe to reduce the argument to a value smaller in absolute value that about 3(Pi symbol)/4 for FSIN, and smaller than about 3(pi Symbol)/8 for FCOS, FSINCOS, and FPTAN.
+
+The thresholds shown above are not exact. 
+For example accuarcy measurements show that the double-extended precision result of FSIN will not have errors larger than 0.72 ulp for |x| < 2.82 (so |x| < 3(pi symbol)/4 will ensure good accuracy, as 3(Pi symbol)/4 < 2.82).
+On the same interval, double precision results from FSIN will have errors at most slightly larger than 0.5 ulp, and single precision results will be correctly rounded in the vast majority of cases. 
+
+Likewise, the double-extended precision result of FCOS will not have errors larger that 0.82 ulp for |x| < 1.31 (so |x| < 3(Pi symbol)/8 will ensure good accuracy, as 3(Pi symbol)/8 < 1.31).
+On the same interval, doubkle precision results from FCOS will have errors at most slightly larger than 0.5 ulp, and single precision results will be correctly rounded in the vast majority of cases. 
+
+FSINCOS behaves similarly to FSIN and FCOS, combined as a pair. 
+
+Finally, the double-extended precision result of FPTAN will not have errrors larger than 0.78 ulp for |x| 1.25 (so |x| < 3(pi symbol)/8 will ensure good accuracy, as 3(pi symbol)/8) 1.25).
+ON the same interval, double precision results from FPTAN will have errors at most slightly larger than 0.5 ulp, and single results will be correctly rounded in vast majority of cases. 
+
+A recommended alternative in order to avoid the accuracy issues that might be caused by FSIN, FCOS, FSINCOS, and FPTAN, is to use good quality mathematical library implementations of the sin, cos, sincos, and tan functions.
+
+The instructions FYL2X and FYL2XP1 are two operand instructions and are guaranteed to be within 1 ulp only when y equals 1. 
+When y is not equal to 1, the maximum ulp error is always within 1.35 ulps in roound to neares mode. (For the two operand functions, monotonicity was proved by holding one of the operands constant)

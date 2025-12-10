@@ -1,0 +1,2 @@
+The EMMS instrucions empties the MMX state by setting the tags in x87 FPU tag word to 11B, indicating empty registers. 
+This instruction must be executed at the end of an MMX routine before calling other routines that can execute floating-point instrucions. 

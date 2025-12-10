@@ -1,0 +1,23 @@
+Intel SSE data movement instructions move single precision floating-point data between XMM registers and between an XMM register and memory. 
+
+The MOVAPS (move aligned packed single precision floating-point values) instrcutions transfers a double quadword operand containing four packed single precision floating-point values from memory to an XMM register and vice versa, or between XMM registers. 
+The memory address must be aligned to a 16-byte boundary; otherwise, a general-protection exception (#GP) is generated. 
+
+The MOVUPS (move unaligned packed single precision, floating-point) instruction performs the same operation as the MOVAPS instruction, except that 16-byte alignment of a memory address is not required. 
+
+The MOVSS (move scalar single precision floating-point) instruction transfers a 32-bit single precision floating-point operand from memory to the low doubleword of an XMM register and vice versa, or between XMM registers. 
+
+The MOVLPS (move low packed single precision floating-point) instruction moves two packed single precision floating-point values from memory to the low quadword of an XMM register and vice versa. 
+The high quadword of the register is left unchanged. 
+
+The MOVHPS (move high packed single precision floating-point) instruction moves two packed single precision floating-point values from memory to the high quadword of an XMM register and vice versa. 
+The low quadword of the register is left unchanged. 
+
+The MOVLHPS (move packed single precision floating-point low to high ) instruction moves two packed single precision floating-point values from the low quadword of the source XMM register into the high quadword of the destination XMM register. 
+The low quadword of the destination register is left unchanged. 
+
+The MOVHLPS (move packed single precision floating-point high to low) instruction moves two packed single precision floating-point values from the high quadword of the source XMM register into the low quadword of the destination XMM register. 
+The high quadword of the destination register is left unchanged. 
+
+The MOVMSKPS (move packed single precision floating-point mask) instruction transfers the most significant bit of each of the four packed single precision floating-point numbers in an XMM register to a general-purose register. 
+This 4-bit value can then be used as a condition to perform branching. 

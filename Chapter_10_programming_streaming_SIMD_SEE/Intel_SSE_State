@@ -1,0 +1,17 @@
+The SSE state is listed below, along with details of its interactions with FXSAVE and FXRSTOR: 
+
+	A) Bytes 23:0 are used for x87 state
+
+	B) Bytes 27:24 are used for the MXCSR register. FXRSTOR generates a general-protection fault (#GP) in response to an attempt to set any of the reserved bits in the MXCSR register. 
+
+	C) Bytes 31:28 are used for the MXCSR_MASK value. FXRSTOR ignores the field. 
+
+	D) Bytes 159:32 are used for x87 state
+
+	E) Bytes 287:160 are used for the registers XMM0-XMM7
+
+	F) Bytes 415:288 are used for the registers XMM8-XMM15. These fields are used only in 64-bit mode. Executions of FXSAVE outside 64-bit mode do not write to these bytes; executions of FXRSTOR outside 64-bit mode do not read these bytes and do not update XMM8-XMM15
+
+If CR4.OSFXSR = 0, FXSAVE and FXRSTOR may or may not operate on SSE state; this behavior is implementation dependent. 
+Moreover, SSE instructions cannot be used unless CR4.OSFXSR = 1
+

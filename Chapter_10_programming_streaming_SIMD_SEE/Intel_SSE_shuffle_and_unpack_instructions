@@ -1,0 +1,8 @@
+Intel SSE shuffle and unpack instructions shuffle or interleave the contents of two packed single precision floating-point values and store the results in the destination operand. 
+
+The SHUFPS (shuffle packed single precision floating-point values) instruction places any two of the fore packed single precision floating-point values from the destination operand into the two low-ordered doublewords of the destination operad, and places any two of the four packed single precision floating-point values from the source operand in the two high-order doublewords of the destination operand. 
+By using the same register for the source and destination operands, the SHUFPS instruction can shuffle four single precision floating-point values into any order. 
+
+The UNPCKHPS (Unpack and interleave high packed single precision floating-point values) instructions perfroms an interleaved unpack of the high-order single precision floating-point values from the source and destination operands and store the result in the destination operand.
+
+The UNPCKLPS (unpack the interleave low packed single precision floating-point values) instruction performs an interleaved unpacked of the low-order single precision floating-point values from the source and destination operands and store the result in the destination operand. 

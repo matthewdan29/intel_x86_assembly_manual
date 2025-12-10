@@ -1,0 +1,4 @@
+When stored in memory: bytes, words, and doublewords in the packed data types are stored in consective addresses. 
+The least significant byte, word, or doubleword is stored at the lowest address and the most significant byte, word, or doubleword is stored at the high address. 
+The ordering of bytes, words, or doublewords in memory is always little endian. 
+This is, the bytes with the low addresses are less significant than the bytes with high addresses. 

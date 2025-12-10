@@ -1,0 +1,7 @@
+The state of the x87 FPU can be saved with the FSTENV/FNSTENV or FSAVE/FNSAVE instructions. 
+
+If the faulting floating-point instruction is followed by one or more non-floating-point instructions, it may not be useful to re-execute the faulting instruction. 
+
+In cases where the handler needs to restart program execution with the faulting instruction, the IRET instruction cannot be used directly. 
+The reason for this is that because the exception is not generated until the next floatin-point or WAIT/FWAIT instruction following the faulting floating-point instruction, the return instruction pointer on the stack may not point to the faulting instruction. 
+To restart program execution at the faulting instruction, the exception handler must obtain a pointer to the instruction for the saved x87 FPU state information, load it into the return instruction pointer location on the stack, and then execute the IRET instruction. 

@@ -1,0 +1,24 @@
+If CR0.NE[bit 5] is 0, the MS-DOS compatibility mode for handling floating-point exceptions is selected. 
+In this moode, the software exception handler for floating-point exceptions is invoked externally using the processor's INTR (not used any more FERR# and IGNNE#) pins. 
+This method of reporting floating-point errors and invoking an exception handler is provided to support the floating-point exception handleing mechanism used in PC systems that are running the MS-DOS or Windows* 95 operations system. 
+
+The MS-DOS compatibility mode is typically used as follows to invoke the floating-point exception handler: 
+
+	1) If the x87 FPU detects an unmasked floating-point exception, it sets the flag for the exception and the ES flag in the x87 FPU status word.
+
+	2) If the IGNNE# pins is deasserted, the x87 FPU then asserts the FERR# pin either immediately, or else delayed (deferred) until just before the execution of the next waiting floating-point instruction or MMX instruction. Whether the FERR# pin is asserted immediately or delayed depends on the type of processor, the instruction, and the type of exception. 
+
+	3) If a preceding floating-point instruction has set the exception flag for an unmasked x87 FPU exception, the processor freezes just before executing the next WAIT instruction, waiting floating-point instruction, or MMX instruction. Whether the FERR# pin was asserted at the preceding floating-point instruction or is just now being asserted, the freezing of the processor assures that the x87 FPU exception handler will be invoked before the new floating-point (or MMX) instruction get executed
+
+	4) The FERR# pin is connected through external hardware to IRQ13 of a cascaded, programmable interrupt controller (PIC). When the FERR# pins is asserted, the PIC is programmed to generate an interrupt 75H
+
+	5) The PIC asserts the INTR pin on the processor to signal the interrupt 75H
+
+	6) The BIOS for the PC system handles the interrupt 75H by branching to the interrupt 02H (NMI) interrupt handler
+
+	7) The interrupt 02H handler determines if the interrupt is the result of NMI interrupt or a floating-point exception
+
+	8) If a floating-point exception is detected, the interrupt 02H handler branches to the floating-point exception handler. 
+
+If the IGNN# pin is asserted, the processor ignores floating-point error conditions.
+This pin is provided to inhibit floating-point exceptions from being generated while the floating-point exception handler is servicing a previously signaled floating-point exception. 

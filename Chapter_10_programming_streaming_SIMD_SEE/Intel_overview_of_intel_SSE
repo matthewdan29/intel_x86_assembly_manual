@@ -1,0 +1,45 @@
+Intel MMX technology introduced single-instruction multiple-data (SIMD) capability into the IA-32 architecture, with the 64-bit MMX registers, 64-bit packed integer data types, and instructions that allow SIMD operations to be performed on packed integers. 
+Intel SSE expanded the SIMD execution model by adding facilities for handling packed and scalar single precision floating-point values contained in 128-bit registers. 
+
+If CPUID.01H:EDX.SSE[bit 25] = 1, intel SSE is available. 
+
+Intel SSE adds the following features to the IA-32 architecture, while maintaining backward compatibility with all existing IA-32 processors, applications, and operating systems: 
+
+	A) Eight 128-bit data registers (called XMM registers) in non-64-bit modes; 16 XMM registers are available in 64-bit mode. 
+
+	B) The 32-bit MXCSR register, which provides control and status bits fro operations performed on XMM registers. 
+
+	C) The 128-bit packed single precision flaoting-point data type (four IEEE single precision floating-point values packed into a double quadword). 
+
+	D) Instructions that perform SIMD operations on single precision floating-point values and that extend SIMD operations that can be performed on integers: 
+		
+		1) 128-bit Packed and scalar single precision floating-point instructions that operate on data located in MMX registers. 
+
+		2) 64-bit SIMD integer instructions that support additional operations on packed integer operands loacted in MMX registers. 
+
+	E) Instructions that save and restore the state of the MXCSR register. 
+
+	F) Instructions that support explicit prefetching of data, control of the cacheability of data, and control the ordering of store operations. 
+
+	G) Extendions to the CPUID instruction
+
+These features extend the IA-32 architecture's SIMD programming model in four imprtant was: 
+
+	1) The ability to perform SIMD operations on four packed single precision floating-point values enhances the performance of IA-32 processors for advanced media and communications applications that use computationintensive alogrithms to perform repetitive operations on large arrays of simple, native data elements. 
+
+	2) The ability to perform SIMD single precision floating-point operations in XMM registers and SIMD integer operations in MMX registers provides greater flexibility and throughput for executing applications that operate on large arrays of floating-point and integer data. 
+
+	3) Cache control instructions provide the ability to stream data in and out of XMM registers without polluting the caches and the ability to prefetch data to selected cache levels before it is actually used. Applications that require regular access to large amounts of data benefit from these prefetching and streaming store capabilites 
+
+	4) The SFENCE (store fence) instruction provides greater control over the ordering of store operations when using weakly-ordered memory types. 
+
+Intel SSE is fully compatible with all software written for IA-32 processors. 
+All existing software continues to run correctly, without modification, on processors that incorporate Intel SSE. 
+Enhancements to CPUID permit detection of Intel SSE. 
+Intel SSE is accessible from all IA-32 execution modes: 
+
+	1) protected mode
+
+	2) real address mode
+
+	3) virtual-8086 mode

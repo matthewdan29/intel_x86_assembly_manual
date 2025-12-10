@@ -1,0 +1,19 @@
+The x87 FPU tag word keeps track of the contents of the registers in the x87 FPU register stack. 
+It then uses this information to detect two defferent types of stack faults: 
+
+	1) Stack overflow - An instruction attempts to load a non-empyt x87 FPU register from memory. A non-empty register is ddfined as a register containing a zero (tag value of 01), a valid valu (tag value of 00), or a special value (tag value of 10).
+
+	2) Stack underflow - An instruction references an empty x87 FPU register as a source operand, including attemptting to write the contents of an empty register to memory. An empty register has a tag value of 11
+
+					NOTE: 
+The term stack overflow originates from the situation where the program has loaded (pushed) eight values from memory onto the x87 FPU register stack and the next value pushed on the stack causes a stack wraparound to a register that already contains a value. 
+The ter stack underflow originates from the opposite situation. 
+Here, a program has stored (popped) eight vaules from the x87 FPU register stack to memory and the next value popped from the stack causes stack wraparound to an empty register. 
+
+
+When the x87 FPU detects stack overflow or underflow, it sets the IE flag (bit 0) and the SF flag (bit 6) in the x87 FPU status word to 1. 
+It then sets condition-code flag C1 (bit 9) in the x87 FPU status word to 1 if stack overflow occurred or the 0 if stack underflow occured. 
+If the invalid-operation exception is masked, the x87 FPU returns the floating-point, integer, or packed decimal integer indefinite value to the destination operand, depending on the instruction being execeuted. 
+This value overwrites the destination register or memory loaction specified by the instruction. 
+
+If the invalid-operation exception is not masked, a software exception handler is invoked and the top-of-stack pointer (TOP) and source operands remain unchanged. 

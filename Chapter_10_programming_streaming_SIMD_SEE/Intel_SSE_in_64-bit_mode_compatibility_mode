@@ -1,0 +1,8 @@
+In compatibility mode, Intel SSE functions like it does in protect mode. 
+In 64-bit mode, eight additional XMM registers are accessible. 
+Registers XMM8-XMM15 are accessed by using REX prefixes. 
+Memory operands are specified using the ModR/M, (The Scale-index-Base (SIB) byte is an essential extension of the ModR/M byte in x86-64 instructions encoding, enabling complex memory addressing modes beyond simple base register addressing. The SIB (Scale-inde-base) byte allows combinations of scaled index registers and base registers, providing powerful addressing flexibility needed for high-performance and complex software implementations)
+
+Some Intel SSE instructions may be used to operate on general-purpose registers. 
+Use to REX.W prefix to access 64-bit general-purpose registers. 
+Note that if a REX prefix is used when it has no meaning, the prefix is ignored. 

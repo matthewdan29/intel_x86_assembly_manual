@@ -1,0 +1,8 @@
+Bit masking in Intel x86 architecture is the techneique of using a "binary pattern" (a mask) and bitwise operations to selectively inspect, modify, or clear specific bits within a data value stored in general-purpose registers or memory.
+
+The techneique is fundamental in low-level programming for tasks such as controlling harware settings, managing boolean flags effiiently, or optimizing algorithms. 
+
+The process uses a "mask" -- a binary value where specific bits are set to 1 or 0 define which bits in the target value will be affected.
+The desired action is achieved by combining the target value and the mask using specific bitwise logic operations .
+
+The x86 instruction set includes several instructions that are used for bit masking operations. 

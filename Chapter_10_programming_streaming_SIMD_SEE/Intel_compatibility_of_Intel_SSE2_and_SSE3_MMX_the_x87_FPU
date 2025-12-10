@@ -1,0 +1,8 @@
+The state (XMM registers and MXCSR registers) introduced into the IA-32 execution environment with Intel SEE is shared with Intel SSE2 and SSE3. 
+Intel SSE, SSE2, and SSE3 instructions are fully compatible; they can be executed together in the same instructions stream with no need to save state when switching between instruction sets. 
+
+XMM registers are independent of the x87 FPU and MMX registers, so Intel SSE, SSE2, and SSE3 operations performed on the XMM registers can be perfromed in parallel with operations on the x87 FPU and MMX registers. 
+
+The FXSAVE and FXRSTOR instructions save and restore the SSe/SSE2/SSE3 states along with the x87 FPU and MMX state. 
+
+

@@ -1,0 +1,19 @@
+The x87 FPU detects a potential floating-point numeric underflow condition whenever the result of an arithmetic instruction is non-zero and tiny; that is, the magnitude of the rounded result with unbounded exponent is non-zero and less than the smallest possible normalized, finite value that will fit into the floating-point format of the destination operand. 
+
+Like numberic overflow, numeric underflow can occur on arithmetic operations where the result is stored in an x87 FPU data register. 
+It can also occur on store floating-point operations (with the FST and FSTP instructions), where a within-range value in a data register is stored in memeory in the smaller single precision or double precision flaoting-point formats. 
+A numeric underflow exception cannot occur when storing values in a integer or BCD integer format, because a value with magnitude less than 1 is always rounded to an integral value of 0 or 1, depending on the rounding mode in effect. 
+
+The flag (UE) for the numeric-underflow exception is bit 4 of the x87 FPU status word, and the mask bit (UM) is bit 4 of the x87 FPU control word. 
+
+When a numeric-underflow condition occurs and the excption is masked, the x87 FPU performs the operation "Numeric Underflow Exception (#U)". 
+
+When the exception is not masked, the action of the x87 FPU depends on whether the instruction is supposed to store the result in memory loaction or on the x87 FPU resister(This word was in the manual IDK if they ment register stack or shadow stack ) stack.
+
+	1) Destination is a memory location - (Can occur only with a store instruction.) The UE flag is set and a software exception handler is invoked. The top-of-stack (TOP) and source and destination operands remain unchanged, and no result is stored in memory. Because the data in the stack is in double extended precision format, the exception handler has the option either of re-exchanges the store instruction after proper adjustment of the operand or of rounding the significand on the stack to the destination's precision as the standard requires. THe exception handler should ultimately store a value into the destination location in memory if the program is to continue. 
+
+
+	2) Destination is the register stack - The significand of the result is rounded according to current settings of the precision and rounding control bits in the x87 FPU control word and the exponent of the result is adjusted by multiplying it by 2^(24576). (For instructions not affected by the precision field, the significand is rounded to double extended precision). The resulting value is stored in the destination operand. Condition code bit C1 in the x87 FPU status register (acting here as a "round-up bit") is set if the significand was rounded upward and cleared if the result was rounded toward 0. After the result is stored, the UE flag is set and a software exception handler is invoked. The scaling bias value 24576 is the same as is used for the overflow exception and has the same effect, which is to translate the result as nearly as possible to the middle of the double extended precision flaoting-point exponent range. 
+
+When using the FSCALE instruction, massive underflow can occur, when the magnitude of the result is too small to be representedm even with the bais-adjusted exponenet. 
+Here if underflow occurs again after the result has been biased, a properly signed 0 is stored in the destination operatnd

@@ -1,0 +1,13 @@
+MMX technology enables direct access to all the MMX registers. 
+This means the all existing interface convertions that apply to the use of the processor's general-purpose registers (EAX, EBX, etc) also apply to the use of MMX registers.
+
+An efficient interface to MMX routines might pass parameters and return values throught the MMX registers or throught a combination of memory locations (via the stack) and MMX registers. 
+Do not use the EEMS instruction or mix MMX and x87 FPU code when using the MMX registers to pass parameters. 
+
+If a high-level language that does not support the MMX data types directly is used, the MMX data types can be defined as 64-bit structure containing packed data types. 
+
+When implementing MMX instructions in high-level languages, other approaches can be taken, such as: 
+
+	1) Passing parameters to an MMX routine by passing a pointer to a structure via the stack. 
+
+	2) Returning a value from a function by returning a pointer to a structure

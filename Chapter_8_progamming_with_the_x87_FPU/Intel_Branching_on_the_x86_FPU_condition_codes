@@ -1,0 +1,14 @@
+The processor does not offer any control-flow instructions that branch on the setting of the condition code flags (C0, C2, and C3) in the x87 FPU status word. 
+To branch on the state of these flags, the x87 FPU status word must first be moved to the AX register in the integer unit. 
+The FSTSW AX (store status word) instruction can be used for this purpose. 
+When these flags are in the AX register, the TEST instruction can be used to control conditional branching as follows: 
+
+1) Check for an unordered result. Use the TEST instruction to compare the contents of the AX register witht the constant 0400H. This operation will clear the ZF flag in the EFLAGS register if the condition code flags indicate an unordered result; otherwise, the ZF flag will be set. The JNZ instruction can then be used to transfer contrl to a procedure for handling unordered operands. 
+
+2) Check ordered comparison result. Use the constants given in the TEST instruction to test for a less than, equal to, or greater than result, then use the corresponding conditional branch instruction to transfer program control to the appropriate procedure or section of code. 
+
+If a program or procedure has been thoroughly tested and it incorporates periodic checks for QNaN results, then it is not necessary to check for the unordered result every time a comparison is made. 
+
+Some non-comparison x87 FPU instructions update the condition code flags in the x87 FPU status word. 
+To ensyre that the status word is not altered inadvertently, store it immediately following a comparison operation. 
+

@@ -1,0 +1,11 @@
+An application can contain both x87 FPU floating-point and MMX instructions. 
+However, frequent transitions between MMX and x87 FPU instructions are not recommended(I walk on a dangous side lol), because they can degrade perfromance in some processors implementations. 
+When mixing MMX code with x87 FPU code, follow these guidelines: 
+
+	1) keep the code in separate modules, procedures, or routines. 
+
+	2) Do not rely on register contents across transitions between x87 FPU and MMX code modules. 
+
+	3) When transitioning between MMX code and x87 FPU code, save the MMX register state (if it will be needed in the future) and execute an EMMS instruction to empty the MMX state. 
+
+	4) When transitioning between x87 FPU code and MMX code, save the x87 FPU state if it will be needed in the future. 

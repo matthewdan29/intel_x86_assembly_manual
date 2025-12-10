@@ -1,0 +1,17 @@
+When the argument of a trigonometric function is within the domain of the function, the argument is automatically reduced by the appropriate multiple of 2(pi symbol) through the same reduction mechanism used by the FPREM and FPREM1 instructions. 
+The internal value of (pi symbol) (3.1415926...) that the x87 FPU uses for argment reduction and other computations. 
+The numerical value of Pi can be written as: 
+
+		Pi = 0.f * 2^2
+
+	Where the fractrion f is expressed in binary form as: 
+		f = C90FDAA2 2168C234 C
+
+	(THe spaces in the fracrtion above indicate 32-bit boundaries)
+
+The internal approximation Pi of the value (Pi symbol) has a 66 significant bits. 
+Since the exact value of (Pi symbol) represented in binary has the next 3 bits equal to 0, it means that Pi is the value of (pi symbol) rounded to nearest-even to 68 bits, and also the value of (Pi symbol) rounded toward zero (truncated ) to 69 bits. 
+
+However, accuracy problems may arise because this relatively short finit approximation Pi of the number (Pi symbol) is used for calculating the reduced argument of the trigonometic function approximations in the implementations of FSIN, FCOS, FSINCOS, and FPTAN. 
+Alternately, this means that FSIN (x), FCOS (x), and FPTAN (x) are really approximating the mathematical functions sin (x * (Pi symbol)/Pi), cos(x * (pi symbol) / Pi), and tan(x* (Pi symbol)/ Pi), and not exactly sin(x), cos(x), and tan(x). (NOTE: the FSINCOS is the equivalent of FSIN and FCOS combined togeather). 
+The period of sin(x * (Pi symbol) / Pi) for example is 2* Pi not 2(Pi symbol). 

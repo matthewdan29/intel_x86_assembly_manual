@@ -1,0 +1,14 @@
+The HADDPS instructions perform a single precision addition on contiguous data elements. 
+The first data element of the result is obtained by adding the first and second elements of the first operand; the secnod element by adding the third and fourth elements of the first operand. 
+
+
+The HSUBPS instruction performs a single precision subtraction on contiguous data elements. 
+the first data element of the result is obtained by subtracting the second element of the first operand from the first element of the first operand. 
+
+
+
+The HADDPD instruction performs a double precision addition on contiguous data elements. 
+The first data element of the result is obtained by adding the first and second elements of the first opernad. 
+
+The HSUBPD instructiong performs a double precision subtraction on contiguous data elements. 
+The first data element of the reuslt is obtained by subtracting the second element of the first operand from the first element of the first operand. 

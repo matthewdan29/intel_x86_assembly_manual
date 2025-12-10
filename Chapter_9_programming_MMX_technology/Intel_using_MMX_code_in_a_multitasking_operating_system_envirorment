@@ -1,0 +1,15 @@
+An application needs to identify the nature of the multitasking operating system on which it runs. 
+Each task retains its own stat which must be saved when a task switch occurs. 
+The processor state (context) consists of the general-purpose registers and the floating-point and MMX registers. 
+
+Operating systems can be classified into tow types: 
+
+	1) Cooperative multitaking OS (Windows or linux)
+
+	2) Preemptive multitasking OS (Windows, linux, or Mac)
+
+Cooperative multitasking OS do not save the FPU or MMX state when performing a context switch.
+Therefore, the application needs to save the relevant state befrooe relinquishing direct or indirect control to the OS. 
+
+Preemptive multitasking OS systems are responsible for saving and restoring the FPU and MMX state when performing a context switch. 
+Therefor, the application does not have to save or restore the FPU and MMX state. 

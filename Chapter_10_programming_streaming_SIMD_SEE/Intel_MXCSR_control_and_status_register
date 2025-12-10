@@ -1,0 +1,14 @@
+The 32-bit MXCSR register contains control and staus information for Intel SSE, SSE2, and SSE3 SIMD floating-point operations. 
+This register contains: 
+
+	A) Flag and mask bits for SIMD flaoting-point exceptions. 
+
+	B) Rounding control field for SIMD floating-point operations. 
+
+	C) Flush-to-zero flag that provides a means of controlling underflow conditions on SIMD floating-point operations
+
+	D) Denormals-are-zeros flag that controls how SIMD floating-point instructions handle denormal source operands. 
+
+The contents of this register can be loaded form memory with the LDMXCSR and FXRSTOR instructions and stored in memory with STMXCSR and FXSAVE. 
+
+Bits 16 through 31 of the MXCSR register are reserved and are cleared on a power-up or reset of the processor; attempting to write a non-zero value to these bits, using either the FXRSTOR or LDMXCSR instructions, will result in a general-protection exception (#GP) being generated. 

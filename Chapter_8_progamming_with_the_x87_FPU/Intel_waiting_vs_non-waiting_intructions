@@ -1,0 +1,10 @@
+All of the x87 FPU instructions except a few special control instructions perform a wait operation (similar to the WAIT/FWAIT instructions), to check for and handle pending unmasked x87 FPU floating-point exceptions, before they perform their primary operation (such as adding two floating-point numbers). 
+These instructions are called "waiting" instructions. 
+Some of the x87 FPU control instructions, such as FSTSW/FNSTSW, have both a waiting and a non-waiting version. 
+The waiting version (with the "F") executes a wait operation before it performs its primary operation; wheres, the non-waiting version (with the "FN") ignores pending unmasked exceptions. 
+
+Non-waiting instructions allow software to save the current x87 FPU state without first handling pending exceptions or to reset or reinitialize the x87 FPU without regard for pending exceptions
+
+					NOTES 
+When operating a Pentium or Intel486 processor in MS-DOS compatibility mode, it is possible (under unusual circumstances) for a non-waiting instruction to be interrupted prior to being executed to handle a pending x87 FPU exception. 
+When operating a P6 family, Prentium 4, or Intel Xeon processor in MS-DOS compatibility mode, non-waiting instructions cannot be interrupted in this way

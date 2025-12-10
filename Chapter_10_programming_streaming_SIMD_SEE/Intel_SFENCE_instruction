@@ -1,0 +1,3 @@
+The SFENCE (Store Fence) instruction controls write ordering by creating a fence for memory store operations. 
+This instruction guarantees that the result of every store instruction that precedes the store fence in program order is globally visible before any store instruction that follows the fence. 
+The SFENCE instruction provides an efficient way of ensuring ordering between procdures that produce weakly-ordered data and procedures that consume that data. 

@@ -1,0 +1,4 @@
+Blending conditionally copies a data element in a source operand to the same element in the destination. 
+
+The variable blend instructions (BLENDVPS, BLENDVPD, PBLENDW) introduce the use of control bits stored in an implicit XMM register (XMM0). 
+The most significant bit in each field (the sign bit, for 2's complement integer or floating-point) is used as a selector. 

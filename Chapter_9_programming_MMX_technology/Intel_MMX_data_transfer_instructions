@@ -1,0 +1,3 @@
+The MOVD (Move 32 bits) instruction transfers 32 bits of packed data from memory to an MMX register and vice versa; or from a general-purpose register to an MMX register and vice versa. 
+
+The MOVQ (Move 64 Bits) instruction transfers 64 bits of packed data from memory to an MMX register and vice versa; or transfer data between MMX registers. 

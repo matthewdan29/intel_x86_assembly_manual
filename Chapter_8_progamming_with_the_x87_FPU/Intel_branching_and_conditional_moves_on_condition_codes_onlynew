@@ -1,0 +1,9 @@
+The x87 FPU supports two mechanisms for branching and performing conditional moves according to comparisons of two floating-point values. 
+These mechanism are referred to here as the "old mechanism" and the "new mechanism". I will only explain the new you can read the old mechanism on page 210 in the Intel man pages. 
+
+The new mechanism is available beginning with the P6 family processors. 
+Using the mechanism, the new floating-point compare and set EFLAGS instructions (FCOMI, FCOMIP, FUCOMI, and FUCOMIP) compare two floating-point values and set the ZF, PF, and CF flags in the EFLAGS register directly. 
+A single instruction thus replaces the three instructions required by the old mechanism. 
+
+Note also that the FCMOVcc instructions (also new in the P6 family processors) allow conditional moves of floating-point values (values in the x87 FPU data registers) based on the setting of the status flags (ZF, PF, and CF) in the EFLAGS register. 
+These instructions eliminate the need for an IF statement to perform conditional moves of floating-point values. 

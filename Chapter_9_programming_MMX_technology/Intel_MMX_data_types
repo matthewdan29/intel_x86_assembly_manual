@@ -1,0 +1,9 @@
+MMX technology instruced the following 64-bit data types to the IA-32 architecture: 
+
+	1) 64-bit packed byte integers -- eight packed bytes 
+
+	2) 64-bit packed word integers -- four packed words 
+
+	3) 64-bit packed doubleword integers -- two packed doublewords
+
+MMX instructions move 64-bit packed data types (packed bytes, packed words, or packed doublewords) and the quadword data type between MMX registers and memory or between MMX registers in 64-bit blocks. However, when performing arithmetic or logical operations on the packed data types, MMX instructions operate in parallel on the individual bytes, words, or doubleword contained in MMX registers.

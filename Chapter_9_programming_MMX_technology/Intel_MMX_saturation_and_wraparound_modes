@@ -1,0 +1,20 @@
+When performing integer arithmetic, an operation may result in an out-of-range condition, where the true result cannot be represented in the destination format. 
+For example, when performing arithmetic on signed word integers, positive overflow can occur when the true signed result is larger than 16 bits. 
+
+The MMX technology provides three ways of handling out-of-range conditions: 
+
+	1) Wraparound arithmetic - With wraparound arithmetic, a true out-of-range result is truncated (that is, the carry or overflow bit is ignored and only the least significant bits of the result are returned to the destination).
+Wraparound arithmetic is suitable for applications that control the range of operands to prevent out-of-range results. 
+If the range of operands is not controlled, however, wraparound arithmetic can lead to large errors. 
+For example, adding two large signed numbers can cause positive overflow and produce a negative result. 
+
+	2) Signed saturation arithmetic - with signed saturation arithmetic, out-of-range results are limited to the representable range of signed integers for the integer size being operated on. 
+For example, if positive overflow occurs when operating on signed word integers, the result is "saturated" to 7FFFH, which is the largest positive integer that can be represented in 16 bits; if negative overflow occurs, the result is saturated to 8000H. 
+
+	3) Unsigned saturation arithmetic - With unsigned saturation arithmetic, out-of-range results are limited to the representable range of unsigned integers for the integer size. So, positive overflow when operating on unsigned byte integers results in FFH being returned and negative overflow results in 00H being returned. 
+
+Saturation arithmetic provides an anser for many overflow situations. 
+For example, in color calculations, saturation causes a color to remain pure black or pure white without allowing inversion. 
+It also prevents wraparound artifacts from entering into computations when rang checking of source operands it not used. 
+
+MMX instructions do not indicate overflow or underflow occurrence by generating exceptions or setting flags in the EFLAGS register. 

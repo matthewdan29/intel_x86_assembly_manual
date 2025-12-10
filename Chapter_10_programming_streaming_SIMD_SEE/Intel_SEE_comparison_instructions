@@ -1,0 +1,10 @@
+The compare instructions compare packed and scalar single precision floating-point values and return the results of the comparison either to the destination operand or the EFLAGS register. 
+
+The CMPPS (compare packed single precision floating-point values) instruction compares the corresponding values from two packed single precision floating-point operands, using an immediate operand as a predicate, and returns a 32-bit mask result of all 1s or all 0s for each comparison to the destination operand. 
+The value of the immediate operand allows the selection of any of 8 compare condition: equal, less than, less than equal, unordered, not equal, not less than, not less than or equal, or ordered. 
+
+The CMPSS (compare scalar single precision, floating-point values) instruction compares the low values from two packed single precision floating-point operands, using an immediate operand as a predicate, and returns a 32-bit mask result of all 1s or all 0s for the comparison to the low doubleword of the destination operand. 
+The immediate operand selects the compare conditions as with the CMPPS instruction. 
+
+The COMISS (compare scalar single precision floating-point values and set EFLAGS) and UCOMISS(unordered compare scalar single precision floating-point values and set EFLAGS) instructions compare the low values of two packed single precision floating-point operands and set the ZF, PF, and CF flags in the EFLAGS register to show the result (greater than, less than, equal or unorded). 
+These two instructions differ as follows: the COMISS instrcution signals a floating-point invalid operation (#I) exception when a source operand is either a QNaN or an SNaN(SNaN is a signaling Not-a-Number value in floating-point math, used for exception handling); 

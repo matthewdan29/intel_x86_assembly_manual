@@ -1,0 +1,7 @@
+To make efficient use of the processor's super-scalar microacrchitecture, a program needs to provide a steady stream of data to the executing program to aviod stalling the processor. 
+PREFETCHh instructiong minimize the latency of data accesses in performance-critical sections of appliction code by allowing data to be fetched into the processor cache hierarchy in advance of actual usage. 
+
+The non-temporal store instructions (MOVNTI, MOVNTPD, MOVNTPS, MOVNTDQ, MOVNTQ, MASKMOVQ, and MASKMOVDQU) minimize cache pollution when writing non-temporal data to memory. 
+They prevent non-temporal data from being written into processor caches on a store operation. 
+
+SFENCE and MFENCE provide a performance-efficient way to ensure ordering by guaranteeing that every store instruction that precedes SFENCE/MFENCE in program order is globally visible before a store instruction that follows the fence. 

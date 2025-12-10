@@ -1,0 +1,2 @@
+The PUNPCKHBW/PUNPCKHWD/PUNPCKHDQ (unpack high-order data elements) instructions and the PUNPCKLBW/PUNPCKLWD/PUNPCKLDQ (unpack low-order data elements) instructions unpack bytes, words, or doublewords from the high- or low-order data elements of the source and destination operands and interleave them in the destination operand. 
+By placing all 0s in the source operand, these instructions can be used to convert byte integers to words integers, word integers to doubleword intgers, or doubleword integers to quadword integers. 

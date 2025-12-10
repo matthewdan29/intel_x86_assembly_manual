@@ -1,0 +1,8 @@
+MMX instructions generate the same type of memory-access exceptions as other IA-32 instructions. 
+
+Exiting exceptions handlers do not have to be modified to handle these types of exceptions for MMX code. 
+
+Unless there is a pending floating-point exception, MMX instructions do not generate numeric exceptions. 
+Therfore, there is no need to modify existing exceptions handlers or add new ones to handle numeric exceptions. 
+
+If a floating-point exception is pending, the subsequent MMX instruction generates a numeric error exception. The MMX instruction resumes exeception upon return from the exception hanlder. 

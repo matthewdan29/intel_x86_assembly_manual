@@ -1,0 +1,11 @@
+All Intel SSE instructions operate on the XMM registers, MMX registers, and/or memory as follows: 
+
+	A) XMM registers -- These eight registers are used to operate on packed or scalar single precision floating-point data. Scalar operations are operations performed on individual (unpacked) single precision floating-point values stored in the low doubleword of an XMM register. XMM registers are referenced by the names XMM0 throught XMM7. 
+
+	B) MXCSR register -- This 32-bit register provides status and control bits used in SIMD floating-point operations
+
+	C) MMX registers -- These eight registers are used to perform operations on 64-bit packed integer data. They are also used to hold operands for some operations perfromed between the MMX and XMM registers. MMX registers are referenced by the named MM0 throught MM7. 
+
+	D) General-purpose registers -- The eight general-purpose registers are used along with the existing IA-32 addressing modes to address operands in memoory. (MMX and XMM registers cannoot be used to address memory). The general-purpose registers are also used to hold operands for some SSE instructions and are referenced as EAX, EBX, ECX, EBP, ESI, EDI, and ESP. 
+
+	E) EFLAGS register -- This 32-bit register is used to record result of some compare operations. 

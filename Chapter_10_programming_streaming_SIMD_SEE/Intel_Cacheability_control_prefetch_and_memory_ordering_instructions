@@ -1,0 +1,3 @@
+Intel SSE introducted several new instructions to give programs more control over the caching of data. 
+They also introduces the PREFETCHh (a computer technique where the system anticipates needed data or resources and loads them into RAM ahead of time, speeding up applications launches and overall performance by reducing disk I/O) instructions, which provide the ability to prefetch data to a specified cache level, and the SFENCE instruction, which enforces programs ordering on stores. 
+

@@ -1,0 +1,2 @@
+After each MMX instruction, the entire x87 FPU tag word is set to valid (00B).
+The EMMSinstruction (empty MMX state) sets the entire x87 FPU tag word to empty (11B). 

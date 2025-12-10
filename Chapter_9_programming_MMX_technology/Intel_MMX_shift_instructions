@@ -1,0 +1,7 @@
+The logical shift left, logical shift right and arithmetic shift right instructions shift each element by a specified number of bit positions. 
+
+The PSLLW/PSLLD/PSLLQ (shift packed data left logical) instructions and the PSRLW/PSRLD/PSRLQ (shift packed data right logical) instructions perform a logical left or right shift of the data elements and fill the empty high or low order bit positions with zeros. 
+These instructions operate on packed words, doublewords, and quadwords.
+ 
+The PSRAW/PSRAD (shift packed data right arithmetic) instructions perform an arithmetic right shift, copy the sign bit for each data element into empty bit positions on the upper end of each data element. 
+This instruction operates on packed words and doublewords. 

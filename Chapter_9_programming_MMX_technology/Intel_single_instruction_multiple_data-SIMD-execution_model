@@ -1,0 +1,10 @@
+MMX technology uses the single instruction, multiple data (SIMD) technique for performing arithmetic and logical operations on bytes, words, or doublewords packed into MMX registers. 
+For example, the PADDSW instruction adds 4 signed word integers from one source operand to 4 signed word integers in a second source operand and stores 4 word integer results in a destination operand. 
+This SIMD technique speeds up software performance by allowing the same operation to be carried out on multiple data elements in parallel. 
+MMX technology supports parallel operations on byte, word, and doubleword data elements when contained in MMX registers. 
+
+The SIMD execution model supported in the MMX technology directly address the needs of modern media, communications, and graphics applications, which often use sophistoicated algorithms that perform the same operations on a large number of small data types (bytes, words, and doublewords). 
+For example, most audio data is represented in 16-bit (word) quantities. 
+THe MMX instructions can operate on 4 words simultaneously with one instruction. 
+Video and graphics information is commonly represented as palletized 8-bit (byte) quantities.
+One MMX instruction operates on 8 bytes simultaneously. 

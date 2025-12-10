@@ -1,0 +1,2 @@
+Many of the Intel SSE/SSE2/SSE3 and SSSE3 instructions accelerate SIMD data processing using a model referred to as vertical computation. 
+Using this model, data flow is vertical between the data elements of the inputs and the output. 

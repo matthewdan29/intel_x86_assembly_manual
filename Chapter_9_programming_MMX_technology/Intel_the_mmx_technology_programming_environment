@@ -1,0 +1,5 @@
+All MMX instructions operate on MMX registers, the general-purpose registers, and/or memory as follows: 
+
+	A) MMX registers - These eight registers are used to perform operations on 64-bit packed integer data. They are named MM0 through MM7
+
+	B) General-purpose registers -- The eight general-purpose registers are used with existing IA-32 addressing modes to address operands in memory. (MMX registers cannot be used to address memory). General-purpose registers are also used to hold operands for some MMX technology operations. They are EAX, EBX, ECX, EDX, EBP, ESI, EDI, and ESP

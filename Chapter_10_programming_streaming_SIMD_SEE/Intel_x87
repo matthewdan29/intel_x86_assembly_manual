@@ -1,0 +1,38 @@
+The x87 state is listed below, along with details of its interations with FXSAVE and FXRSTOR: 
+
+	A) Bytes 1:0, 3:2, and 7:6 are used for x87 FPU Control Word (FCW), x87 FPU Status Word (FSW), and x87 FPU Opcode (FOP), respectively, 
+
+	B) Byte 4 is used for an abridged version of the x87 FPU Tag Word (FTW). The following items describe its usage: 
+		1) For each j, 0 <= j <= 7, FXSAVE saves a 0 into bit j of byte 4 if x87 FPU data register STj has a empty tag; otherwise, FXSAVE saves a 1 into bit j of byte 4. 
+
+		2) For each j, 0 <= j <= 7, FXRSTOR establishes the tag value for x87 FPU data register STj as follows. if bit j of byte 4 is 0, the tag for STj in the tag register for the data register is marked empty (11B); otherwise, the x87 FPU sets the tag for STj based on the value being loaded into the register 
+
+	C) Bytes 15:8 are used as follows: 
+
+		1) If the instruction has no REX prefix, or if REX.W = 0: 
+
+			a) Bytes 11:8 are used for bits 31:0 of the x87 FPU instruction Pointer Offset (FIP). 
+
+			b) If CPUID.(EAX=07H, ECX=OH):EBX[bit 13] = 0, bytes 13:12 are used for x87 FPU Instruction Pointer Selector (FPU CS). Otherwise, the processor deprecates the FPU CS value: FXSAVE saves it as 0000H. 
+
+			c) Bytes 15:14 are not used. 
+
+		2) if the instruction has a REX prefix with REX.W = 1, bytes 15:8 are used for the full 64 bits of FIP
+
+	D) Bytes 23:16 are used as follows: 
+
+		1) If the instruction has no REX prefix, or if REX.W = 0: 
+
+			a) Bytes 19:16 are used for bits 31:0 of the x87 FPU Data Pointer Offset (FDP). 
+
+			b) If CPUID.(EAX=07H, ECX=0H):EBX[bit 13] = 0, bytes 21:20 are used for x87 FPU Data Pointer Selector (FPU DS). Otherwise, the procssor deprecates the FPU DS value: FXSAVE saves it as 0000H
+
+			c) Bytes 23:22 are not used. 
+
+		2) if the Instructions has a REX prefix with REX.W = 1, bytes 23:16 are used for the full 64 bits of FDP
+
+	E) Bytes 31:24 are used for SSE state 
+
+	F) Bytes 159:32 are used for the registers ST0-ST7 (MM0-MM7). Each of the 8 registers is allocated a 128-bit region, with the low 80 bits used for the register and the upper 48 bits unused. 
+
+

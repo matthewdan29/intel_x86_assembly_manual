@@ -1,0 +1,43 @@
+Intel SSE and SSE2 define typed operations on packed and scalar floating-point data types and on 128-bit SIMD integer data types, but IA-32 processors do not enforce this typeing at the architectural level. 
+They only enforce it at the microarchitectural level. 
+THerefore, when a Prentium 4 or Intel Xeon processor loads a packed or scalr floating-point operand or a 128-bit packed integer operand from memory into an XMM register, it does not check that the actural data being loaded matches the data type specified in the instruction. 
+Likewise, when the processor performs an arithmetic operation on the data in an XMM register, it does not check that the data being operated on matches the data type specified in the instrution. 
+
+
+As a general rule, because data typeing of SIMD floating-point and integer data types is not enforced at the architectural level, it is the responsibility of the programmer, assembler, or compiler to ensure that code enforces data typing. 
+Failure to enforce correct data typeing can lead to computations that return unepected results. 
+
+For example, in the following code sample, two packed single precision floating-point operands are moved from memory into XMM registers (using MOVAPS instructions); then a double precision packed add operation (using the ADDPD instruction) is performed on the operands: 
+
+		movaps		xmm0, [eax]		;EAX register contains pointer to packed
+							; single precision floating-point operand
+	
+		movaps		xmm1, [ebx]
+		addpd		xmm0, xmm1
+
+
+Pentium 4 and Intel Xeon processors execute these instructions without generating an invalid-operand exception (#UD) and will produce the exepected results in registers XMM0 (that is, the high and low 64-bits of each register will be treated as a double precision floating-point value and the processor will operateon them accordingly). 
+Because the data types operated on and the data type expected by the ADDPD instruction were inconsisitent, the instruction may result in a SIMD floating-point exception (such as numeric overflow [#O] or invalid operation [#I]) being genertaed, but the actual source of the problem (inconsistent data types) is not detected. 
+
+The ability to operate on an operand that contains a data type that is inconsistent with the typeing of the instruction being executed, permits some valid operations to be performed. 
+For example, the following instructions load a packed double precision floating-point operand from memory to regsiter XMM0, and mask to register XMM1; then they use XORPD to toggle the sign bits of the two packed values in register XMM0
+
+
+		movapd		xmm0,[eax] 		; EAX register contains pointer to packed
+							; double precision floating-point operand
+
+		movaps 		xmm1, [ebx]		; EBX register contains pointer to packed 
+							; double precision floating-point mask
+
+		xorpd 		xmm0, xmm1		XOR operation toggles sign bit using the mask in xmm1
+
+In this example: XORPS or PXOR can be used in place of XORPD and yield the same correct result. 
+However, because of the type mismatch between the operand data type and the instruction data type, a latency penalty will be incurred due to implementations of the instructions at the microarchitecture levle. 
+
+Latency penalties can also be incurred by using move instructions of the wrong type. 
+For example, MOVAPS and MOVAPD can both be used to move a packed single precision operand from memory to an XMM register. 
+However, if MOVAPD is used, a latency penalty will be incurred when a correctly typed instruction attempts to use the data in the register. 
+
+Not that these latency penalties are not incurred when moving data from XMM registers to memory. 
+
+				

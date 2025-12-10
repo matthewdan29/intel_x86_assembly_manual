@@ -1,0 +1,3 @@
+Some Intel SSE3, SSSE3, and Intle SSE4 instructions may be used to operate on general-purpose registers. 
+Ust the REX.W prefix to access 64-bit general-purpose regsiters. 
+Not that if a REX prefix is used when it has no meaning, the prefix is ignored. 

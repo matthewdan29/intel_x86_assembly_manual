@@ -1,0 +1,3 @@
+The FXRSTOR instruction takes a single memory operand, which is a FXSAVE area. 
+If the value at bytes 27:24 of the FXSAVE area is not a legal value for the MXCSR register (e.g. the value sets reserved bits), executin of FXRSTOR results in a general-protection fault (#GP). 
+Otherwise, the instruction loads x87 state and SSE state from the FXSAVE area. 

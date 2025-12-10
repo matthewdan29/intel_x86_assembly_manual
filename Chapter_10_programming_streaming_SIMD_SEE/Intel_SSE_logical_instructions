@@ -1,0 +1,10 @@
+Intel SSE logical instructions perform AND, AND NOT, OR, and XOR operations on packed single precision floating-point values. 
+
+The ANDPS (bitwise logical AND of packed single precision floating-point values) instructions return the logical AND of two packed single precision floating-point operands 
+
+The ANDNPS (bitwise logical AND NOT of packed single precision, floating-point values) instructions return the logical AND NOT of two packed single precision floating-point operands. 
+
+The ORPS (bitwise logical OR of packed single precision, floating-point values) instructions return the logical OR of two packed single precision floating-point operands. 
+
+The XORPS (bitwise logical XOR of packed single precision, floating-point values) instructions return the logical XOR of two packed single precision floating-point operands. 
+

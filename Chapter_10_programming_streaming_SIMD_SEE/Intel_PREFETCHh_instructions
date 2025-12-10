@@ -1,0 +1,7 @@
+The PREFETCHh instructions permit programs to load data into the processor at a suggested cache level, so that the data is closer to the processor's load and store unit when it is needed. 
+These instructions fetch 32 aligned bytes (or more, depending on the implementation) containing the addressed byte to a location in the cache hierarchy specified by the temproal locality hint. 
+The hints specify a prefetch of either temproal or non-temporal data.
+Subsequent accesses to temporal data are treated like normal accesses, while those to non-temporal data will continue to minimize cache pollution. 
+If the data is already present at a level of the cache hierarchy that is closer to the processor, the PREFETCHh instruction will not result in any data movement. 
+The PREFETCHh instructions do not affect functional behavior of the program. 
+

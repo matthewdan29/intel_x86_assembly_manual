@@ -1,0 +1,19 @@
+MMX technology defines a simple and flexible SIMD(single instruction multi data) execution model to handle 64-bit packed integer data. 
+This model adds the following features to the IA-32 architecture, while maintaining backwards compatibility with all IA-32 applications and operating-system code: 
+
+	1) Eight new 64-bit data registers, called MMX registers. 
+
+	2) Three new packed data types: 
+
+		2a) 64-bit packed byte integers (signed and unsigned)
+
+		2b) 64-bit word integers (signed and unsigned)
+
+		2c) 64-bit packed doubleword integers (signed and unsigned)
+
+	3) instructions that support the new data types and to handle MMX state management
+
+	4) Extensions to the CPUID instruction
+
+MMX technology is accessible from all the IA-32-architecture execution modes. 
+It does not add any new modes to the architecture. 

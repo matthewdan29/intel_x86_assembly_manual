@@ -1,0 +1,89 @@
+The streaming load instrucion in SSE4.1, MOVNTDQA, provides a non-temporal hint that can cause adjacent 16-byte items within an aligned 64-byte region of WC memory type (a streaming line) to be feched and held in a small set of temporary buffers ("streaming load buffers"). 
+Subsquent streaming loads to other aligned 16-byte items in the same streaming line may be satified from the streaming load buffer and can improve throughput. 
+
+Below provides a sketch of the basic assembly sequences that illustrate the principles of using MOVNTDQA in a situation with a producer-cunsumer accessing a WC memory region. 
+
+			"SKETCH OF 'MOVNTDQA' USAGE OF A CONSUMER AND A PCI PRODUCER"
+
+		//PO: producer is a PCI device writing into the WC space
+		# the PCI device updates status through a UC flag "u_dev_status". 
+		#the protocol for "u_dev_status" : 0: produce; 1: consume 2: all done
+
+			mov eax, $0
+	
+			mov [u_dev_status], eax
+
+		producerStart: 
+
+			mov eax, [u_dev_status]		# poll status flag to see if consumer is requestion data
+	
+			cmp eax, $0			#
+
+			jne done			# I no longer need to produce
+
+			commence PCI writes to WC region..
+
+
+			mov eax, $1			#producer ready to notify the consumer via status flag
+
+		#now wait for consumer to signal its status
+
+		spinloop: 
+
+			cmp [u_dev_status], $1		#did I get signal from the consumer ?
+
+		jne producerStart			#yes I did
+
+		jmp spinloop				#check again
+
+	
+	done: 
+	//producer is finished at this point
+
+-------------------------------------------------------------------------------------------------------------
+
+		//P1: consumer check PCI status flag to consume WC data
+
+				mov eax, $0		#request to the producer
+
+				mov[u_dev_status], eax
+
+		consumerStart: 
+
+				mov; eax, [u_dev_status] #reads the value of the PCI status
+
+				cmp eax, $1		 #has producer written
+	
+				jne consumerStart	#tight loop; make it more efficient with pause, etc. 
+
+				mfence 	#producer finished device writes to WC, ensure WC region is coherent
+
+			ntread: 
+	
+				movntdqa xmm0, [addr]
+
+				movntdqa xmm1, [addr + 16]
+
+				movntdqa xmm2, [addr + 32]
+
+				movntdqa xmm3, [addr + 48]
+
+				... #do any more NT reads as needed 
+
+				mfence #ensure PCI device reads the correct value of [u_dev_status]
+
+
+			#now decide whether we are done or we need to producer to produce more data 
+
+			#if we done write a 2 into the cariable, otherwise write a 0 into the variable 
+
+				mov eax, $0/$2			#end or continue producing 
+
+				mov [u_dev_status], eax 
+
+
+			#if I want to consume again I will jump back to consumerStart after storing a 0 into eax 
+
+			#otherwise I am done
+
+	
